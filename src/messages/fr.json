@@ -1,0 +1,448 @@
+{
+  "nav": {
+    "accueil": "Accueil",
+    "prevenir": "Prévenir",
+    "soutenir": "Soutenir",
+    "plaider": "Plaider",
+    "former": "Former",
+    "notreMission": "Notre mission",
+    "formations": "Formations",
+    "actualites": "Actualités",
+    "aPropos": "À propos",
+    "contact": "Contact",
+    "adhesion": "Adhérer",
+    "rejoignez": "Rejoindre",
+    "besoinDAide": "Contact – Besoin d'aide",
+    "menu": "Menu",
+    "ouvrirMenu": "Ouvrir le menu",
+    "fermerMenu": "Fermer le menu",
+    "accueilLogo": "Primrose – La Sororité Active, accueil"
+  },
+  "quickExit": {
+    "label": "Quitter rapidement",
+    "aria": "Quitter immédiatement ce site et aller sur un site neutre"
+  },
+  "home": {
+    "hero": {
+      "titre": "Un monde sans violences de genre. Ensemble, pour le rétablissement.",
+      "texte": "Au Congo-Brazzaville, Primrose écoute et accompagne les femmes victimes de violences, et agit pour que ces violences reculent — dans les familles, les écoles, les services de santé et jusque dans la loi.",
+      "cta": "Découvrir nos actions",
+      "eyebrow": "La sororité active · Congo-Brazzaville",
+      "titre1": "Un monde sans violences de genre.",
+      "titre2": "Ensemble, pour le rétablissement.",
+      "ctaRejoindre": "Rejoindre l'association"
+    },
+    "missions": {
+      "titre": "Agir avant, pendant et après les violences",
+      "texte": "Prévenir avant que la violence ne survienne, soutenir celles qui la subissent, faire évoluer les lois et former celles et ceux qui accueillent les victimes.",
+      "eyebrow": "Notre action",
+      "concretement": "Concrètement",
+      "moments": {
+        "prevenir": "Avant",
+        "soutenir": "Pendant et après",
+        "plaider": "Changer les lois",
+        "former": "Changer les pratiques"
+      },
+      "enSavoirPlus": "Découvrir cet axe"
+    },
+    "aide": {
+      "titre": "Vous traversez une situation difficile ?",
+      "texte": "Une écoute confidentielle, sans inscription et sans trace sur votre appareil.",
+      "lien": "Demander de l'aide",
+      "astuce": "Pour quitter ce site immédiatement, appuyez deux fois sur Échap."
+    },
+    "vision": {
+      "eyebrow": "Notre vision",
+      "titre": "Personne ne devrait affronter la violence seule.",
+      "texte": "Une femme qui ose parler doit trouver une écoute digne à chaque porte où elle frappe : sa famille, l'hôpital, le commissariat, le tribunal. C'est ce que nous construisons, avec nos valeurs pour boussole.",
+      "valeursTitre": "Nos valeurs",
+      "valeurs": [
+        "Confiance",
+        "Solidarité",
+        "Bienveillance",
+        "Tolérance",
+        "Respect civique de tous"
+      ],
+      "lien": "Découvrir l'association"
+    },
+    "engager": {
+      "eyebrow": "Agir avec nous",
+      "titre": "Rejoignez la sororité active",
+      "texte": "La sororité, c'est se tenir aux côtés les unes des autres. Voici les façons de le faire avec nous.",
+      "bouton": "Voir comment nous rejoindre",
+      "items": {
+        "membre": {
+          "titre": "Devenir membre",
+          "texte": "Adhérer, participer aux assemblées et porter la voix de l'association."
+        },
+        "benevole": {
+          "titre": "Devenir bénévole",
+          "texte": "Animer un atelier, tenir un stand de sensibilisation, aider à organiser une campagne."
+        },
+        "partenaire": {
+          "titre": "Devenir partenaire",
+          "texte": "Institution, ONG ou entreprise : construisons ensemble des programmes de prévention et de formation."
+        },
+        "donateur": {
+          "titre": "Faire un don",
+          "texte": "Financer l'écoute, l'orientation et l'accompagnement des victimes."
+        }
+      }
+    },
+    "actualites": {
+      "eyebrow": "Actualités",
+      "titre": "Les dernières nouvelles",
+      "tout": "Toutes les actualités"
+    }
+  },
+  "missions": {
+    "titre": "Notre mission",
+    "texte": "Prévenir avant, soutenir pendant et après, changer les lois et les pratiques : notre action couvre tout le parcours d'une victime.",
+    "prevenir": {
+      "titre": "PRÉVENIR",
+      "description": "Organiser des campagnes, ateliers et conférences de grande envergure pour éduquer le grand public.",
+      "detail": "Nous allons à la rencontre du grand public — écoles, quartiers, médias — pour faire reculer les violences de genre avant qu'elles ne surviennent, par l'information et le dialogue.",
+      "valeurs": [
+        "Information",
+        "Dialogue",
+        "Proximité"
+      ],
+      "actions": [
+        "Campagnes de sensibilisation",
+        "Ateliers dans les écoles et les quartiers",
+        "Conférences et interventions dans les médias"
+      ]
+    },
+    "soutenir": {
+      "titre": "SOUTENIR",
+      "description": "Apporter un soutien psychologique, médical et légal aux victimes.",
+      "detail": "Chaque victime accompagnée reçoit une écoute confidentielle et une orientation vers les ressources psychologiques, médicales et juridiques adaptées à sa situation.",
+      "valeurs": [
+        "Confiance",
+        "Solidarité",
+        "Bienveillance",
+        "Tolérance"
+      ],
+      "actions": [
+        "Écoute confidentielle",
+        "Orientation vers un soutien psychologique et médical",
+        "Accompagnement dans les démarches juridiques"
+      ]
+    },
+    "plaider": {
+      "titre": "PLAIDER",
+      "description": "Plaider pour des changements législatifs et des politiques publiques contre les violences.",
+      "detail": "Nous portons la voix des victimes auprès des institutions pour faire évoluer les lois et les politiques publiques congolaises contre les violences de genre.",
+      "valeurs": [
+        "Justice",
+        "Engagement",
+        "Persévérance"
+      ],
+      "actions": [
+        "Dialogue avec les institutions",
+        "Propositions de réformes législatives",
+        "Suivi des politiques publiques"
+      ]
+    },
+    "former": {
+      "titre": "FORMER",
+      "description": "Former les professionnels (médecins, policiers, etc.) en charge des victimes.",
+      "detail": "Médecins, policiers et travailleurs sociaux sont formés à un accueil digne et adapté des victimes, pour que chaque prise en charge soit à la hauteur de ce qu'elles traversent.",
+      "valeurs": [
+        "Confiance",
+        "Solidarité",
+        "Respect civique de tous"
+      ],
+      "actions": [
+        "Formation des personnels de santé",
+        "Formation des forces de l'ordre",
+        "Formation des travailleurs sociaux"
+      ]
+    },
+    "eyebrow": "Nos axes d'action",
+    "concretement": "Concrètement"
+  },
+  "formations": {
+    "titre": "Nos formations",
+    "texte": "Sessions de formation ouvertes aux professionnels et bénévoles engagés contre les violences de genre.",
+    "vide": "Aucune formation ne correspond à ces critères pour le moment.",
+    "lieu": "Lieu",
+    "places": "Places disponibles",
+    "dateDebut": "Date de début",
+    "sInscrire": "S'inscrire",
+    "filtrerStatut": "Toutes les sessions",
+    "filtrerPublic": "Tous les publics",
+    "statut": {
+      "ouverte": "Inscriptions ouvertes",
+      "complete": "Complet",
+      "terminee": "Terminée"
+    },
+    "introuvable": "Cette formation n'existe pas ou n'est plus disponible.",
+    "retour": "Retour aux formations",
+    "inscription": {
+      "titre": "S'inscrire à cette formation",
+      "nom": "Nom complet",
+      "email": "Adresse e-mail",
+      "telephone": "Téléphone (facultatif)",
+      "message": "Message (facultatif)",
+      "envoyer": "Envoyer ma demande d'inscription",
+      "confirmation": "Votre demande d'inscription a bien été envoyée. Vous recevrez une confirmation par e-mail.",
+      "complet": "Cette session est complète. Vous pouvez nous contacter pour être informé·e des prochaines sessions."
+    },
+    "eyebrow": "Se former",
+    "voir": "Voir la formation"
+  },
+  "actualites": {
+    "titre": "Actualités",
+    "texte": "Les dernières nouvelles de l'association : campagnes, événements et avancées de nos actions.",
+    "vide": "Aucun article publié pour le moment.",
+    "publieLe": "Publié le",
+    "precedent": "Précédent",
+    "suivant": "Suivant",
+    "page": "Page {page} sur {total}",
+    "retour": "Retour aux actualités",
+    "introuvable": "Cet article n'existe pas ou n'est plus disponible.",
+    "partager": "Partager",
+    "lienCopie": "Lien copié !",
+    "eyebrow": "Le journal de l'association",
+    "lire": "Lire l'article"
+  },
+  "cookies": {
+    "titre": "Confidentialité",
+    "texte": "Nous utilisons Plausible, un outil de mesure d'audience respectueux de la vie privée (sans cookie, sans donnée personnelle). Vous pouvez l'accepter ou le refuser.",
+    "accepter": "Accepter",
+    "refuser": "Refuser"
+  },
+  "evenements": {
+    "titre": "Événements",
+    "texte": "Ateliers, conférences et rencontres organisés par l'association.",
+    "vide": "Aucun événement à venir pour le moment.",
+    "lieu": "Lieu",
+    "eyebrow": "Agenda"
+  },
+  "footer": {
+    "description": "Association congolaise engagée contre les violences de genre : prévenir, soutenir, plaider, former.",
+    "evenements": "Événements",
+    "mentionsLegales": "Mentions légales",
+    "politiqueConfidentialite": "Politique de confidentialité",
+    "contact": "Contact",
+    "droits": "Tous droits réservés.",
+    "association": "L'association",
+    "agir": "Agir",
+    "besoinDAide": "Besoin d'aide",
+    "demanderAide": "Demander de l'aide",
+    "quitter": "Pour quitter ce site immédiatement, appuyez deux fois sur Échap.",
+    "aPropos": "À propos",
+    "notreMission": "Notre mission",
+    "formations": "Formations",
+    "actualites": "Actualités",
+    "rejoindre": "Rejoindre l'association",
+    "suivre": "Suivez-nous",
+    "legal": "Informations légales"
+  },
+  "aide": {
+    "accueil": "Vous n'êtes pas seule. Vous êtes en sécurité ici.",
+    "titre": "Besoin d'aide",
+    "texte": "Vous pouvez nous contacter en toute confidentialité, sans créer de compte. Cette page ne conserve aucune trace de votre visite sur cet appareil.",
+    "avertissement": "Si vous êtes en danger immédiat, contactez les services d'urgence de votre pays.",
+    "confidentialite": {
+      "titre": "Confidentialité",
+      "texte": "Seule l'équipe habilitée de Primrose peut consulter votre demande. Vos coordonnées et votre message sont chiffrés dès leur enregistrement. Nous ne vous demandons que le strict nécessaire pour vous répondre."
+    },
+    "urgences": {
+      "titre": "Besoin d'aide immédiate ?",
+      "appeler": "Appeler",
+      "aVenir": "Les numéros d'urgence de l'association seront publiés ici prochainement."
+    },
+    "formulaire": {
+      "moyenContact": "Moyen de contact préféré",
+      "telephone": "Téléphone",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "coordonnee": "Votre coordonnée",
+      "message": "Votre message (facultatif)",
+      "urgence": "Niveau d'urgence",
+      "urgenceNormal": "Normal",
+      "urgenceImportant": "Important",
+      "urgenceUrgent": "Urgent",
+      "nePasRecontacterAvant": "Ne pas me recontacter avant... (facultatif)",
+      "envoyer": "Envoyer en toute confidentialité",
+      "confirmation": "Votre demande a été transmise en toute confidentialité. Une personne de l'équipe vous contactera."
+    },
+    "eyebrow": "Espace confidentiel"
+  },
+  "contact": {
+    "titre": "Contactez-nous",
+    "texte": "Une question sur nos actions, une proposition de partenariat, une demande de presse ? Écrivez-nous, nous vous répondrons dès que possible.",
+    "formulaire": {
+      "nom": "Nom complet",
+      "email": "Adresse e-mail",
+      "telephone": "Téléphone (facultatif)",
+      "sujet": "Sujet",
+      "message": "Message",
+      "envoyer": "Envoyer le message",
+      "confirmation": "Votre message a bien été envoyé. Merci de nous avoir contactés."
+    },
+    "eyebrow": "Nous écrire",
+    "aideTitre": "Vous avez besoin d'aide ?",
+    "aideTexte": "Ce formulaire n'est pas adapté aux situations de danger. Utilisez plutôt notre formulaire d'aide confidentiel.",
+    "aideLien": "Demander de l'aide"
+  },
+  "rejoindre": {
+    "titre": "Rejoindre Primrose",
+    "texte": "La sororité, c'est se tenir aux côtés les unes des autres. Choisissez comment vous voulez agir avec nous.",
+    "choisirProfil": "Choisissez votre profil",
+    "changerProfil": "Changer de profil",
+    "temoignages": {
+      "titre": "Elles et ils en parlent",
+      "aVenir": "Les témoignages de nos membres et bénévoles seront publiés ici prochainement, avec leur accord."
+    },
+    "faq": {
+      "titre": "Questions fréquentes",
+      "items": [
+        {
+          "question": "Mes informations personnelles resteront-elles confidentielles ?",
+          "reponse": "Oui. Vos données sont protégées et ne sont accessibles qu'aux membres autorisés de l'équipe, conformément à notre politique de confidentialité."
+        },
+        {
+          "question": "Faut-il une expérience particulière pour devenir bénévole ?",
+          "reponse": "Non, aucune expérience préalable n'est requise. Une formation et un accompagnement sont proposés à chaque bénévole selon son rôle."
+        },
+        {
+          "question": "Comment devenir partenaire institutionnel ou associatif ?",
+          "reponse": "Décrivez votre organisation et le type de collaboration envisagé dans le formulaire ; notre équipe reviendra vers vous pour en discuter."
+        },
+        {
+          "question": "Puis-je faire un don ponctuel plutôt que devenir membre ?",
+          "reponse": "Oui. Choisissez le profil « Donateur » et précisez vos souhaits dans le formulaire ; nous vous recontacterons avec les modalités."
+        }
+      ]
+    },
+    "formulaire": {
+      "type": "Je souhaite devenir",
+      "typeMembre": "Membre",
+      "typeBenevole": "Bénévole",
+      "typePartenaire": "Partenaire",
+      "typeDonateur": "Donateur",
+      "nom": "Nom complet",
+      "email": "Adresse e-mail",
+      "telephone": "Téléphone (facultatif)",
+      "ville": "Ville",
+      "motivation": "Votre motivation",
+      "envoyer": "Envoyer ma demande",
+      "confirmation": "Merci pour votre engagement ! Votre demande a été enregistrée."
+    },
+    "eyebrow": "Agir avec nous"
+  },
+  "validation": {
+    "requis": "Ce champ est requis.",
+    "emailInvalide": "Adresse e-mail invalide.",
+    "trop_court": "Ce champ est trop court.",
+    "trop_long": "Ce champ est trop long.",
+    "erreurGenerique": "Une erreur est survenue. Merci de réessayer.",
+    "erreurAntiSpam": "Vérification anti-spam échouée. Merci de réessayer."
+  },
+  "admin": {
+    "tableauDeBord": "Tableau de bord",
+    "bienvenue": "Bienvenue {nom} — rôle : {role}"
+  },
+  "auth": {
+    "titre": "Connexion",
+    "email": "E-mail",
+    "motDePasse": "Mot de passe",
+    "seConnecter": "Se connecter",
+    "connexionEnCours": "Connexion…",
+    "seDeconnecter": "Se déconnecter"
+  },
+  "aPropos": {
+    "titre": "À propos de Primrose",
+    "histoireTitre": "Notre histoire",
+    "histoireTexte": "Primrose – La Sororité Active est née de la conviction qu'un monde sans violences de genre est possible. Au Congo-Brazzaville, nous agissons chaque jour selon quatre axes complémentaires — prévenir, soutenir, plaider, former — pour que la prévention, l'écoute et l'accompagnement soient accessibles à toutes celles et ceux qui en ont besoin.",
+    "equipeTitre": "Notre équipe",
+    "equipeAVenir": "Les membres de l'équipe seront présentés ici prochainement.",
+    "valeursTitre": "Nos valeurs",
+    "valeurs": [
+      "Confiance",
+      "Solidarité",
+      "Bienveillance",
+      "Respect civique de tous"
+    ],
+    "partenairesTitre": "Nos partenaires",
+    "partenairesAVenir": "Nos partenaires seront présentés ici prochainement.",
+    "eyebrow": "Qui sommes-nous",
+    "intro": "Une association congolaise engagée contre les violences de genre, au plus près des femmes et des communautés."
+  },
+  "mentionsLegales": {
+    "titre": "Mentions légales",
+    "avertissement": "Les informations ci-dessous doivent être complétées et vérifiées par l'association avant la mise en ligne du site.",
+    "editeur": {
+      "titre": "Éditeur du site",
+      "texte": "[Nom légal de l'association], [forme juridique], immatriculée sous le numéro [à compléter], dont le siège social est situé [adresse à compléter], Congo-Brazzaville."
+    },
+    "directeur": {
+      "titre": "Directeur de la publication",
+      "texte": "[Nom et fonction à compléter]"
+    },
+    "hebergement": {
+      "titre": "Hébergement",
+      "texte": "Site hébergé par Vercel Inc. Base de données et authentification hébergées par Supabase."
+    },
+    "contact": {
+      "titre": "Contact",
+      "texte": "[Adresse e-mail de contact à compléter]"
+    },
+    "eyebrow": "Informations légales"
+  },
+  "politiqueConfidentialite": {
+    "titre": "Politique de confidentialité",
+    "majLe": "Dernière mise à jour : à compléter par l'association.",
+    "intro": "Cette page explique quelles données Primrose – La Sororité Active collecte via ce site, pourquoi, et comment elles sont protégées. Le public de ce site peut se trouver en situation de vulnérabilité : la confidentialité n'est pas une formalité, c'est une condition de sécurité.",
+    "responsable": {
+      "titre": "Responsable de traitement",
+      "texte": "[Nom légal de l'association], [forme juridique], [adresse du siège] — à compléter par l'association avant mise en ligne."
+    },
+    "donnees": {
+      "titre": "Données collectées",
+      "texte": "Selon le formulaire utilisé, nous collectons : nom, e-mail, téléphone (facultatif), ville, message ou motivation. Pour le formulaire « Besoin d'aide » : le moyen de contact préféré, une coordonnée, un message facultatif et le niveau d'urgence — rien de plus n'est demandé.",
+      "aide": "Les coordonnées et messages transmis via « Besoin d'aide » sont chiffrés dès leur enregistrement (AES-256) et ne sont jamais lisibles en clair dans notre base de données, y compris par nous : seule une consultation explicite et journalisée par un membre habilité de l'équipe permet de les déchiffrer."
+    },
+    "finalite": {
+      "titre": "Pourquoi ces données",
+      "texte": "Uniquement pour répondre à votre demande (adhésion, contact, inscription à une formation, demande d'aide) et assurer le suivi correspondant. Aucune donnée n'est vendue, louée ou utilisée à des fins publicitaires."
+    },
+    "conservation": {
+      "titre": "Durée de conservation",
+      "texte": "Les données sont conservées le temps nécessaire au traitement de votre demande puis à sa clôture. [Durée précise à définir par l'association selon le type de demande, par exemple 3 ans pour les échanges courants.]"
+    },
+    "destinataires": {
+      "titre": "Qui peut voir ces données",
+      "texte": "Seuls les membres autorisés de l'équipe (rôles administrateur et super-administrateur) peuvent consulter les demandes ; les demandes d'aide sont réservées aux administrateurs et chaque consultation est journalisée. Nos sous-traitants techniques : Supabase (hébergement des données), Resend (envoi d'e-mails), Cloudflare Turnstile (protection anti-spam) — chacun agit selon ses propres engagements de confidentialité."
+    },
+    "cookies": {
+      "titre": "Cookies et mesure d'audience",
+      "texte": "Un seul cookie technique mémorise la langue choisie. Si vous l'acceptez via la bannière, Plausible (mesure d'audience sans cookie ni donnée personnelle) peut être activé — jamais sur la page « Besoin d'aide », qui reste strictement exempte de tout traceur, y compris de tout stockage local sur votre appareil."
+    },
+    "droits": {
+      "titre": "Vos droits",
+      "texte": "Vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à [e-mail de contact à compléter]."
+    },
+    "securite": {
+      "titre": "Sécurité",
+      "texte": "Connexion chiffrée (HTTPS), accès aux données protégé par des règles de sécurité au niveau de la base de données, chiffrement supplémentaire pour les demandes d'aide, en-têtes de sécurité (CSP, HSTS) sur l'ensemble du site."
+    },
+    "eyebrow": "Vos données"
+  },
+  "erreurs": {
+    "404titre": "Page introuvable",
+    "404texte": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "404bouton": "Retour à l'accueil",
+    "500titre": "Une erreur est survenue",
+    "500texte": "Quelque chose s'est mal passé de notre côté. Merci de réessayer.",
+    "500bouton": "Réessayer"
+  },
+  "common": {
+    "chargement": "Chargement…",
+    "envoyerEnCours": "Envoi en cours…",
+    "contenuAVenir": "Cette page est en cours de rédaction. Revenez bientôt."
+  }
+}

@@ -1,0 +1,334 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@config "../../tailwind.config.ts";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Palette nommée (primrose-*) définie dans tailwind.config.ts, source de
+     vérité de la charte graphique. Alias courts utilisés ci-dessous pour
+     composer les tokens sémantiques shadcn (--primary, --card, etc.). */
+  --primrose-green: theme(colors.primrose-green);
+  --primrose-green-dark: theme(colors.primrose-green-dark);
+  --primrose-cream: theme(colors.primrose-cream);
+  --primrose-ink: theme(colors.primrose-ink);
+  --primrose-alert: theme(colors.primrose-alert);
+  --primrose-white: theme(colors.primrose-white);
+  --primrose-charcoal: theme(colors.primrose-charcoal);
+  --primrose-forest: theme(colors.primrose-forest);
+
+  --font-serif: var(--font-newsreader);
+  --font-sans: var(--font-public-sans);
+
+  /* Cartes : rayon 16px (charte) */
+  --radius: 1rem;
+
+  --background: var(--primrose-white);
+  --foreground: var(--primrose-ink);
+
+  --card: var(--primrose-white);
+  --card-foreground: var(--primrose-ink);
+
+  --popover: var(--primrose-white);
+  --popover-foreground: var(--primrose-ink);
+
+  --primary: var(--primrose-green-dark);
+  --primary-foreground: var(--primrose-white);
+
+  --secondary: var(--primrose-cream);
+  --secondary-foreground: var(--primrose-green-dark);
+
+  --muted: var(--primrose-cream);
+  --muted-foreground: color-mix(in oklch, var(--primrose-ink), transparent 35%);
+
+  --accent: var(--primrose-green);
+  --accent-foreground: var(--primrose-white);
+
+  /* Rouge réservé à l'aide/urgence (charte) : le "destructive" du back-office
+     (staff uniquement) utilise une teinte distincte pour ne pas dupliquer ce signal. */
+  --destructive: #8a4a3d;
+
+  --border: color-mix(in oklch, var(--primrose-ink), transparent 88%);
+  --input: color-mix(in oklch, var(--primrose-ink), transparent 80%);
+  --ring: var(--primrose-green);
+
+  --chart-1: var(--primrose-green);
+  --chart-2: var(--primrose-green-dark);
+  --chart-3: var(--primrose-cream);
+  --chart-4: var(--primrose-ink);
+  --chart-5: var(--destructive);
+
+  --sidebar: var(--primrose-cream);
+  --sidebar-foreground: var(--primrose-ink);
+  --sidebar-primary: var(--primrose-green-dark);
+  --sidebar-primary-foreground: var(--primrose-white);
+  --sidebar-accent: var(--primrose-green);
+  --sidebar-accent-foreground: var(--primrose-white);
+  --sidebar-border: color-mix(in oklch, var(--primrose-ink), transparent 88%);
+  --sidebar-ring: var(--primrose-green);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-serif);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+
+/* Focus visible net et cohérent sur tout le site (WCAG AA) */
+:focus-visible {
+  outline: 2px solid var(--primrose-green-dark);
+  outline-offset: 2px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.dark {
+  --background: #1c1a17;
+  --foreground: var(--primrose-cream);
+  --card: #262320;
+  --card-foreground: var(--primrose-cream);
+  --popover: #262320;
+  --popover-foreground: var(--primrose-cream);
+  --primary: var(--primrose-green);
+  --primary-foreground: #1c1a17;
+  --secondary: #302c27;
+  --secondary-foreground: var(--primrose-cream);
+  --muted: #302c27;
+  --muted-foreground: color-mix(in oklch, var(--primrose-cream), transparent 35%);
+  --accent: var(--primrose-green-dark);
+  --accent-foreground: var(--primrose-cream);
+  --destructive: #b5695a;
+  --border: color-mix(in oklch, var(--primrose-cream), transparent 88%);
+  --input: color-mix(in oklch, var(--primrose-cream), transparent 80%);
+  --ring: var(--primrose-green);
+  --sidebar: #262320;
+  --sidebar-foreground: var(--primrose-cream);
+  --sidebar-primary: var(--primrose-green);
+  --sidebar-primary-foreground: #1c1a17;
+  --sidebar-accent: var(--primrose-green-dark);
+  --sidebar-accent-foreground: var(--primrose-cream);
+  --sidebar-border: color-mix(in oklch, var(--primrose-cream), transparent 88%);
+  --sidebar-ring: var(--primrose-green);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Barres de défilement masquées (le défilement reste actif : molette,
+   tactile, clavier). Débordement horizontal coupé à la racine. */
+html,
+body {
+  overflow-x: clip;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Champs de formulaire ---------- */
+/* Hors couches : sinon la réinitialisation de base de Tailwind l'emporte. */
+.field-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primrose-ink);
+}
+
+.field-input {
+  width: 100%;
+  border-radius: 0.875rem;
+  border: 1px solid color-mix(in oklch, var(--primrose-ink), transparent 82%);
+  background: color-mix(in srgb, var(--primrose-cream), white 55%);
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  color: var(--primrose-ink);
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.field-input::placeholder {
+  color: color-mix(in oklch, var(--primrose-ink), transparent 50%);
+}
+
+.field-input:hover {
+  border-color: color-mix(in oklch, var(--primrose-forest), transparent 55%);
+}
+
+.field-input:focus,
+.field-input:focus-visible {
+  outline: none;
+  border-color: var(--primrose-forest);
+  background: var(--primrose-white);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primrose-forest), transparent 82%);
+}
+
+.field-input[aria-invalid="true"] {
+  border-color: var(--primrose-alert);
+}
+
+textarea.field-input {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.field-error {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primrose-alert);
+}
+
+/* Choix en pastilles : vrai bouton radio (clavier, lecteurs d'écran)
+   masqué visuellement, l'étiquette sert de cible. */
+.choice {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.choice span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklch, var(--primrose-ink), transparent 80%);
+  background: var(--primrose-white);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primrose-ink);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.choice:hover span {
+  border-color: var(--primrose-forest);
+}
+
+.choice input:checked + span {
+  border-color: var(--primrose-forest);
+  background: var(--primrose-forest);
+  color: var(--primrose-white);
+}
+
+.choice input:focus-visible + span {
+  outline: 2px solid var(--primrose-forest);
+  outline-offset: 3px;
+}
+
+/* Zone admin : liens sans classe propre en vert forêt (au lieu du bleu par défaut). */
+.admin-main a:where(:not([class])) {
+  color: var(--primrose-forest);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.admin-main a:where(:not([class])):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

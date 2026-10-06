@@ -1,0 +1,448 @@
+{
+  "nav": {
+    "accueil": "Home",
+    "prevenir": "Prevent",
+    "soutenir": "Support",
+    "plaider": "Advocate",
+    "former": "Train",
+    "notreMission": "Our mission",
+    "formations": "Trainings",
+    "actualites": "News",
+    "aPropos": "About",
+    "contact": "Contact",
+    "adhesion": "Join us",
+    "rejoignez": "Join us",
+    "besoinDAide": "Contact – Need help",
+    "menu": "Menu",
+    "ouvrirMenu": "Open menu",
+    "fermerMenu": "Close menu",
+    "accueilLogo": "Primrose – La Sororité Active, home"
+  },
+  "quickExit": {
+    "label": "Quick exit",
+    "aria": "Leave this site immediately and go to a neutral site"
+  },
+  "home": {
+    "hero": {
+      "titre": "A world without gender-based violence. Together, towards recovery.",
+      "texte": "In Congo-Brazzaville, Primrose listens to and supports women affected by violence, and works to make that violence recede — in families, schools, health services and all the way into the law.",
+      "cta": "Discover our work",
+      "eyebrow": "The active sisterhood · Congo-Brazzaville",
+      "titre1": "A world without gender-based violence.",
+      "titre2": "Together, towards recovery.",
+      "ctaRejoindre": "Join the association"
+    },
+    "missions": {
+      "titre": "Acting before, during and after violence",
+      "texte": "Preventing violence before it happens, supporting those who face it, changing the law and training those who receive survivors.",
+      "eyebrow": "Our action",
+      "concretement": "In practice",
+      "moments": {
+        "prevenir": "Before",
+        "soutenir": "During and after",
+        "plaider": "Changing laws",
+        "former": "Changing practices"
+      },
+      "enSavoirPlus": "Explore this area"
+    },
+    "aide": {
+      "titre": "Going through a difficult situation?",
+      "texte": "Confidential support, no sign-up and no trace left on your device.",
+      "lien": "Ask for help",
+      "astuce": "To leave this site immediately, press Escape twice."
+    },
+    "vision": {
+      "eyebrow": "Our vision",
+      "titre": "No one should face violence alone.",
+      "texte": "A woman who dares to speak should find dignified listening at every door she knocks on: her family, the hospital, the police station, the court. That is what we are building, guided by our values.",
+      "valeursTitre": "Our values",
+      "valeurs": [
+        "Trust",
+        "Solidarity",
+        "Kindness",
+        "Tolerance",
+        "Civic respect for all"
+      ],
+      "lien": "About the association"
+    },
+    "engager": {
+      "eyebrow": "Act with us",
+      "titre": "Join the active sisterhood",
+      "texte": "Sisterhood means standing by one another. Here are the ways to do it with us.",
+      "bouton": "See how to join",
+      "items": {
+        "membre": {
+          "titre": "Become a member",
+          "texte": "Join, take part in general meetings and carry the association's voice."
+        },
+        "benevole": {
+          "titre": "Volunteer",
+          "texte": "Run a workshop, staff an awareness stand, help organise a campaign."
+        },
+        "partenaire": {
+          "titre": "Become a partner",
+          "texte": "Institution, NGO or company: let's build prevention and training programmes together."
+        },
+        "donateur": {
+          "titre": "Donate",
+          "texte": "Fund listening, guidance and support for survivors."
+        }
+      }
+    },
+    "actualites": {
+      "eyebrow": "News",
+      "titre": "Latest news",
+      "tout": "All news"
+    }
+  },
+  "missions": {
+    "titre": "Our mission",
+    "texte": "Prevent before, support during and after, change laws and practices: our action covers a survivor's entire journey.",
+    "prevenir": {
+      "titre": "PREVENT",
+      "description": "Organize large-scale campaigns, workshops and conferences to educate the general public.",
+      "detail": "We meet the general public where they are — schools, neighborhoods, media — to reduce gender-based violence before it happens, through information and dialogue.",
+      "valeurs": [
+        "Information",
+        "Dialogue",
+        "Proximity"
+      ],
+      "actions": [
+        "Awareness campaigns",
+        "Workshops in schools and neighbourhoods",
+        "Talks and media appearances"
+      ]
+    },
+    "soutenir": {
+      "titre": "SUPPORT",
+      "description": "Provide psychological, medical and legal support to survivors.",
+      "detail": "Every survivor we support receives confidential listening and guidance toward the psychological, medical and legal resources suited to their situation.",
+      "valeurs": [
+        "Trust",
+        "Solidarity",
+        "Compassion",
+        "Tolerance"
+      ],
+      "actions": [
+        "Confidential listening",
+        "Referral to psychological and medical support",
+        "Support with legal procedures"
+      ]
+    },
+    "plaider": {
+      "titre": "ADVOCATE",
+      "description": "Advocate for legislative change and public policy against violence.",
+      "detail": "We carry survivors' voices to institutions to advance Congolese laws and public policy against gender-based violence.",
+      "valeurs": [
+        "Justice",
+        "Commitment",
+        "Perseverance"
+      ],
+      "actions": [
+        "Dialogue with institutions",
+        "Proposals for legal reform",
+        "Monitoring public policy"
+      ]
+    },
+    "former": {
+      "titre": "TRAIN",
+      "description": "Train professionals (doctors, police officers, etc.) responsible for supporting survivors.",
+      "detail": "Doctors, police officers and social workers are trained to receive survivors with dignity, so every intake matches what they are going through.",
+      "valeurs": [
+        "Trust",
+        "Solidarity",
+        "Civic respect for all"
+      ],
+      "actions": [
+        "Training health workers",
+        "Training law enforcement",
+        "Training social workers"
+      ]
+    },
+    "eyebrow": "Our areas of action",
+    "concretement": "In practice"
+  },
+  "formations": {
+    "titre": "Our trainings",
+    "texte": "Training sessions open to professionals and volunteers committed to fighting gender-based violence.",
+    "vide": "No training matches these filters right now.",
+    "lieu": "Location",
+    "places": "Available seats",
+    "dateDebut": "Start date",
+    "sInscrire": "Register",
+    "filtrerStatut": "All sessions",
+    "filtrerPublic": "All audiences",
+    "statut": {
+      "ouverte": "Registration open",
+      "complete": "Full",
+      "terminee": "Completed"
+    },
+    "introuvable": "This training doesn't exist or is no longer available.",
+    "retour": "Back to trainings",
+    "inscription": {
+      "titre": "Register for this training",
+      "nom": "Full name",
+      "email": "Email address",
+      "telephone": "Phone (optional)",
+      "message": "Message (optional)",
+      "envoyer": "Send my registration request",
+      "confirmation": "Your registration request has been sent. You'll receive a confirmation by email.",
+      "complet": "This session is full. You can contact us to be notified of future sessions."
+    },
+    "eyebrow": "Training",
+    "voir": "View training"
+  },
+  "actualites": {
+    "titre": "News",
+    "texte": "The association's latest news: campaigns, events and progress on our work.",
+    "vide": "No article published yet.",
+    "publieLe": "Published on",
+    "precedent": "Previous",
+    "suivant": "Next",
+    "page": "Page {page} of {total}",
+    "retour": "Back to news",
+    "introuvable": "This article doesn't exist or is no longer available.",
+    "partager": "Share",
+    "lienCopie": "Link copied!",
+    "eyebrow": "The association's journal",
+    "lire": "Read article"
+  },
+  "cookies": {
+    "titre": "Privacy",
+    "texte": "We use Plausible, a privacy-friendly analytics tool (no cookies, no personal data). You can accept or decline it.",
+    "accepter": "Accept",
+    "refuser": "Decline"
+  },
+  "evenements": {
+    "titre": "Events",
+    "texte": "Workshops, conferences and gatherings organized by the association.",
+    "vide": "No upcoming events right now.",
+    "lieu": "Location",
+    "eyebrow": "Calendar"
+  },
+  "footer": {
+    "description": "A Congolese association working against gender-based violence: prevent, support, advocate, train.",
+    "evenements": "Events",
+    "mentionsLegales": "Legal notice",
+    "politiqueConfidentialite": "Privacy policy",
+    "contact": "Contact",
+    "droits": "All rights reserved.",
+    "association": "The association",
+    "agir": "Get involved",
+    "besoinDAide": "Need help",
+    "demanderAide": "Ask for help",
+    "quitter": "To leave this site immediately, press Escape twice.",
+    "aPropos": "About",
+    "notreMission": "Our mission",
+    "formations": "Training",
+    "actualites": "News",
+    "rejoindre": "Join the association",
+    "suivre": "Follow us",
+    "legal": "Legal information"
+  },
+  "aide": {
+    "accueil": "You are not alone. You are safe here.",
+    "titre": "Need help",
+    "texte": "You can contact us in full confidentiality, with no account needed. This page keeps no trace of your visit on this device.",
+    "avertissement": "If you are in immediate danger, contact your country's emergency services.",
+    "confidentialite": {
+      "titre": "Confidentiality",
+      "texte": "Only Primrose's authorized team can view your request. Your contact details and message are encrypted as soon as they're saved. We only ask for what's strictly necessary to respond to you."
+    },
+    "urgences": {
+      "titre": "Need help right now?",
+      "appeler": "Call",
+      "aVenir": "The association's emergency numbers will be published here soon."
+    },
+    "formulaire": {
+      "moyenContact": "Preferred contact method",
+      "telephone": "Phone",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "coordonnee": "Your contact detail",
+      "message": "Your message (optional)",
+      "urgence": "Urgency level",
+      "urgenceNormal": "Normal",
+      "urgenceImportant": "Important",
+      "urgenceUrgent": "Urgent",
+      "nePasRecontacterAvant": "Don't contact me before... (optional)",
+      "envoyer": "Send confidentially",
+      "confirmation": "Your request has been sent confidentially. A team member will contact you."
+    },
+    "eyebrow": "Confidential space"
+  },
+  "contact": {
+    "titre": "Contact us",
+    "texte": "A question about our work, a partnership proposal, a press request? Write to us and we will reply as soon as possible.",
+    "formulaire": {
+      "nom": "Full name",
+      "email": "Email address",
+      "telephone": "Phone (optional)",
+      "sujet": "Subject",
+      "message": "Message",
+      "envoyer": "Send message",
+      "confirmation": "Your message has been sent. Thank you for contacting us."
+    },
+    "eyebrow": "Write to us",
+    "aideTitre": "Do you need help?",
+    "aideTexte": "This form is not suited to situations of danger. Please use our confidential help form instead.",
+    "aideLien": "Ask for help"
+  },
+  "rejoindre": {
+    "titre": "Join Primrose",
+    "texte": "Sisterhood means standing by one another. Choose how you want to act with us.",
+    "choisirProfil": "Choose your profile",
+    "changerProfil": "Change profile",
+    "temoignages": {
+      "titre": "In their words",
+      "aVenir": "Testimonials from our members and volunteers will be published here soon, with their consent."
+    },
+    "faq": {
+      "titre": "Frequently asked questions",
+      "items": [
+        {
+          "question": "Will my personal information stay confidential?",
+          "reponse": "Yes. Your data is protected and only accessible to authorized team members, in line with our privacy policy."
+        },
+        {
+          "question": "Do I need prior experience to volunteer?",
+          "reponse": "No prior experience is required. Training and support are provided to every volunteer based on their role."
+        },
+        {
+          "question": "How can my organization become a partner?",
+          "reponse": "Describe your organization and the kind of collaboration you have in mind in the form; our team will get back to you to discuss it."
+        },
+        {
+          "question": "Can I make a one-time donation instead of becoming a member?",
+          "reponse": "Yes. Choose the \"Donor\" profile and share your preferences in the form; we'll follow up with the details."
+        }
+      ]
+    },
+    "formulaire": {
+      "type": "I want to become a",
+      "typeMembre": "Member",
+      "typeBenevole": "Volunteer",
+      "typePartenaire": "Partner",
+      "typeDonateur": "Donor",
+      "nom": "Full name",
+      "email": "Email address",
+      "telephone": "Phone (optional)",
+      "ville": "City",
+      "motivation": "Your motivation",
+      "envoyer": "Send my request",
+      "confirmation": "Thank you for your commitment! Your request has been recorded."
+    },
+    "eyebrow": "Act with us"
+  },
+  "validation": {
+    "requis": "This field is required.",
+    "emailInvalide": "Invalid email address.",
+    "trop_court": "This field is too short.",
+    "trop_long": "This field is too long.",
+    "erreurGenerique": "Something went wrong. Please try again.",
+    "erreurAntiSpam": "Anti-spam check failed. Please try again."
+  },
+  "admin": {
+    "tableauDeBord": "Dashboard",
+    "bienvenue": "Welcome {nom} — role: {role}"
+  },
+  "auth": {
+    "titre": "Sign in",
+    "email": "Email",
+    "motDePasse": "Password",
+    "seConnecter": "Sign in",
+    "connexionEnCours": "Signing in…",
+    "seDeconnecter": "Sign out"
+  },
+  "aPropos": {
+    "titre": "About Primrose",
+    "histoireTitre": "Our story",
+    "histoireTexte": "Primrose – La Sororité Active was born from the belief that a world without gender-based violence is possible. In Congo-Brazzaville, we act every day along four complementary areas — prevent, support, advocate, train — so that prevention, listening and support are accessible to everyone who needs them.",
+    "equipeTitre": "Our team",
+    "equipeAVenir": "Team members will be introduced here soon.",
+    "valeursTitre": "Our values",
+    "valeurs": [
+      "Trust",
+      "Solidarity",
+      "Compassion",
+      "Civic respect for all"
+    ],
+    "partenairesTitre": "Our partners",
+    "partenairesAVenir": "Our partners will be introduced here soon.",
+    "eyebrow": "Who we are",
+    "intro": "A Congolese association committed against gender-based violence, close to women and communities."
+  },
+  "mentionsLegales": {
+    "titre": "Legal notice",
+    "avertissement": "The information below must be completed and verified by the association before the site goes live.",
+    "editeur": {
+      "titre": "Site publisher",
+      "texte": "[Association's legal name], [legal form], registered under number [to be completed], with registered office at [address to be completed], Congo-Brazzaville."
+    },
+    "directeur": {
+      "titre": "Publication director",
+      "texte": "[Name and role to be completed]"
+    },
+    "hebergement": {
+      "titre": "Hosting",
+      "texte": "Site hosted by Vercel Inc. Database and authentication hosted by Supabase."
+    },
+    "contact": {
+      "titre": "Contact",
+      "texte": "[Contact email to be completed]"
+    },
+    "eyebrow": "Legal information"
+  },
+  "politiqueConfidentialite": {
+    "titre": "Privacy policy",
+    "majLe": "Last updated: to be completed by the association.",
+    "intro": "This page explains what data Primrose – La Sororité Active collects through this site, why, and how it is protected. This site's audience can be in a vulnerable situation: confidentiality is not a formality, it is a safety requirement.",
+    "responsable": {
+      "titre": "Data controller",
+      "texte": "[Association's legal name], [legal form], [registered address] — to be completed by the association before going live."
+    },
+    "donnees": {
+      "titre": "Data we collect",
+      "texte": "Depending on the form used, we collect: name, email, phone (optional), city, message or motivation. For the \"Need help\" form: preferred contact method, a contact detail, an optional message and the urgency level — nothing more is asked.",
+      "aide": "Contact details and messages submitted via \"Need help\" are encrypted as soon as they are saved (AES-256) and are never readable in plain text in our database, including by us: only an explicit, logged consultation by an authorized team member can decrypt them."
+    },
+    "finalite": {
+      "titre": "Why we collect it",
+      "texte": "Solely to respond to your request (membership, contact, training registration, help request) and to follow up on it. No data is sold, rented, or used for advertising."
+    },
+    "conservation": {
+      "titre": "Retention period",
+      "texte": "Data is kept for as long as needed to process your request, then until it is closed. [Precise duration to be defined by the association depending on the type of request, e.g. 3 years for routine exchanges.]"
+    },
+    "destinataires": {
+      "titre": "Who can see this data",
+      "texte": "Only authorized team members (admin and super-admin roles) can view requests; help requests are restricted to admins and every consultation is logged. Our technical subprocessors: Supabase (data hosting), Resend (email delivery), Cloudflare Turnstile (anti-spam protection) — each operates under its own privacy commitments."
+    },
+    "cookies": {
+      "titre": "Cookies and analytics",
+      "texte": "A single technical cookie remembers your chosen language. If you accept it via the banner, Plausible (cookieless, no personal data analytics) may be enabled — never on the \"Need help\" page, which remains strictly free of any tracker, including any local storage on your device."
+    },
+    "droits": {
+      "titre": "Your rights",
+      "texte": "You can request access to, correction of, or deletion of your data by writing to [contact email to be completed]."
+    },
+    "securite": {
+      "titre": "Security",
+      "texte": "Encrypted connection (HTTPS), database-level access rules, additional encryption for help requests, security headers (CSP, HSTS) across the whole site."
+    },
+    "eyebrow": "Your data"
+  },
+  "erreurs": {
+    "404titre": "Page not found",
+    "404texte": "The page you are looking for doesn't exist or has been moved.",
+    "404bouton": "Back to home",
+    "500titre": "Something went wrong",
+    "500texte": "Something broke on our end. Please try again.",
+    "500bouton": "Try again"
+  },
+  "common": {
+    "chargement": "Loading…",
+    "envoyerEnCours": "Sending…",
+    "contenuAVenir": "This page is being written. Please check back soon."
+  }
+}
