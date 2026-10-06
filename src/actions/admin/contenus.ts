@@ -21,6 +21,7 @@ export async function updateVision(formData: FormData): Promise<ActionResult> {
 
   if (error) return { error: "La sauvegarde a échoué." };
   revalidatePath("/admin/contenus");
+  revalidatePath("/", "layout");
 }
 
 export async function createChiffreCle(formData: FormData): Promise<ActionResult> {
@@ -42,6 +43,7 @@ export async function createChiffreCle(formData: FormData): Promise<ActionResult
 
   if (error) return { error: "La création a échoué." };
   revalidatePath("/admin/contenus");
+  revalidatePath("/", "layout");
 }
 
 export async function updateChiffreCle(
@@ -69,6 +71,7 @@ export async function updateChiffreCle(
 
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/contenus");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteChiffreCle(id: string): Promise<ActionResult> {
@@ -76,6 +79,7 @@ export async function deleteChiffreCle(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("chiffres_cles").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/contenus");
+  revalidatePath("/", "layout");
 }
 
 export async function toggleChiffreCleActif(
@@ -86,4 +90,5 @@ export async function toggleChiffreCleActif(
   const { error } = await supabase.from("chiffres_cles").update({ actif }).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/contenus");
+  revalidatePath("/", "layout");
 }

@@ -30,7 +30,9 @@ export async function updateParametres(formData: FormData): Promise<ActionResult
 
   if (error) return { error: "La sauvegarde a échoué." };
   revalidatePath("/admin/parametres");
+  revalidatePath("/", "layout");
   revalidatePath("/");
+  revalidatePath("/", "layout");
 }
 
 export async function updateNumerosUrgence(
@@ -47,5 +49,7 @@ export async function updateNumerosUrgence(
 
   if (error) return { error: "La sauvegarde a échoué." };
   revalidatePath("/admin/parametres");
+  revalidatePath("/", "layout");
   revalidatePath("/besoin-d-aide");
+  revalidatePath("/", "layout");
 }

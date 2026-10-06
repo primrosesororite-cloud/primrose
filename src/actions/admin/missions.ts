@@ -26,6 +26,7 @@ export async function updateMission(id: string, formData: FormData): Promise<Act
 
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }
 
 export async function toggleMissionActif(id: string, actif: boolean): Promise<ActionResult> {
@@ -33,6 +34,7 @@ export async function toggleMissionActif(id: string, actif: boolean): Promise<Ac
   const { error } = await supabase.from("missions").update({ actif }).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }
 
 export async function reorderMissions(orderedIds: string[]): Promise<ActionResult> {
@@ -44,6 +46,7 @@ export async function reorderMissions(orderedIds: string[]): Promise<ActionResul
   );
   if (results.some((r) => r.error)) return { error: "Le réordonnancement a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }
 
 export async function createValeur(
@@ -61,6 +64,7 @@ export async function createValeur(
 
   if (error) return { error: "La création a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }
 
 export async function updateValeur(id: string, formData: FormData): Promise<ActionResult> {
@@ -75,6 +79,7 @@ export async function updateValeur(id: string, formData: FormData): Promise<Acti
 
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteValeur(id: string): Promise<ActionResult> {
@@ -82,6 +87,7 @@ export async function deleteValeur(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("valeurs").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }
 
 export async function reorderValeurs(orderedIds: string[]): Promise<ActionResult> {
@@ -93,4 +99,5 @@ export async function reorderValeurs(orderedIds: string[]): Promise<ActionResult
   );
   if (results.some((r) => r.error)) return { error: "Le réordonnancement a échoué." };
   revalidatePath("/admin/missions");
+  revalidatePath("/", "layout");
 }

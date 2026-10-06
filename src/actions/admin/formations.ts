@@ -42,6 +42,7 @@ export async function createFormation(formData: FormData): Promise<ActionResult>
     };
   }
   revalidatePath("/admin/formations");
+  revalidatePath("/", "layout");
 }
 
 export async function updateFormation(id: string, formData: FormData): Promise<ActionResult> {
@@ -69,6 +70,7 @@ export async function updateFormation(id: string, formData: FormData): Promise<A
     };
   }
   revalidatePath("/admin/formations");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteFormation(id: string): Promise<ActionResult> {
@@ -76,6 +78,7 @@ export async function deleteFormation(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("formations").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/formations");
+  revalidatePath("/", "layout");
 }
 
 export async function updateInscriptionStatut(
@@ -90,4 +93,5 @@ export async function updateInscriptionStatut(
 
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/formations");
+  revalidatePath("/", "layout");
 }

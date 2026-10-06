@@ -34,6 +34,7 @@ export async function createMembreEquipe(
   });
   if (error) return { error: "La création a échoué." };
   revalidatePath("/admin/equipe");
+  revalidatePath("/", "layout");
 }
 
 export async function updateMembreEquipe(
@@ -60,6 +61,7 @@ export async function updateMembreEquipe(
     .eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/equipe");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteMembreEquipe(id: string): Promise<ActionResult> {
@@ -67,6 +69,7 @@ export async function deleteMembreEquipe(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("equipe").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/equipe");
+  revalidatePath("/", "layout");
 }
 
 export async function toggleMembreEquipeActif(id: string, actif: boolean): Promise<ActionResult> {
@@ -74,6 +77,7 @@ export async function toggleMembreEquipeActif(id: string, actif: boolean): Promi
   const { error } = await supabase.from("equipe").update({ actif }).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/equipe");
+  revalidatePath("/", "layout");
 }
 
 export async function reorderEquipe(orderedIds: string[]): Promise<ActionResult> {
@@ -83,6 +87,7 @@ export async function reorderEquipe(orderedIds: string[]): Promise<ActionResult>
   );
   if (results.some((r) => r.error)) return { error: "Le réordonnancement a échoué." };
   revalidatePath("/admin/equipe");
+  revalidatePath("/", "layout");
 }
 
 // --- Partenaires ---
@@ -107,6 +112,7 @@ export async function createPartenaire(
   });
   if (error) return { error: "La création a échoué." };
   revalidatePath("/admin/partenaires");
+  revalidatePath("/", "layout");
 }
 
 export async function updatePartenaire(
@@ -127,6 +133,7 @@ export async function updatePartenaire(
     .eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/partenaires");
+  revalidatePath("/", "layout");
 }
 
 export async function deletePartenaire(id: string): Promise<ActionResult> {
@@ -134,6 +141,7 @@ export async function deletePartenaire(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("partenaires").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/partenaires");
+  revalidatePath("/", "layout");
 }
 
 export async function togglePartenaireActif(id: string, actif: boolean): Promise<ActionResult> {
@@ -141,6 +149,7 @@ export async function togglePartenaireActif(id: string, actif: boolean): Promise
   const { error } = await supabase.from("partenaires").update({ actif }).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/partenaires");
+  revalidatePath("/", "layout");
 }
 
 export async function reorderPartenaires(orderedIds: string[]): Promise<ActionResult> {
@@ -150,6 +159,7 @@ export async function reorderPartenaires(orderedIds: string[]): Promise<ActionRe
   );
   if (results.some((r) => r.error)) return { error: "Le réordonnancement a échoué." };
   revalidatePath("/admin/partenaires");
+  revalidatePath("/", "layout");
 }
 
 // --- Réseaux sociaux ---
@@ -165,6 +175,7 @@ export async function createReseauSocial(formData: FormData): Promise<ActionResu
   const { error } = await supabase.from("reseaux_sociaux").insert(parsed.data);
   if (error) return { error: "La création a échoué." };
   revalidatePath("/admin/reseaux-sociaux");
+  revalidatePath("/", "layout");
 }
 
 export async function updateReseauSocial(id: string, formData: FormData): Promise<ActionResult> {
@@ -178,6 +189,7 @@ export async function updateReseauSocial(id: string, formData: FormData): Promis
   const { error } = await supabase.from("reseaux_sociaux").update(parsed.data).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/reseaux-sociaux");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteReseauSocial(id: string): Promise<ActionResult> {
@@ -185,6 +197,7 @@ export async function deleteReseauSocial(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("reseaux_sociaux").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/reseaux-sociaux");
+  revalidatePath("/", "layout");
 }
 
 export async function toggleReseauSocialActif(id: string, actif: boolean): Promise<ActionResult> {
@@ -192,4 +205,5 @@ export async function toggleReseauSocialActif(id: string, actif: boolean): Promi
   const { error } = await supabase.from("reseaux_sociaux").update({ actif }).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/reseaux-sociaux");
+  revalidatePath("/", "layout");
 }

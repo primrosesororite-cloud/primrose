@@ -29,6 +29,7 @@ export async function recordMedia(formData: FormData): Promise<ActionResult> {
 
   if (error) return { error: "L'enregistrement a échoué." };
   revalidatePath("/admin/mediatheque");
+  revalidatePath("/", "layout");
 }
 
 export async function updateMediaAlt(id: string, formData: FormData): Promise<ActionResult> {
@@ -39,6 +40,7 @@ export async function updateMediaAlt(id: string, formData: FormData): Promise<Ac
   const { error } = await supabase.from("medias").update({ alt: parsed.data.alt }).eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/mediatheque");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteMedia(id: string, chemin: string): Promise<ActionResult> {
@@ -47,4 +49,5 @@ export async function deleteMedia(id: string, chemin: string): Promise<ActionRes
   const { error } = await supabase.from("medias").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/mediatheque");
+  revalidatePath("/", "layout");
 }

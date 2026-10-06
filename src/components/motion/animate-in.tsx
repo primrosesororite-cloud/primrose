@@ -1,10 +1,8 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import { fadeUp } from "@/lib/motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { fadeUp, reducedMotionVariant } from "@/lib/motion";
 
-// prefers-reduced-motion est géré globalement par MotionProvider
-// (MotionConfig reducedMotion="user") : déplacements coupés, fondu conservé.
 export function AnimateIn({
   children,
   variants = fadeUp,
@@ -16,6 +14,8 @@ export function AnimateIn({
   className?: string;
   delay?: number;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
       className={className}
@@ -23,7 +23,7 @@ export function AnimateIn({
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       transition={{ delay }}
-      variants={variants}
+      variants={shouldReduceMotion ? reducedMotionVariant : variants}
     >
       {children}
     </motion.div>

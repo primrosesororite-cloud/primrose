@@ -41,7 +41,7 @@ export async function createActualite(formData: FormData): Promise<ActionResult>
     contenu: parseContenu(formData),
     image_url: parsed.data.image_url || null,
     publie: parsed.data.publie,
-    date_publication: parsed.data.date_publication || null,
+    date_publication: parsed.data.date_publication || (parsed.data.publie ? new Date().toISOString() : null),
     auteur_id: userData.user?.id ?? null,
   });
 
@@ -49,6 +49,7 @@ export async function createActualite(formData: FormData): Promise<ActionResult>
     return { error: error.code === "23505" ? "Ce slug existe déjà." : "La création a échoué." };
   }
   revalidatePath("/admin/actualites");
+  revalidatePath("/", "layout");
 }
 
 export async function updateActualite(id: string, formData: FormData): Promise<ActionResult> {
@@ -65,7 +66,7 @@ export async function updateActualite(id: string, formData: FormData): Promise<A
       contenu: parseContenu(formData),
       image_url: parsed.data.image_url || null,
       publie: parsed.data.publie,
-      date_publication: parsed.data.date_publication || null,
+      date_publication: parsed.data.date_publication || (parsed.data.publie ? new Date().toISOString() : null),
     })
     .eq("id", id);
 
@@ -73,6 +74,7 @@ export async function updateActualite(id: string, formData: FormData): Promise<A
     return { error: error.code === "23505" ? "Ce slug existe déjà." : "La mise à jour a échoué." };
   }
   revalidatePath("/admin/actualites");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteActualite(id: string): Promise<ActionResult> {
@@ -80,6 +82,7 @@ export async function deleteActualite(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("actualites").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/actualites");
+  revalidatePath("/", "layout");
 }
 
 export async function createEvenement(formData: FormData): Promise<ActionResult> {
@@ -105,6 +108,7 @@ export async function createEvenement(formData: FormData): Promise<ActionResult>
 
   if (error) return { error: "La création a échoué." };
   revalidatePath("/admin/evenements");
+  revalidatePath("/", "layout");
 }
 
 export async function updateEvenement(id: string, formData: FormData): Promise<ActionResult> {
@@ -133,6 +137,7 @@ export async function updateEvenement(id: string, formData: FormData): Promise<A
 
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/evenements");
+  revalidatePath("/", "layout");
 }
 
 export async function deleteEvenement(id: string): Promise<ActionResult> {
@@ -140,4 +145,5 @@ export async function deleteEvenement(id: string): Promise<ActionResult> {
   const { error } = await supabase.from("evenements").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
   revalidatePath("/admin/evenements");
+  revalidatePath("/", "layout");
 }
