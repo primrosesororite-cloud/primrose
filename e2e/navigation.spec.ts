@@ -8,15 +8,6 @@ test.describe("Navigation publique", () => {
     );
   });
 
-  test("le bouton Quitter rapidement est toujours présent", async ({ page }) => {
-    await page.goto("/");
-    // Le nom accessible du bouton vient de son aria-label (description
-    // complète), pas du texte visible "Quitter rapidement" — l'aria-label
-    // prime toujours sur le texte visible pour le nom accessible.
-    await expect(
-      page.getByRole("button", { name: /quitter immédiatement ce site/i })
-    ).toBeVisible();
-  });
 
   test("double Échap redirige vers un site neutre", async ({ page }) => {
     await page.goto("/");

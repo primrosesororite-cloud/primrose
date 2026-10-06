@@ -18,10 +18,6 @@
     "fermerMenu": "Close menu",
     "accueilLogo": "Primrose – La Sororité Active, home"
   },
-  "quickExit": {
-    "label": "Quick exit",
-    "aria": "Leave this site immediately and go to a neutral site"
-  },
   "home": {
     "hero": {
       "titre": "A world without gender-based violence. Together, towards recovery.",

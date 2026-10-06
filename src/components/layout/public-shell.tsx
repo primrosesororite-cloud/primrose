@@ -3,9 +3,9 @@
 import type { ReactNode } from "react";
 import { usePathname } from "@/i18n/navigation";
 import { PageTransition } from "@/components/motion/page-transition";
-import { QuickExit } from "@/components/layout/quick-exit";
+import { useDoubleEscapeExit } from "@/components/layout/use-double-escape-exit";
 
-/** Espace admin : pas de chrome public (navbar, pied de page, bouton de fuite). */
+/** Espace admin : pas de chrome public, et Échap y ferme les dialogues (pas de sortie rapide). */
 function isStaffArea(pathname: string) {
   return pathname === "/admin" || pathname.startsWith("/admin/");
 }
@@ -20,8 +20,10 @@ export function PublicShell({
   children: ReactNode;
 }) {
   const pathname = usePathname();
+  const staff = isStaffArea(pathname);
+  useDoubleEscapeExit(!staff);
 
-  if (isStaffArea(pathname)) {
+  if (staff) {
     return <>{children}</>;
   }
 
@@ -32,7 +34,6 @@ export function PublicShell({
         <PageTransition>{children}</PageTransition>
       </main>
       {footer}
-      <QuickExit />
     </>
   );
 }
