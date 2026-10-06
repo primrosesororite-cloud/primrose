@@ -13,7 +13,7 @@ export function ArticleCard({ actualite }: { actualite: Actualite }) {
   return (
   <Link
   href={`/actualites/${actualite.slug}`}
-  className="group flex h-full flex-col overflow-hidden rounded-card bg-primrose-white shadow-card transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
+  className="group flex h-full flex-col overflow-hidden rounded-card bg-primrose-white shadow-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
   >
   <div className="relative aspect-[16/10] w-full overflow-hidden bg-primrose-green/20">
   {actualite.image_url && (

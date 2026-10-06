@@ -1,5 +1,6 @@
 import { AnimateIn } from "@/components/motion/animate-in";
 import { ConvergingBands } from "@/components/sections/converging-bands";
+import { RevealText } from "@/components/motion/reveal-text";
 
 /**
  * En-tête des pages intérieures. Le chevron et les deux bandes qui
@@ -28,7 +29,7 @@ export function PageHeader({
           </AnimateIn>
         )}
         <AnimateIn>
-          <h1 className="mt-3 font-serif text-4xl leading-[1.08] text-primrose-white md:text-[3.4rem]">{title}</h1>
+          <h1 className="mt-3 font-serif text-4xl leading-[1.08] text-primrose-white md:text-[3.4rem]"><RevealText text={title} /></h1>
         </AnimateIn>
         {intro && (
           <AnimateIn delay={0.35}>

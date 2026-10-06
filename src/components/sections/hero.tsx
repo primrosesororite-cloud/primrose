@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimateIn } from "@/components/motion/animate-in";
 import { fadeIn } from "@/lib/motion";
 import { HeroBands } from "@/components/sections/hero-bands";
+import { RevealText } from "@/components/motion/reveal-text";
 
 export function Hero() {
   const t = useTranslations("home.hero");
@@ -36,8 +37,8 @@ export function Hero() {
 
   <AnimateIn delay={0.18}>
           <h1 className="mx-auto mt-6 max-w-4xl font-serif text-[2.3rem] leading-[1.05] text-primrose-ink sm:text-5xl md:text-[4rem]">
-            {t("titre1")}{" "}
-            <em className="block font-normal italic text-primrose-forest">{t("titre2")}</em>
+            <RevealText text={t("titre1")} />{" "}
+            <em className="block font-normal italic text-primrose-forest"><RevealText text={t("titre2")} /></em>
           </h1>
         </AnimateIn>
 

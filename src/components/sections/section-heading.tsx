@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { RevealText } from "@/components/motion/reveal-text";
 
 export function SectionHeading({
   eyebrow,
@@ -35,7 +36,7 @@ export function SectionHeading({
           dark ? "text-primrose-white" : "text-primrose-forest"
         )}
       >
-        {title}
+        <RevealText text={title} />
       </h2>
       {text && (
         <p
