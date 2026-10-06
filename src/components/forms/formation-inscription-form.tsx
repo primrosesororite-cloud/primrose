@@ -12,7 +12,7 @@ import {
 import { submitFormationInscription } from "@/actions/formation-inscription";
 import type { ActionState } from "@/actions/contact";
 import { TurnstileWidget } from "@/components/forms/turnstile-widget";
-import { fadeInUp, reducedMotionVariant } from "@/lib/motion";
+import { fadeIn, reducedMotionVariant } from "@/lib/motion";
 import { SubmitButton } from "@/components/motion/submit-button";
 
 type FormValues = Omit<FormationInscriptionInput, "turnstileToken">;
@@ -57,7 +57,7 @@ export function FormationInscriptionForm({ formationId }: { formationId: string 
           role="status"
           initial="hidden"
           animate="visible"
-          variants={shouldReduceMotion ? reducedMotionVariant : fadeInUp}
+          variants={shouldReduceMotion ? reducedMotionVariant : fadeIn}
           className="rounded-card bg-primrose-cream p-6 text-primrose-forest"
         >
           {t("confirmation")}
@@ -68,7 +68,7 @@ export function FormationInscriptionForm({ formationId }: { formationId: string 
           initial="hidden"
           animate="visible"
           exit="hidden"
-          variants={shouldReduceMotion ? reducedMotionVariant : fadeInUp}
+          variants={shouldReduceMotion ? reducedMotionVariant : fadeIn}
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-6"
         >

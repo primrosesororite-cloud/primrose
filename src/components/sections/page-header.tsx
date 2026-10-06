@@ -1,5 +1,4 @@
 import { AnimateIn } from "@/components/motion/animate-in";
-import { RevealText } from "@/components/motion/reveal-text";
 import { ConvergingBands } from "@/components/sections/converging-bands";
 
 /**
@@ -28,9 +27,9 @@ export function PageHeader({
             </p>
           </AnimateIn>
         )}
-        <h1 className="mt-3 font-serif text-4xl leading-[1.08] text-primrose-white md:text-[3.4rem]">
-          <RevealText text={title} immediate delay={0.1} />
-        </h1>
+        <AnimateIn>
+          <h1 className="mt-3 font-serif text-4xl leading-[1.08] text-primrose-white md:text-[3.4rem]">{title}</h1>
+        </AnimateIn>
         {intro && (
           <AnimateIn delay={0.35}>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-primrose-white/85 md:text-lg">

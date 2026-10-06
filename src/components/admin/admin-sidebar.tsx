@@ -57,34 +57,34 @@ function NavSection({
   pathname: string;
 }) {
   return (
-    <div>
-      {title && (
-        <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-primrose-forest/70">
-          {title}
-        </p>
-      )}
-      <ul className="mt-2 space-y-1">
-        {links.map(({ href, label, Icon, exact }) => {
-          const active = exact ? pathname === href : pathname.startsWith(href);
-          return (
-            <li key={href}>
-              <Link
-                href={href}
-                className={cn(
-                  "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
-                  active
-                    ? "bg-primrose-forest text-primrose-white shadow-[0_8px_18px_-12px_rgba(52,80,59,0.8)]"
-                    : "text-primrose-ink/85 hover:bg-primrose-cream hover:text-primrose-ink"
-                )}
-              >
-                <Icon aria-hidden className="h-4 w-4 shrink-0" />
-                {label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+  <div>
+  {title && (
+  <p className="px-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-primrose-forest/70">
+  {title}
+  </p>
+  )}
+  <ul className="mt-2 space-y-1">
+  {links.map(({ href, label, Icon, exact }) => {
+  const active = exact ? pathname === href : pathname.startsWith(href);
+  return (
+  <li key={href}>
+  <Link
+  href={href}
+  className={cn(
+"flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+  active
+  ? "bg-primrose-forest text-primrose-white shadow-[0_8px_18px_-12px_rgba(52,80,59,0.8)]"
+  : "text-primrose-ink/85 hover:bg-primrose-cream hover:text-primrose-ink"
+  )}
+  >
+  <Icon aria-hidden className="h-4 w-4 shrink-0" />
+  {label}
+  </Link>
+  </li>
+  );
+  })}
+  </ul>
+  </div>
   );
 }
 
@@ -92,18 +92,18 @@ export function AdminSidebar({ role }: { role: UserRole }) {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-64 shrink-0 overflow-y-auto border-r border-primrose-ink/10 bg-primrose-white md:block">
-      <div className="space-y-8 px-4 py-7">
-        <NavSection links={CONTENT_LINKS} pathname={pathname} />
+  <aside className="hidden w-64 shrink-0 overflow-y-auto border-r border-primrose-ink/10 bg-primrose-white md:block">
+  <div className="space-y-8 px-4 py-7">
+  <NavSection links={CONTENT_LINKS} pathname={pathname} />
 
-        {role !== "editor" && (
-          <NavSection title="Demandes" links={DEMANDES_LINKS} pathname={pathname} />
-        )}
+  {role !== "editor" && (
+  <NavSection title="Demandes" links={DEMANDES_LINKS} pathname={pathname} />
+  )}
 
-        {role === "super_admin" && (
-          <NavSection title="Administration" links={SUPER_ADMIN_LINKS} pathname={pathname} />
-        )}
-      </div>
-    </aside>
+  {role === "super_admin" && (
+  <NavSection title="Administration" links={SUPER_ADMIN_LINKS} pathname={pathname} />
+  )}
+  </div>
+  </aside>
   );
 }

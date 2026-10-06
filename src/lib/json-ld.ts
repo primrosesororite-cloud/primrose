@@ -51,3 +51,25 @@ export function evenementJsonLd(evenement: Evenement) {
     },
   };
 }
+
+/** JSON-LD NewsArticle pour une actualité publiée. */
+export function actualiteJsonLd(actualite: {
+  titre: string;
+  slug: string;
+  resume: string | null;
+  image_url: string | null;
+  date_publication: string | null;
+}) {
+  const siteUrl = getSiteUrl();
+  return {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: actualite.titre,
+    description: actualite.resume ?? undefined,
+    image: actualite.image_url ?? undefined,
+    datePublished: actualite.date_publication ?? undefined,
+    mainEntityOfPage: `${siteUrl}/actualites/${actualite.slug}`,
+    author: { "@type": "Organization", name: "Primrose – La Sororité Active" },
+    publisher: { "@type": "Organization", name: "Primrose – La Sororité Active", url: siteUrl },
+  };
+}

@@ -2,8 +2,11 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { getEvenementsPublies } from "@/lib/data/evenements";
 import { evenementJsonLd } from "@/lib/json-ld";
 import { AnimateIn } from "@/components/motion/animate-in";
-import { staggerContainer } from "@/lib/motion";
+import { stagger } from "@/lib/motion";
 import { buildMetadata } from "@/lib/seo";
+import { getDernieresActualites } from "@/lib/data/actualites";
+import { NewsTicker } from "@/components/sections/news-ticker";
+import Image from "next/image";
 import { PageHeader } from "@/components/sections/page-header";
 
 export const revalidate = 300;
@@ -27,10 +30,12 @@ export default async function EvenementsPage({
   setRequestLocale(locale);
   const t = await getTranslations("evenements");
   const evenements = await getEvenementsPublies();
+  const dernieres = await getDernieresActualites();
 
   return (
     <>
     <PageHeader eyebrow={t("eyebrow")} title={t("titre")} intro={t("texte")} />
+    <NewsTicker items={dernieres} />
     <section className="mx-auto max-w-4xl px-4 py-14 md:px-6 md:py-20">
       {evenements.map((evenement) => (
         <script
@@ -45,12 +50,24 @@ export default async function EvenementsPage({
           {t("vide")}
         </p>
       ) : (
-        <AnimateIn variants={staggerContainer}>
+        <AnimateIn variants={stagger}>
           <ul className="space-y-4">
             {evenements.map((evenement) => (
               <li key={evenement.id}>
                 <AnimateIn>
-                  <div className="rounded-card border border-primrose-ink/10 border-l-4 border-l-primrose-green bg-primrose-white p-6 shadow-card md:p-7">
+                  <div className="overflow-hidden rounded-card border border-primrose-ink/10 border-l-4 border-l-primrose-green bg-primrose-white shadow-card">
+                    {evenement.image_url && (
+                      <div className="relative aspect-[16/7] w-full bg-primrose-green/20">
+                        <Image
+                          src={evenement.image_url}
+                          alt={evenement.titre}
+                          fill
+                          sizes="(min-width: 768px) 720px, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 md:p-7">
                     <p className="text-xs font-medium uppercase tracking-wide text-primrose-forest">
                       {new Date(evenement.date_evenement).toLocaleDateString(locale, {
                         dateStyle: "long",
@@ -67,7 +84,7 @@ export default async function EvenementsPage({
                         {t("lieu")} : {evenement.lieu}
                       </p>
                     )}
-                  </div>
+                  </div></div>
                 </AnimateIn>
               </li>
             ))}

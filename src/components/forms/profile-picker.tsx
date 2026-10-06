@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { UserPlus, HandHeart, Handshake, Gift } from "lucide-react";
 import { AnimateIn } from "@/components/motion/animate-in";
-import { staggerContainer } from "@/lib/motion";
+import { stagger } from "@/lib/motion";
 import { JoinRowContent, joinRowClass } from "@/components/sections/join-row";
 
 const PROFILES = [
@@ -21,7 +21,7 @@ export function ProfilePicker({
   const t = useTranslations("home.engager.items");
 
   return (
-    <AnimateIn variants={staggerContainer}>
+    <AnimateIn variants={stagger}>
       <ul className="border-t border-primrose-ink/15">
         {PROFILES.map(({ type, Icon }) => (
           <li key={type} className="border-b border-primrose-ink/15">

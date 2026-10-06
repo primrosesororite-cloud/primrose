@@ -9,6 +9,7 @@ import { ShareButton } from "@/components/forms/share-button";
 import { AnimateIn } from "@/components/motion/animate-in";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { buildMetadata } from "@/lib/seo";
+import { actualiteJsonLd } from "@/lib/json-ld";
 import { tiptapExtensions } from "@/lib/tiptap-extensions";
 
 export const revalidate = 300;
@@ -23,10 +24,12 @@ export async function generateMetadata({
   if (!actualite) return {};
 
   return buildMetadata({
-    locale,
-    title: actualite.titre,
-    description: actualite.resume ?? "",
-    path: `/actualites/${slug}`,
+  locale,
+  title: actualite.titre,
+  description: actualite.resume ?? "",
+  path: `/actualites/${slug}`,
+  image: actualite.image_url,
+  article: { publishedTime: actualite.date_publication },
   });
 }
 
@@ -46,60 +49,64 @@ export default async function ActualiteDetailPage({
   if (!actualite) notFound();
 
   const contentHtml =
-    actualite.contenu && Object.keys(actualite.contenu).length > 0
-      ? generateHTML(actualite.contenu as JSONContent, tiptapExtensions)
-      : null;
+  actualite.contenu && Object.keys(actualite.contenu).length > 0
+  ? generateHTML(actualite.contenu as JSONContent, tiptapExtensions)
+  : null;
 
   return (
-    <article className="mx-auto max-w-2xl px-4 py-16 md:px-6">
-      <ScrollProgress />
-      <Link href="/actualites" className="text-sm text-primrose-forest hover:underline">
-        ← {t("retour")}
-      </Link>
+  <article className="mx-auto max-w-2xl px-4 py-16 md:px-6">
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(actualiteJsonLd(actualite)) }}
+  />
+  <ScrollProgress />
+  <Link href="/actualites" className="text-sm text-primrose-forest hover:underline">
+  ← {t("retour")}
+  </Link>
 
-      <AnimateIn className="mt-4">
-        {actualite.date_publication && (
-          <p className="text-xs text-primrose-ink/75">
-            {t("publieLe")}{" "}
-            {new Date(actualite.date_publication).toLocaleDateString(locale, {
-              dateStyle: "long",
-            })}
-          </p>
-        )}
-        <h1 className="mt-2 font-serif text-3xl text-primrose-forest md:text-4xl">
-          {actualite.titre}
-        </h1>
+  <AnimateIn className="mt-4">
+  {actualite.date_publication && (
+  <p className="text-xs text-primrose-ink/75">
+  {t("publieLe")}{" "}
+  {new Date(actualite.date_publication).toLocaleDateString(locale, {
+  dateStyle: "long",
+  })}
+  </p>
+  )}
+  <h1 className="mt-2 font-serif text-3xl text-primrose-forest md:text-4xl">
+  {actualite.titre}
+  </h1>
 
-        {actualite.image_url && (
-          <div className="relative mt-6 h-64 w-full overflow-hidden rounded-card">
-            <Image
-              src={actualite.image_url}
-              alt=""
-              fill
-              sizes="(min-width: 768px) 672px, 100vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-        )}
+  {actualite.image_url && (
+  <div className="relative mt-6 h-64 w-full overflow-hidden rounded-card">
+  <Image
+  src={actualite.image_url}
+  alt={actualite.titre}
+  fill
+  sizes="(min-width: 768px) 672px, 100vw"
+  className="object-cover"
+  priority
+  />
+  </div>
+  )}
 
-        {actualite.resume && (
-          <p className="mt-6 text-lg text-primrose-ink/90">{actualite.resume}</p>
-        )}
+  {actualite.resume && (
+  <p className="mt-6 text-lg text-primrose-ink/90">{actualite.resume}</p>
+  )}
 
-        {contentHtml && (
-          <div
-            className="prose-sm mt-6 max-w-none text-primrose-ink [&_a]:text-primrose-forest [&_a]:underline [&_blockquote]:border-l-2 [&_blockquote]:border-primrose-green [&_blockquote]:pl-3 [&_blockquote]:italic [&_h2]:mt-6 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:text-primrose-forest [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:mt-3 [&_ul]:list-disc [&_ul]:pl-5"
-            // Contenu rédigé par l'équipe via l'éditeur admin (Tiptap), pas
-            // une entrée utilisateur publique : rendu de confiance.
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          />
-        )}
+  {contentHtml && (
+  <div
+  className="prose-sm mt-6 max-w-none text-primrose-ink [&_a]:text-primrose-forest [&_a]:underline [&_blockquote]:border-l-2 [&_blockquote]:border-primrose-green [&_blockquote]:pl-3 [&_blockquote]:italic [&_h2]:mt-6 [&_h2]:font-serif [&_h2]:text-xl [&_h2]:text-primrose-forest [&_ol]:list-decimal [&_ol]:pl-5 [&_p]:mt-3 [&_ul]:list-disc [&_ul]:pl-5"
+  // Contenu rédigé par l'équipe via l'éditeur admin (Tiptap), pas
+  // une entrée utilisateur publique : rendu de confiance.
+  dangerouslySetInnerHTML={{ __html: contentHtml }}
+  />
+  )}
 
-        <div className="mt-8">
-          <ShareButton title={actualite.titre} />
-        </div>
-      </AnimateIn>
-    </article>
+  <div className="mt-8">
+  <ShareButton title={actualite.titre} />
+  </div>
+  </AnimateIn>
+  </article>
   );
 }

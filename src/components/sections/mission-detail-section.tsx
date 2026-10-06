@@ -1,7 +1,5 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
@@ -17,31 +15,19 @@ export function MissionDetailSection({
   reverse?: boolean;
 }) {
   const t = useTranslations("missions");
-  const ref = useRef<HTMLDivElement>(null);
-  const shouldReduceMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [32, -32]);
-
   const valeurs = t.raw(`${missionKey}.valeurs`) as string[];
   const actions = t.raw(`${missionKey}.actions`) as string[];
 
   return (
     <section
       id={missionKey}
-      ref={ref}
       className="mx-auto grid max-w-6xl scroll-mt-28 items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-16 md:px-6 md:py-24"
     >
       <div className={cn("flex justify-center", reverse && "md:order-2")}>
-        <motion.div
-          style={shouldReduceMotion ? undefined : { y }}
-          className="flex h-56 w-56 items-center justify-center rounded-full bg-primrose-cream ring-1 ring-primrose-green/30 md:h-64 md:w-64"
+        <div className="flex h-56 w-56 items-center justify-center rounded-full bg-primrose-cream ring-1 ring-primrose-green/30 md:h-64 md:w-64"
         >
           {icon}
-        </motion.div>
+        </div>
       </div>
 
       <AnimateIn className={cn(reverse && "md:order-1")}>

@@ -16,19 +16,22 @@ export function buildMetadata({
   title,
   description,
   path,
+  image,
+  article,
 }: {
   locale: string;
   title: string;
   description: string;
   path: string;
+  image?: string | null;
+  article?: { publishedTime?: string | null };
 }): Metadata {
   const siteUrl = getSiteUrl();
   const localizedPath = (l: string) =>
     l === routing.defaultLocale ? path || "/" : `/${l}${path}`;
   const url = `${siteUrl}${localizedPath(locale)}`;
 
-  // Pas d'`images` explicite ici : le fichier src/app/opengraph-image.tsx
-  // fournit déjà og:image/twitter:image pour toutes les routes.
+  const images = image ? [image] : undefined;
   return {
     title: `${title} · ${SITE_NAME}`,
     description,
@@ -44,12 +47,15 @@ export function buildMetadata({
       url,
       siteName: SITE_NAME,
       locale,
-      type: "website",
+      images,
+      type: article ? "article" : "website",
+      publishedTime: article?.publishedTime ?? undefined,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images,
     },
   };
 }

@@ -19,10 +19,10 @@ export async function generateMetadata({
   if (!formation) return {};
 
   return buildMetadata({
-    locale,
-    title: formation.titre,
-    description: formation.description ?? "",
-    path: `/formations/${slug}`,
+  locale,
+  title: formation.titre,
+  description: formation.description ?? "",
+  path: `/formations/${slug}`,
   });
 }
 
@@ -44,63 +44,63 @@ export default async function FormationDetailPage({
   if (!formation) notFound();
 
   return (
-    <>
-    <PageHeader
-      eyebrow={t(`statut.${formation.statut}`)}
-      title={formation.titre}
-      intro={formation.description ?? undefined}
-    />
-    <section className="mx-auto max-w-4xl px-4 py-14 md:px-6 md:py-20">
-      <Link href="/formations" className="text-sm font-semibold text-primrose-forest hover:underline">
-        ← {t("retour")}
-      </Link>
+  <>
+  <PageHeader
+  eyebrow={t(`statut.${formation.statut}`)}
+  title={formation.titre}
+  intro={formation.description ?? undefined}
+  />
+  <section className="mx-auto max-w-4xl px-4 py-14 md:px-6 md:py-20">
+  <Link href="/formations" className="text-sm font-semibold text-primrose-forest hover:underline">
+  ← {t("retour")}
+  </Link>
 
-      <AnimateIn className="mt-6">
-        <dl className="grid gap-4 rounded-card bg-primrose-cream p-6 text-sm text-primrose-ink/85 sm:grid-cols-2">
-          {formation.lieu && (
-            <div>
-              <dt className="font-medium text-primrose-ink">{t("lieu")}</dt>
-              <dd>{formation.lieu}</dd>
-            </div>
-          )}
-          {formation.date_debut && (
-            <div>
-              <dt className="font-medium text-primrose-ink">{t("dateDebut")}</dt>
-              <dd>
-                {new Date(formation.date_debut).toLocaleDateString(locale, {
-                  dateStyle: "long",
-                })}
-              </dd>
-            </div>
-          )}
-          {formation.places != null && (
-            <div>
-              <dt className="font-medium text-primrose-ink">{t("places")}</dt>
-              <dd>{formation.places}</dd>
-            </div>
-          )}
-          {formation.public_cible && (
-            <div>
-              <dt className="font-medium text-primrose-ink">{t("filtrerPublic")}</dt>
-              <dd>{formation.public_cible}</dd>
-            </div>
-          )}
-        </dl>
-      </AnimateIn>
+  <AnimateIn className="mt-6">
+  <dl className="grid gap-4 rounded-card bg-primrose-cream p-6 text-sm text-primrose-ink/85 sm:grid-cols-2">
+  {formation.lieu && (
+  <div>
+  <dt className="font-medium text-primrose-ink">{t("lieu")}</dt>
+  <dd>{formation.lieu}</dd>
+  </div>
+  )}
+  {formation.date_debut && (
+  <div>
+  <dt className="font-medium text-primrose-ink">{t("dateDebut")}</dt>
+  <dd>
+  {new Date(formation.date_debut).toLocaleDateString(locale, {
+  dateStyle: "long",
+  })}
+  </dd>
+  </div>
+  )}
+  {formation.places != null && (
+  <div>
+  <dt className="font-medium text-primrose-ink">{t("places")}</dt>
+  <dd>{formation.places}</dd>
+  </div>
+  )}
+  {formation.public_cible && (
+  <div>
+  <dt className="font-medium text-primrose-ink">{t("filtrerPublic")}</dt>
+  <dd>{formation.public_cible}</dd>
+  </div>
+  )}
+  </dl>
+  </AnimateIn>
 
-      <AnimateIn delay={0.1} className="mt-10 rounded-card border border-primrose-ink/10 bg-primrose-white p-6 shadow-card md:p-8">
-        <h2 className="font-serif text-2xl text-primrose-forest">
-          {t("inscription.titre")}
-        </h2>
-        <div className="mt-4">
-          {formation.statut === "ouverte" ? (
-            <FormationInscriptionForm formationId={formation.id} />
-          ) : (
-            <p className="text-sm text-primrose-ink/70">{t("inscription.complet")}</p>
-          )}
-        </div>
-      </AnimateIn>
-    </section>
-    </>
+  <AnimateIn delay={0.1} className="mt-10 rounded-card border border-primrose-ink/10 bg-primrose-white p-6 shadow-card md:p-8">
+  <h2 className="font-serif text-2xl text-primrose-forest">
+  {t("inscription.titre")}
+  </h2>
+  <div className="mt-4">
+  {formation.statut === "ouverte" ? (
+  <FormationInscriptionForm formationId={formation.id} />
+  ) : (
+  <p className="text-sm text-primrose-ink/70">{t("inscription.complet")}</p>
+  )}
+  </div>
+  </AnimateIn>
+  </section>
+  </>
   );
 }

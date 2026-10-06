@@ -9,19 +9,19 @@ export function SignOutButton() {
   const router = useRouter();
 
   async function onClick() {
-    const supabase = createClient();
-    await supabase.auth.signOut();
-    router.push("/connexion");
-    router.refresh();
+  const supabase = createClient();
+  await supabase.auth.signOut();
+  router.push("/connexion");
+  router.refresh();
   }
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="rounded-full border border-primrose-white/35 px-4 py-2 text-sm font-medium text-primrose-white transition-colors hover:bg-primrose-white/10"
-    >
-      {t("seDeconnecter")}
-    </button>
+  <button
+  type="button"
+  onClick={onClick}
+  className="rounded-full border border-primrose-white/35 px-4 py-2 text-sm font-medium text-primrose-white transition-colors hover:bg-primrose-white/10"
+  >
+  {t("seDeconnecter")}
+  </button>
   );
 }

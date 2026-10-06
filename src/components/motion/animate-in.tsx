@@ -1,13 +1,13 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { fadeInUp } from "@/lib/motion";
+import { fadeIn } from "@/lib/motion";
 
 // prefers-reduced-motion est géré globalement par MotionProvider
 // (MotionConfig reducedMotion="user") : déplacements coupés, fondu conservé.
 export function AnimateIn({
   children,
-  variants = fadeInUp,
+  variants = fadeIn,
   className,
   delay = 0,
 }: {

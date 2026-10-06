@@ -45,3 +45,8 @@ export async function getActualiteBySlug(slug: string): Promise<Actualite | null
   if (error || !data) return null;
   return data;
 }
+
+export async function getDernieresActualites(limit = 8): Promise<Pick<Actualite, "id" | "titre" | "slug">[]> {
+  const { actualites } = await getActualitesPage(1);
+  return actualites.slice(0, limit).map(({ id, titre, slug }) => ({ id, titre, slug }));
+}

@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { UserPlus, HandHeart, Handshake, Gift } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { AnimateIn } from "@/components/motion/animate-in";
-import { staggerContainer } from "@/lib/motion";
+import { stagger } from "@/lib/motion";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { JoinRowContent, joinRowClass } from "@/components/sections/join-row";
 
@@ -21,7 +21,7 @@ export function EngageSection() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow={t("eyebrow")} title={t("titre")} text={t("texte")} />
 
-        <AnimateIn variants={staggerContainer} className="mt-12">
+        <AnimateIn variants={stagger} className="mt-12">
           <ul className="border-t border-primrose-ink/15">
             {PROFILS.map(({ key, Icon }) => (
               <li key={key} className="border-b border-primrose-ink/15">
