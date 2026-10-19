@@ -18,10 +18,10 @@ export default async function AdminMissionsPage() {
         Former) sont fixes : titre, description et valeurs sont modifiables, mais
         aucun axe ne peut être créé ou supprimé ici.
       </p>
-      <p className="mt-1 text-xs text-primrose-alert/80">
-        Le site public affiche actuellement ces textes depuis les fichiers de
-        traduction, pas depuis cette table : une mise à jour ici ne se reflète
-        pas encore automatiquement sur /notre-mission.
+      <p className="mt-1 text-xs text-primrose-ink/70">
+        Ces contenus s&apos;affichent sur l&apos;accueil et sur la page « Notre
+        mission ». Un axe désactivé disparaît du site. Version française uniquement :
+        la version anglaise garde ses propres textes.
       </p>
 
       <div className="mt-6">

@@ -89,6 +89,16 @@
       "eyebrow": "News",
       "titre": "Latest news",
       "tout": "All news"
+    },
+    "documents": {
+      "eyebrow": "Resources",
+      "titre": "To read and share",
+      "texte": "Reports, practical guides and reference texts, free to read online.",
+      "tout": "All documents"
+    },
+    "chiffres": {
+      "eyebrow": "Our impact",
+      "titre": "Primrose's work in numbers"
     }
   },
   "missions": {
@@ -235,7 +245,8 @@
     "actualites": "News",
     "rejoindre": "Join the association",
     "suivre": "Follow us",
-    "legal": "Legal information"
+    "legal": "Legal information",
+    "documents": "Documents & resources"
   },
   "aide": {
     "accueil": "You are not alone. You are safe here.",
@@ -441,5 +452,40 @@
     "chargement": "Loading…",
     "envoyerEnCours": "Sending…",
     "contenuAVenir": "This page is being written. Please check back soon."
+  },
+  "documents": {
+    "eyebrow": "Resources",
+    "titre": "Documents & resources",
+    "texte": "Reports, practical guides and reference texts, to read online or download freely.",
+    "vide": "No documents are available yet. Please check back soon.",
+    "filtre": "Filter by category",
+    "toutes": "All",
+    "categories": {
+      "rapport": "Report",
+      "guide": "Practical guide",
+      "plaidoyer": "Advocacy",
+      "formation": "Training material",
+      "juridique": "Legal text",
+      "autre": "Other"
+    },
+    "lire": "Read online",
+    "telecharger": "Download",
+    "telechargerPdf": "Download PDF ({taille})",
+    "retour": "All documents",
+    "publieLe": "Published on",
+    "format": "PDF · {taille}",
+    "lecteur": {
+      "region": "Reader for “{titre}”",
+      "chargement": "Loading document…",
+      "erreur": "The document could not be displayed here. You can download it to read it.",
+      "page": "Page {current} of {total}",
+      "precedente": "Previous page",
+      "suivante": "Next page",
+      "zoomPlus": "Zoom in",
+      "zoomMoins": "Zoom out",
+      "zoomReset": "Fit to width",
+      "pageAlt": "Page {numero}"
+    },
+    "discretion": "This document opens in your browser. Remember to clear your history if you share this device."
   }
 }

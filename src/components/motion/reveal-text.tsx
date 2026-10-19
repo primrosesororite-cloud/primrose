@@ -2,8 +2,7 @@
 
 import { Fragment } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
+import { EASE } from "@/lib/motion";
 
 /** Titre révélé mot à mot (remontée depuis un masque) au défilement. */
 export function RevealText({ text, className }: { text: string; className?: string }) {
@@ -23,12 +22,18 @@ export function RevealText({ text, className }: { text: string; className?: stri
         <Fragment key={`${word}-${index}`}>
           <span className="inline-block overflow-hidden pb-[0.12em] align-bottom">
             <motion.span
-              className="inline-block"
+              className="inline-block origin-bottom-left"
               variants={{
-                hidden: { y: "105%", opacity: 0 },
+                hidden: { y: "110%", rotate: 6, opacity: 0, filter: "blur(8px)" },
                 visible: shouldReduceMotion
-                  ? { y: "0%", opacity: 1 }
-                  : { y: "0%", opacity: 1, transition: { duration: 0.65, ease: EASE } },
+                  ? { y: "0%", rotate: 0, opacity: 1, filter: "blur(0px)" }
+                  : {
+                      y: "0%",
+                      rotate: 0,
+                      opacity: 1,
+                      filter: "blur(0px)",
+                      transition: { duration: 0.7, ease: EASE },
+                    },
               }}
             >
               {word}

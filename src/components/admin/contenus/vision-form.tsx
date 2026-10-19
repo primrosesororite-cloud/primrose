@@ -23,6 +23,7 @@ export function VisionForm({ defaultValues }: { defaultValues: VisionInput }) {
   const fd = new FormData();
   fd.set("titre", values.titre);
   fd.set("texte", values.texte);
+  fd.set("valeurs", values.valeurs);
   const result = await updateVision(fd);
   if (result?.error) toast.error(result.error);
   else toast.success("Vision mise à jour.");
@@ -56,6 +57,20 @@ export function VisionForm({ defaultValues }: { defaultValues: VisionInput }) {
   />
   {errors.texte && (
   <p className="mt-1 text-sm text-primrose-alert">Ce champ est requis.</p>
+  )}
+  </div>
+  <div>
+  <label htmlFor="valeurs" className="text-sm font-medium text-primrose-ink">
+  Nos valeurs (une par ligne)
+  </label>
+  <textarea
+  id="valeurs"
+  rows={5}
+  className="mt-1 w-full rounded-lg border border-primrose-ink/15 bg-primrose-white px-3 py-2 text-sm"
+  {...register("valeurs")}
+  />
+  {errors.valeurs && (
+  <p className="mt-1 text-sm text-primrose-alert">{errors.valeurs.message}</p>
   )}
   </div>
   <button

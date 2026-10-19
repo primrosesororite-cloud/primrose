@@ -4,19 +4,19 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { AnimateIn } from "@/components/motion/animate-in";
+import type { MissionContent } from "@/lib/data/contenus";
 
 export function MissionDetailSection({
-  missionKey,
+  mission,
   icon,
   reverse = false,
 }: {
-  missionKey: "prevenir" | "soutenir" | "plaider" | "former";
+  mission: MissionContent;
   icon: React.ReactNode;
   reverse?: boolean;
 }) {
   const t = useTranslations("missions");
-  const valeurs = t.raw(`${missionKey}.valeurs`) as string[];
-  const actions = t.raw(`${missionKey}.actions`) as string[];
+  const { key: missionKey, valeurs, actions } = mission;
 
   return (
     <section
@@ -32,10 +32,10 @@ export function MissionDetailSection({
 
       <AnimateIn className={cn(reverse && "md:order-1")}>
         <h2 className="font-sans text-sm font-bold tracking-[0.16em] text-primrose-forest">
-          {t(`${missionKey}.titre`)}
+          {mission.titre}
         </h2>
-        <p className="mt-4 font-serif text-2xl leading-snug text-primrose-ink md:text-[1.9rem]">{t(`${missionKey}.description`)}</p>
-        <p className="mt-4 text-base leading-relaxed text-primrose-ink/80 md:text-lg">{t(`${missionKey}.detail`)}</p>
+        <p className="mt-4 font-serif text-2xl leading-snug text-primrose-ink md:text-[1.9rem]">{mission.description}</p>
+        <p className="mt-4 text-base leading-relaxed text-primrose-ink/80 md:text-lg">{mission.detail}</p>
 
         <h3 className="mt-8 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-primrose-forest">
           {t("concretement")}

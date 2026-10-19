@@ -89,6 +89,16 @@
       "eyebrow": "Actualités",
       "titre": "Les dernières nouvelles",
       "tout": "Toutes les actualités"
+    },
+    "documents": {
+      "eyebrow": "Ressources",
+      "titre": "À lire et à partager",
+      "texte": "Rapports, guides pratiques et textes de référence, consultables en ligne gratuitement.",
+      "tout": "Tous les documents"
+    },
+    "chiffres": {
+      "eyebrow": "Notre impact",
+      "titre": "L'action de Primrose en chiffres"
     }
   },
   "missions": {
@@ -235,7 +245,8 @@
     "actualites": "Actualités",
     "rejoindre": "Rejoindre l'association",
     "suivre": "Suivez-nous",
-    "legal": "Informations légales"
+    "legal": "Informations légales",
+    "documents": "Documents et ressources"
   },
   "aide": {
     "accueil": "Vous n'êtes pas seule. Vous êtes en sécurité ici.",
@@ -441,5 +452,40 @@
     "chargement": "Chargement…",
     "envoyerEnCours": "Envoi en cours…",
     "contenuAVenir": "Cette page est en cours de rédaction. Revenez bientôt."
+  },
+  "documents": {
+    "eyebrow": "Ressources",
+    "titre": "Documents et ressources",
+    "texte": "Rapports, guides pratiques et textes de référence, à lire en ligne ou à télécharger librement.",
+    "vide": "Aucun document n'est disponible pour le moment. Revenez bientôt.",
+    "filtre": "Filtrer par catégorie",
+    "toutes": "Tous",
+    "categories": {
+      "rapport": "Rapport",
+      "guide": "Guide pratique",
+      "plaidoyer": "Plaidoyer",
+      "formation": "Support de formation",
+      "juridique": "Texte juridique",
+      "autre": "Autre"
+    },
+    "lire": "Lire en ligne",
+    "telecharger": "Télécharger",
+    "telechargerPdf": "Télécharger le PDF ({taille})",
+    "retour": "Tous les documents",
+    "publieLe": "Publié le",
+    "format": "PDF · {taille}",
+    "lecteur": {
+      "region": "Lecteur du document « {titre} »",
+      "chargement": "Chargement du document…",
+      "erreur": "Le document n'a pas pu s'afficher ici. Vous pouvez le télécharger pour le lire.",
+      "page": "Page {current} sur {total}",
+      "precedente": "Page précédente",
+      "suivante": "Page suivante",
+      "zoomPlus": "Agrandir",
+      "zoomMoins": "Réduire",
+      "zoomReset": "Ajuster à la largeur",
+      "pageAlt": "Page {numero}"
+    },
+    "discretion": "Ce document s'ouvre dans votre navigateur. Pensez à effacer votre historique si vous partagez cet appareil."
   }
 }

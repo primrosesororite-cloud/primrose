@@ -34,12 +34,14 @@ export function MissionCard({
   const {
   register,
   handleSubmit,
-  formState: { isSubmitting },
+  formState: { isSubmitting, errors },
   } = useForm<MissionEditInput>({
   resolver: zodResolver(missionEditSchema),
   defaultValues: {
   titre: mission.titre,
   description: mission.description,
+  detail: mission.detail ?? "",
+  actions: (mission.actions ?? []).join("\n"),
   icone: mission.icone ?? "",
   },
   });
@@ -48,6 +50,8 @@ export function MissionCard({
   const fd = new FormData();
   fd.set("titre", values.titre);
   fd.set("description", values.description);
+  fd.set("detail", values.detail ?? "");
+  fd.set("actions", values.actions);
   fd.set("icone", values.icone ?? "");
   const result = await updateMission(mission.id, fd);
   if (result?.error) toast.error(result.error);
@@ -74,11 +78,33 @@ export function MissionCard({
   />
   <ToggleSwitch checked={mission.actif} onToggle={(next) => toggleMissionActif(mission.id, next)} />
   </div>
+  <label className="block text-xs font-medium uppercase tracking-wide text-primrose-ink/70">
+  Phrase d&apos;accroche
   <textarea
   rows={2}
-  className="w-full rounded-lg border border-primrose-ink/15 px-3 py-2 text-sm"
+  className="mt-1 w-full rounded-lg border border-primrose-ink/15 px-3 py-2 text-sm font-normal normal-case tracking-normal"
   {...register("description")}
   />
+  </label>
+  <label className="block text-xs font-medium uppercase tracking-wide text-primrose-ink/70">
+  Présentation détaillée
+  <textarea
+  rows={3}
+  className="mt-1 w-full rounded-lg border border-primrose-ink/15 px-3 py-2 text-sm font-normal normal-case tracking-normal"
+  {...register("detail")}
+  />
+  </label>
+  <label className="block text-xs font-medium uppercase tracking-wide text-primrose-ink/70">
+  Actions concrètes (une par ligne)
+  <textarea
+  rows={4}
+  className="mt-1 w-full rounded-lg border border-primrose-ink/15 px-3 py-2 text-sm font-normal normal-case tracking-normal"
+  {...register("actions")}
+  />
+  </label>
+  {errors.actions && (
+  <p className="text-xs text-primrose-alert">{errors.actions.message}</p>
+  )}
   <div className="flex items-center gap-3">
   <input
   placeholder="Icône (lucide, ex. megaphone)"

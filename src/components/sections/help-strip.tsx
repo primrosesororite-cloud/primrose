@@ -24,7 +24,7 @@ export function HelpStrip() {
   className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-primrose-alert px-5 py-3 text-sm font-semibold text-primrose-white transition-colors hover:bg-primrose-alert/90"
   >
   {t("lien")}
-  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300" />
+  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" />
   </Link>
   </div>
   </AnimateIn>

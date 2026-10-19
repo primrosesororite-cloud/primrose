@@ -56,7 +56,7 @@ export async function Footer() {
   target="_blank"
   rel="noopener noreferrer"
   aria-label={plateforme}
-  className="block overflow-hidden rounded-full ring-2 ring-primrose-white/15 transition-transform"
+  className="block overflow-hidden rounded-full ring-2 ring-primrose-white/15 transition-transform duration-300 motion-safe:hover:-translate-y-0.5 hover:ring-primrose-white/40"
   >
   <SocialIcon plateforme={plateforme} className="block h-9 w-9 overflow-hidden rounded-full" />
   </a>
@@ -76,6 +76,7 @@ export async function Footer() {
   <li><Link href="/notre-mission" className={linkClass}>{t("notreMission")}</Link></li>
   <li><Link href="/actualites" className={linkClass}>{t("actualites")}</Link></li>
   <li><Link href="/evenements" className={linkClass}>{t("evenements")}</Link></li>
+  <li><Link href="/documents" className={linkClass}>{t("documents")}</Link></li>
   </ul>
   </nav>
 
@@ -99,10 +100,10 @@ export async function Footer() {
   </h2>
   <Link
   href="/besoin-d-aide"
-  className="group mt-4 inline-flex items-center gap-2 rounded-full bg-primrose-white px-5 py-2.5 text-sm font-semibold text-primrose-forest transition-transform duration-300"
+  className="group mt-4 inline-flex items-center gap-2 rounded-full bg-primrose-white px-5 py-2.5 text-sm font-semibold text-primrose-forest transition-transform duration-300 motion-safe:hover:-translate-y-0.5 active:translate-y-0"
   >
   {t("demanderAide")}
-  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300" />
+  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" />
   </Link>
   {numerosAppelables.length > 0 && (
   <ul className="mt-4 space-y-1 text-sm text-primrose-white/85">

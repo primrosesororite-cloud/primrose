@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ArticleCard } from "@/components/sections/article-card";
@@ -24,7 +25,7 @@ export function LatestNews({ actualites }: { actualites: Actualite[] }) {
   className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primrose-forest"
   >
   {t("tout")}
-  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300" />
+  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" />
   </Link>
   </AnimateIn>
 
@@ -32,9 +33,9 @@ export function LatestNews({ actualites }: { actualites: Actualite[] }) {
   <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
   {actualites.map((actualite) => (
   <li key={actualite.id}>
-  <AnimateIn className="h-full">
+  <StaggerItem className="h-full">
   <ArticleCard actualite={actualite} />
-  </AnimateIn>
+  </StaggerItem>
   </li>
   ))}
   </ul>

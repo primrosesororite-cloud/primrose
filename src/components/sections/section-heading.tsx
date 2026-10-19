@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { RevealText } from "@/components/motion/reveal-text";
+import { ScrollHighlightText } from "@/components/motion/scroll-highlight-text";
 
 export function SectionHeading({
   eyebrow,
@@ -7,6 +8,7 @@ export function SectionHeading({
   text,
   align = "left",
   tone = "light",
+  highlight = false,
   className,
 }: {
   eyebrow?: string;
@@ -14,6 +16,8 @@ export function SectionHeading({
   text?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";
+  /** Titre qui s'illumine mot à mot au défilement (au lieu de la révélation). */
+  highlight?: boolean;
   className?: string;
 }) {
   const dark = tone === "dark";
@@ -36,7 +40,7 @@ export function SectionHeading({
           dark ? "text-primrose-white" : "text-primrose-forest"
         )}
       >
-        <RevealText text={title} />
+        {highlight ? <ScrollHighlightText text={title} /> : <RevealText text={title} />}
       </h2>
       {text && (
         <p

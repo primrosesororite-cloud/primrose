@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
+import { EASE } from "@/lib/motion";
 
 /** Chevron sauge et deux bandes qui se dessinent depuis le sceau au chargement. */
 export function HeroBands() {

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import type { Database, FormationStatut } from "@/types/database";
 
@@ -69,7 +70,7 @@ export function FormationsList({ formations }: { formations: Formation[] }) {
   <AnimateIn variants={stagger} className="mt-8">
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
   {filtered.map((formation) => (
-  <AnimateIn key={formation.id}>
+  <StaggerItem key={formation.id}>
   <Link
   href={`/formations/${formation.slug}`}
   className="group flex h-full flex-col gap-3 rounded-card border border-primrose-ink/10 bg-primrose-white p-7 shadow-card transition-[transform,box-shadow] duration-500 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
@@ -87,7 +88,7 @@ export function FormationsList({ formations }: { formations: Formation[] }) {
   <p className="mt-auto pt-2 text-xs font-semibold uppercase tracking-[0.12em] text-primrose-forest">{formation.public_cible}</p>
   )}
   </Link>
-  </AnimateIn>
+  </StaggerItem>
   ))}
   </div>
   </AnimateIn>

@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { UserPlus, HandHeart, Handshake, Gift } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { JoinRowContent, joinRowClass } from "@/components/sections/join-row";
@@ -25,11 +26,11 @@ export function EngageSection() {
           <ul className="border-t border-primrose-ink/15">
             {PROFILS.map(({ key, Icon }) => (
               <li key={key} className="border-b border-primrose-ink/15">
-                <AnimateIn>
+                <StaggerItem>
                   <Link href="/rejoindre" className={joinRowClass}>
                     <JoinRowContent Icon={Icon} titre={t(`items.${key}.titre`)} texte={t(`items.${key}.texte`)} />
                   </Link>
-                </AnimateIn>
+                </StaggerItem>
               </li>
             ))}
           </ul>

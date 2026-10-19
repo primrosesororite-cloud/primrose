@@ -1,8 +1,8 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { getActualitesPage, getDernieresActualites } from "@/lib/data/actualites";
-import { NewsTicker } from "@/components/sections/news-ticker";
+import { getActualitesPage } from "@/lib/data/actualites";
 import { Link } from "@/i18n/navigation";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import { buildMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/sections/page-header";
@@ -32,13 +32,11 @@ export default async function ActualitesPage({
 
   const page = Math.max(1, Number(pageParam) || 1);
   const { actualites, total, pageSize } = await getActualitesPage(page);
-  const dernieres = await getDernieresActualites();
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
 
   return (
   <>
   <PageHeader eyebrow={t("eyebrow")} title={t("titre")} intro={t("texte")} />
-    <NewsTicker items={dernieres} />
   <section className="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
 
   {actualites.length === 0 ? (
@@ -51,9 +49,9 @@ export default async function ActualitesPage({
   <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
   {actualites.map((actualite) => (
   <li key={actualite.id}>
-  <AnimateIn className="h-full">
+  <StaggerItem className="h-full">
   <ArticleCard actualite={actualite} />
-  </AnimateIn>
+  </StaggerItem>
   </li>
   ))}
   </ul>

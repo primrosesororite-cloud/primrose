@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { visionSchema, chiffreCleSchema } from "@/lib/validations/admin/contenus";
+import { lignes } from "@/lib/format";
 
 type ActionResult = { error?: string } | void;
 
@@ -10,14 +11,20 @@ export async function updateVision(formData: FormData): Promise<ActionResult> {
   const parsed = visionSchema.safeParse({
     titre: formData.get("titre"),
     texte: formData.get("texte"),
+    valeurs: formData.get("valeurs") ?? "",
   });
-  if (!parsed.success) return { error: "Champs invalides." };
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Champs invalides." };
 
   const supabase = await createClient();
-  const { error } = await supabase
-    .from("pages_content")
-    .update({ content: parsed.data })
-    .eq("key", "home.vision");
+  const { error } = await supabase.from("pages_content").upsert({
+    key: "home.vision",
+    title: "Notre vision",
+    content: {
+      titre: parsed.data.titre,
+      texte: parsed.data.texte,
+      valeurs: lignes(parsed.data.valeurs),
+    },
+  });
 
   if (error) return { error: "La sauvegarde a échoué." };
   revalidatePath("/admin/contenus");
@@ -27,9 +34,9 @@ export async function updateVision(formData: FormData): Promise<ActionResult> {
 export async function createChiffreCle(formData: FormData): Promise<ActionResult> {
   const parsed = chiffreCleSchema.safeParse({
     libelle: formData.get("libelle"),
-    valeur: formData.get("valeur"),
+    valeur: Number(formData.get("valeur")),
     suffixe: formData.get("suffixe"),
-    ordre: formData.get("ordre"),
+    ordre: Number(formData.get("ordre")),
   });
   if (!parsed.success) return { error: "Champs invalides." };
 
@@ -52,9 +59,9 @@ export async function updateChiffreCle(
 ): Promise<ActionResult> {
   const parsed = chiffreCleSchema.safeParse({
     libelle: formData.get("libelle"),
-    valeur: formData.get("valeur"),
+    valeur: Number(formData.get("valeur")),
     suffixe: formData.get("suffixe"),
-    ordre: formData.get("ordre"),
+    ordre: Number(formData.get("ordre")),
   });
   if (!parsed.success) return { error: "Champs invalides." };
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { User } from "lucide-react";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import { SectionHeading } from "@/components/sections/section-heading";
 import type { Database } from "@/types/database";
@@ -23,7 +24,7 @@ export function TeamSection({ membres }: { membres: Membre[] }) {
         <AnimateIn variants={stagger} className="mt-12">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {membres.map((membre) => (
-              <AnimateIn key={membre.id}>
+              <StaggerItem key={membre.id}>
                 <article className="flex flex-col items-center rounded-card bg-primrose-white p-6 text-center shadow-card">
                   <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-primrose-green/15 text-primrose-forest">
                     {membre.photo_url ? (
@@ -46,7 +47,7 @@ export function TeamSection({ membres }: { membres: Membre[] }) {
                     <p className="mt-2 text-xs text-primrose-ink/75">{membre.bio}</p>
                   )}
                 </article>
-              </AnimateIn>
+              </StaggerItem>
             ))}
           </div>
         </AnimateIn>

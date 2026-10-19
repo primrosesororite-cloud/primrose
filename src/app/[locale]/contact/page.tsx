@@ -43,7 +43,7 @@ export default async function ContactPage({
   className="group mt-5 inline-flex items-center gap-2 rounded-full bg-primrose-alert px-5 py-2.5 text-sm font-semibold text-primrose-white transition-colors hover:bg-primrose-alert/90"
   >
   {t("aideLien")}
-  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300" />
+  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" />
   </Link>
   </aside>
   </AnimateIn>

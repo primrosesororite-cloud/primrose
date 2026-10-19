@@ -27,7 +27,8 @@ export async function getReseauxSociaux(): Promise<
     .select("plateforme, url")
     .eq("actif", true);
 
-  if (error || !data || data.length === 0) return FALLBACK_RESEAUX;
+  // Liste vide = l'équipe a tout désactivé : on respecte ce choix (repli seulement en cas d'erreur).
+  if (error || !data) return FALLBACK_RESEAUX;
   return data;
 }
 

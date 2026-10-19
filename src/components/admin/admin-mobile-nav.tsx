@@ -10,6 +10,7 @@ const ALL_LINKS = [
   { href: "/admin/formations", label: "Formations" },
   { href: "/admin/actualites", label: "Actualités" },
   { href: "/admin/evenements", label: "Événements" },
+  { href: "/admin/documents", label: "Documents PDF" },
   { href: "/admin/mediatheque", label: "Médiathèque" },
   { href: "/admin/equipe", label: "Équipe" },
   { href: "/admin/partenaires", label: "Partenaires" },

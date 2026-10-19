@@ -140,6 +140,77 @@
   animation-play-state: paused;
 }
 
+/* ---------- Défilement fluide (Lenis) ---------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ---------- Halos « aurora » (héro, en-têtes) ---------- */
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(8%, -6%, 0) scale(1.12);
+  }
+  66% {
+    transform: translate3d(-6%, 5%, 0) scale(0.94);
+  }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform;
+  animation: aurora-drift 22s ease-in-out infinite;
+}
+
+.aurora-delay-1 {
+  animation-delay: -7s;
+  animation-duration: 26s;
+}
+
+.aurora-delay-2 {
+  animation-delay: -14s;
+  animation-duration: 30s;
+}
+
+.aurora-green {
+  background: radial-gradient(circle, color-mix(in srgb, var(--primrose-green), transparent 45%), transparent 68%);
+}
+
+.aurora-green-strong {
+  background: radial-gradient(circle, color-mix(in srgb, var(--primrose-green), transparent 55%), transparent 68%);
+}
+
+.aurora-forest {
+  background: radial-gradient(circle, color-mix(in srgb, var(--primrose-forest), transparent 90%), transparent 68%);
+}
+
+.aurora-white {
+  background: radial-gradient(circle, color-mix(in srgb, var(--primrose-white), transparent 15%), transparent 65%);
+}
+
+.aurora-cream-soft {
+  background: radial-gradient(circle, color-mix(in srgb, var(--primrose-cream), transparent 82%), transparent 65%);
+}
+
+/* Texte en contour (bandeau typographique) */
+.text-outline-forest {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--primrose-forest);
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -331,4 +402,58 @@ textarea.field-input {
 .admin-main a:where(:not([class])):hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* Calque de texte pdf.js (lecteur de documents) : texte transparent posé
+   sur le canvas pour la sélection, la copie et les lecteurs d'écran.
+   Version réduite de pdfjs-dist/web/pdf_viewer.css. */
+.textLayer {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  line-height: 1;
+  text-align: initial;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  z-index: 0;
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+}
+
+.textLayer :is(span, br) {
+  position: absolute;
+  color: transparent;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0% 0%;
+}
+
+.textLayer > :not(.markedContent),
+.textLayer .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  --scale-x: 1;
+  --rotate: 0deg;
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv));
+}
+
+.textLayer .markedContent {
+  display: contents;
+}
+
+.textLayer ::selection {
+  background: color-mix(in srgb, var(--primrose-green), transparent 55%);
+  color: transparent;
+}
+
+.textLayer .endOfContent {
+  display: block;
+  position: absolute;
+  inset: 100% 0 0;
+  z-index: 0;
+  cursor: default;
+  user-select: none;
 }

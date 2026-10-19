@@ -11,7 +11,12 @@ export default async function AdminContenusPage() {
     supabase.from("chiffres_cles").select("*").order("ordre", { ascending: true }),
   ]);
 
-  const visionContent = (visionRow?.content ?? { titre: "", texte: "" }) as VisionInput;
+  const contenu = (visionRow?.content ?? {}) as { titre?: string; texte?: string; valeurs?: string[] };
+  const visionContent: VisionInput = {
+    titre: contenu.titre ?? "",
+    texte: contenu.texte ?? "",
+    valeurs: (contenu.valeurs ?? []).join("\n"),
+  };
 
   return (
     <div className="space-y-10">
@@ -20,7 +25,9 @@ export default async function AdminContenusPage() {
           Contenus du site
         </h1>
         <p className="mt-1 text-sm text-primrose-ink/70">
-          Vision de l&apos;accueil et chiffres clés affichés sur le site public.
+          Vision de l&apos;accueil et chiffres clés affichés sur le site public. Les
+          chiffres égaux à 0 ou désactivés ne sont pas affichés : la section
+          apparaît dès qu&apos;un chiffre est renseigné.
         </p>
       </div>
 

@@ -2,10 +2,9 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { getEvenementsPublies } from "@/lib/data/evenements";
 import { evenementJsonLd } from "@/lib/json-ld";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import { buildMetadata } from "@/lib/seo";
-import { getDernieresActualites } from "@/lib/data/actualites";
-import { NewsTicker } from "@/components/sections/news-ticker";
 import Image from "next/image";
 import { PageHeader } from "@/components/sections/page-header";
 
@@ -30,12 +29,10 @@ export default async function EvenementsPage({
   setRequestLocale(locale);
   const t = await getTranslations("evenements");
   const evenements = await getEvenementsPublies();
-  const dernieres = await getDernieresActualites();
 
   return (
     <>
     <PageHeader eyebrow={t("eyebrow")} title={t("titre")} intro={t("texte")} />
-    <NewsTicker items={dernieres} />
     <section className="mx-auto max-w-4xl px-4 py-14 md:px-6 md:py-20">
       {evenements.map((evenement) => (
         <script
@@ -54,7 +51,7 @@ export default async function EvenementsPage({
           <ul className="space-y-4">
             {evenements.map((evenement) => (
               <li key={evenement.id}>
-                <AnimateIn>
+                <StaggerItem>
                   <div className="overflow-hidden rounded-card border border-primrose-ink/10 border-l-4 border-l-primrose-green bg-primrose-white shadow-card">
                     {evenement.image_url && (
                       <div className="relative aspect-[16/7] w-full bg-primrose-green/20">
@@ -85,7 +82,7 @@ export default async function EvenementsPage({
                       </p>
                     )}
                   </div></div>
-                </AnimateIn>
+                </StaggerItem>
               </li>
             ))}
           </ul>

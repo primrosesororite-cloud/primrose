@@ -14,17 +14,17 @@ export function JoinRowContent({
   <>
   <span
   aria-hidden
-  className="absolute inset-0 bg-primrose-cream opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
+  className="absolute inset-0 origin-left scale-x-0 bg-primrose-cream transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
   />
   <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primrose-forest/20 text-primrose-forest transition-colors duration-300 group-hover:border-primrose-forest/40 group-hover:bg-primrose-white">
   <Icon aria-hidden className="h-5 w-5" strokeWidth={1.7} />
   </span>
-  <span className="relative flex-1 text-left">
+  <span className="relative flex-1 text-left transition-transform duration-500 ease-out motion-safe:group-hover:translate-x-2">
   <span className="block font-serif text-2xl text-primrose-ink md:text-[1.9rem]">{titre}</span>
   <span className="mt-1 block text-sm leading-relaxed text-primrose-ink/80 md:text-base">{texte}</span>
   </span>
   <span className="relative hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primrose-forest/25 text-primrose-forest transition-all duration-300 group-hover:border-primrose-forest group-hover:bg-primrose-forest group-hover:text-primrose-white sm:flex">
-  <ArrowRight aria-hidden className="h-4 w-4" />
+  <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-500 motion-safe:group-hover:-rotate-45" />
   </span>
   </>
   );

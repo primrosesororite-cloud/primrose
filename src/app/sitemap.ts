@@ -11,6 +11,7 @@ const STATIC_PATHS = [
   "/evenements",
   "/rejoindre",
   "/actualites",
+  "/documents",
   "/contact",
   "/besoin-d-aide",
   "/mentions-legales",
@@ -49,13 +50,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const supabase = createPublicClient();
 
-  const [{ data: actualites }, { data: formations }] = await Promise.all([
+  const [{ data: actualites }, { data: formations }, { data: documents }] = await Promise.all([
     supabase.from("actualites").select("slug").eq("publie", true),
     supabase.from("formations").select("slug").neq("statut", "brouillon"),
+    supabase.from("documents").select("slug").eq("publie", true),
   ]);
 
   actualites?.forEach((a) => entries.push(withLocales(`/actualites/${a.slug}`, siteUrl)));
   formations?.forEach((f) => entries.push(withLocales(`/formations/${f.slug}`, siteUrl)));
+  documents?.forEach((d) => entries.push(withLocales(`/documents/${d.slug}`, siteUrl)));
 
   return entries;
 }

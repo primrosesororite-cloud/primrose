@@ -13,7 +13,11 @@ export const partenaireSchema = z.object({
 
 export const reseauSocialSchema = z.object({
   plateforme: z.enum(["instagram", "x", "facebook", "youtube", "tiktok", "whatsapp", "linkedin"]),
-  url: z.string().trim().url(),
+  url: z
+    .string()
+    .trim()
+    .url()
+    .refine((url) => /^https:\/\//i.test(url), "L'adresse doit commencer par https://"),
 });
 
 export type MembreEquipeInput = z.infer<typeof membreEquipeSchema>;

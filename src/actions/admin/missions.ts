@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { missionEditSchema, valeurSchema } from "@/lib/validations/admin/missions";
+import { lignes } from "@/lib/format";
 
 type ActionResult = { error?: string } | void;
 
@@ -10,9 +11,11 @@ export async function updateMission(id: string, formData: FormData): Promise<Act
   const parsed = missionEditSchema.safeParse({
     titre: formData.get("titre"),
     description: formData.get("description"),
+    detail: formData.get("detail") ?? "",
+    actions: formData.get("actions") ?? "",
     icone: formData.get("icone"),
   });
-  if (!parsed.success) return { error: "Champs invalides." };
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Champs invalides." };
 
   const supabase = await createClient();
   const { error } = await supabase
@@ -20,6 +23,8 @@ export async function updateMission(id: string, formData: FormData): Promise<Act
     .update({
       titre: parsed.data.titre,
       description: parsed.data.description,
+      detail: parsed.data.detail || null,
+      actions: lignes(parsed.data.actions),
       icone: parsed.data.icone || null,
     })
     .eq("id", id);

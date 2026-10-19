@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { UserPlus, HandHeart, Handshake, Gift } from "lucide-react";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
 import { stagger } from "@/lib/motion";
 import { JoinRowContent, joinRowClass } from "@/components/sections/join-row";
 
@@ -25,11 +26,11 @@ export function ProfilePicker({
       <ul className="border-t border-primrose-ink/15">
         {PROFILES.map(({ type, Icon }) => (
           <li key={type} className="border-b border-primrose-ink/15">
-            <AnimateIn>
+            <StaggerItem>
               <button type="button" onClick={() => onSelect(type)} className={joinRowClass}>
                 <JoinRowContent Icon={Icon} titre={t(`${type}.titre`)} texte={t(`${type}.texte`)} />
               </button>
-            </AnimateIn>
+            </StaggerItem>
           </li>
         ))}
       </ul>

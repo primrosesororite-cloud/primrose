@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
+import { EASE } from "@/lib/motion";
 
 /** Deux traits qui se dessinent depuis les bords vers la pointe du chevron. */
 export function ConvergingBands() {

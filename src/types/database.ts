@@ -1,6 +1,6 @@
 /**
  * Types Supabase pour Primrose – La Sororité Active.
- * Écrits à la main pour correspondre à supabase/migrations/001_schema_primrose.sql.
+ * Écrits à la main pour correspondre à supabase/migrations/*.sql.
  * À régénérer avec `supabase gen types typescript --project-id <id> > src/types/database.ts`
  * dès que le projet Supabase est provisionné, pour rester la source de vérité.
  */
@@ -19,6 +19,13 @@ export type Plateforme =
   | "tiktok"
   | "whatsapp"
   | "linkedin";
+export type DocumentCategorie =
+  | "rapport"
+  | "guide"
+  | "plaidoyer"
+  | "formation"
+  | "juridique"
+  | "autre";
 
 type NoRelationships = { Relationships: [] };
 
@@ -66,6 +73,8 @@ export interface Database {
           slug: string;
           titre: string;
           description: string;
+          detail: string | null;
+          actions: string[];
           icone: string | null;
           ordre: number;
           actif: boolean;
@@ -77,6 +86,8 @@ export interface Database {
           slug: string;
           titre: string;
           description: string;
+          detail?: string | null;
+          actions?: string[];
           icone?: string | null;
           ordre?: number;
           actif?: boolean;
@@ -254,6 +265,37 @@ export interface Database {
           uploaded_by?: string | null;
         };
         Update: Partial<Database["public"]["Tables"]["medias"]["Insert"]>;
+      } & NoRelationships;
+      documents: {
+        Row: {
+          id: string;
+          slug: string;
+          titre: string;
+          description: string | null;
+          categorie: DocumentCategorie;
+          fichier_url: string;
+          chemin: string;
+          taille_octets: number | null;
+          publie: boolean;
+          date_publication: string | null;
+          uploaded_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          titre: string;
+          description?: string | null;
+          categorie?: DocumentCategorie;
+          fichier_url: string;
+          chemin: string;
+          taille_octets?: number | null;
+          publie?: boolean;
+          date_publication?: string | null;
+          uploaded_by?: string | null;
+        };
+        Update: Partial<Database["public"]["Tables"]["documents"]["Insert"]>;
       } & NoRelationships;
       reseaux_sociaux: {
         Row: {

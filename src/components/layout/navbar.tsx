@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { EASE, SPRING, stagger, slideInLeft } from "@/lib/motion";
 import { Menu, X, Lock } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -40,7 +41,7 @@ export function Navbar() {
   <motion.header
   initial={shouldReduceMotion ? false : { y: -24, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+  transition={{ duration: 0.5, ease: EASE }}
   className={cn(
 "sticky top-0 z-40 border-b border-primrose-green/25 bg-primrose-cream transition-shadow duration-300",
   scrolled && "shadow-[0_8px_24px_-16px_rgba(52,80,59,0.35)]"
@@ -67,7 +68,7 @@ export function Navbar() {
   </span>
   </Link>
 
-  <ul className="hidden items-center gap-1 lg:flex xl:gap-2">
+  <ul className="isolate hidden items-center gap-1 lg:flex xl:gap-2">
   {NAV_ITEMS.map((item) => {
   const active = isActive(pathname, item.href);
   return (
@@ -76,12 +77,18 @@ export function Navbar() {
   href={item.href}
   aria-current={active ? "page" : undefined}
   className={cn(
-"rounded-full px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] transition-colors",
-  active
-  ? "bg-primrose-green text-primrose-ink"
-  : "text-primrose-ink hover:bg-primrose-white"
+"relative block rounded-full px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-primrose-ink transition-colors",
+  !active && "hover:bg-primrose-white"
   )}
   >
+  {active && (
+  <motion.span
+  layoutId="nav-pill"
+  transition={SPRING}
+  aria-hidden
+  className="absolute inset-0 -z-10 rounded-full bg-primrose-green"
+  />
+  )}
   {t(item.key)}
   </Link>
   </li>
@@ -139,14 +146,19 @@ export function Navbar() {
   initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
   animate={{ height: "auto", opacity: 1 }}
   exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
-  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+  transition={{ duration: 0.3, ease: EASE }}
   className="overflow-hidden border-t border-primrose-green/25 bg-primrose-cream lg:hidden"
   >
-  <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4">
+  <motion.ul
+  initial="hidden"
+  animate="visible"
+  variants={stagger}
+  className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4"
+  >
   {[...NAV_ITEMS, { href: "/rejoindre", key: "rejoignez" } as const].map((item) => {
   const active = isActive(pathname, item.href);
   return (
-  <li key={item.href}>
+  <motion.li key={item.href} variants={slideInLeft}>
   <Link
   href={item.href}
   aria-current={active ? "page" : undefined}
@@ -158,10 +170,10 @@ export function Navbar() {
   >
   {t(item.key)}
   </Link>
-  </li>
+  </motion.li>
   );
   })}
-  </ul>
+  </motion.ul>
   </motion.div>
   )}
   </AnimatePresence>
