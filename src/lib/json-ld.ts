@@ -20,7 +20,7 @@ export function organizationJsonLd(reseaux: ReseauSocial[]) {
       "Association congolaise engagée contre les violences de genre : prévenir, soutenir, plaider, former.",
     areaServed: {
       "@type": "Country",
-      name: "Congo-Brazzaville",
+      name: "République du Congo",
     },
     sameAs: reseaux.map((r) => r.url),
   };
