@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+
+export const metadata: Metadata = {
+  title: "Charte graphique (interne)",
+  robots: { index: false, follow: false },
+};
 
 /**
  * Page interne de référence (non liée dans la navigation publique).

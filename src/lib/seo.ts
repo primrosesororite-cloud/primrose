@@ -18,6 +18,8 @@ export function buildMetadata({
   path,
   image,
   article,
+  absoluteTitle = false,
+  noindex = false,
 }: {
   locale: string;
   title: string;
@@ -25,6 +27,10 @@ export function buildMetadata({
   path: string;
   image?: string | null;
   article?: { publishedTime?: string | null };
+  /** Titre complet tel quel (accueil), sans suffixe du nom du site. */
+  absoluteTitle?: boolean;
+  /** Page à garder hors des moteurs de recherche (connexion, pages internes). */
+  noindex?: boolean;
 }): Metadata {
   const siteUrl = getSiteUrl();
   const localizedPath = (l: string) =>
@@ -33,13 +39,15 @@ export function buildMetadata({
 
   const images = image ? [image] : undefined;
   return {
-    title: `${title} · ${SITE_NAME}`,
+    title: absoluteTitle ? { absolute: title } : `${title} · ${SITE_NAME}`,
     description,
+    ...(noindex && { robots: { index: false, follow: false } }),
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `${siteUrl}${localizedPath(l)}`])
-      ),
+      languages: {
+        ...Object.fromEntries(routing.locales.map((l) => [l, `${siteUrl}${localizedPath(l)}`])),
+        "x-default": `${siteUrl}${localizedPath(routing.defaultLocale)}`,
+      },
     },
     openGraph: {
       title,

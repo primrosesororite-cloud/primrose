@@ -1,4 +1,5 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/hero";
 import { HelpStrip } from "@/components/sections/help-strip";
 import { MissionsSection } from "@/components/sections/missions-section";
@@ -10,6 +11,22 @@ import { StatsSection } from "@/components/sections/stats-section";
 import { AxesMarquee } from "@/components/sections/axes-marquee";
 import { LatestDocuments } from "@/components/sections/latest-documents";
 import { getDocumentsPublies } from "@/lib/data/documents";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home.hero" });
+  return buildMetadata({
+    locale,
+    title: t("metaTitre"),
+    description: t("metaDescription"),
+    path: "",
+    absoluteTitle: true,
+  });
+}
 
 export default async function HomePage({
   params,

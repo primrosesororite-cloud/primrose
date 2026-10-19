@@ -73,3 +73,18 @@ export function actualiteJsonLd(actualite: {
     publisher: { "@type": "Organization", name: "Primrose – La Sororité Active", url: siteUrl },
   };
 }
+
+/** Fil d'Ariane (Accueil > Section > Page) pour les pages de détail. */
+export function breadcrumbJsonLd(items: { nom: string; chemin: string }[]) {
+  const siteUrl = getSiteUrl();
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.nom,
+      item: `${siteUrl}${item.chemin}`,
+    })),
+  };
+}

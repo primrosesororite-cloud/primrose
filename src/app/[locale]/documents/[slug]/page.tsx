@@ -4,6 +4,7 @@ import { ArrowLeft, Download, ShieldCheck } from "lucide-react";
 import { getDocumentBySlug } from "@/lib/data/documents";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { formatTaille } from "@/lib/format";
 import { AnimateIn } from "@/components/motion/animate-in";
 import { RevealText } from "@/components/motion/reveal-text";
@@ -47,6 +48,17 @@ export default async function DocumentDetailPage({
 
   return (
     <article className="mx-auto max-w-5xl px-4 py-12 md:px-6 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { nom: t("eyebrow"), chemin: "/documents" },
+              { nom: document.titre, chemin: `/documents/${document.slug}` },
+            ])
+          ),
+        }}
+      />
       <Link
         href="/documents"
         className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primrose-forest hover:underline"

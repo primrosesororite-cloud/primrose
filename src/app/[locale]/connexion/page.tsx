@@ -1,5 +1,16 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ConnexionForm } from "@/components/forms/connexion-form";
+import { buildMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "auth" });
+  return buildMetadata({ locale, title: t("titre"), description: t("titre"), path: "/connexion", noindex: true });
+}
 
 export default async function ConnexionPage({
   params,

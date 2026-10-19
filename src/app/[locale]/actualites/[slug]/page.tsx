@@ -9,7 +9,7 @@ import { ShareButton } from "@/components/forms/share-button";
 import { AnimateIn } from "@/components/motion/animate-in";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { buildMetadata } from "@/lib/seo";
-import { actualiteJsonLd } from "@/lib/json-ld";
+import { actualiteJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { tiptapExtensions } from "@/lib/tiptap-extensions";
 
 export const revalidate = 300;
@@ -58,6 +58,17 @@ export default async function ActualiteDetailPage({
   <script
     type="application/ld+json"
     dangerouslySetInnerHTML={{ __html: JSON.stringify(actualiteJsonLd(actualite)) }}
+  />
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(
+        breadcrumbJsonLd([
+          { nom: t("titre"), chemin: "/actualites" },
+          { nom: actualite.titre, chemin: `/actualites/${actualite.slug}` },
+        ])
+      ),
+    }}
   />
   <ScrollProgress />
   <Link href="/actualites" className="text-sm text-primrose-forest hover:underline">

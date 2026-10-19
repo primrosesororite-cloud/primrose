@@ -21,7 +21,11 @@ const STATIC_PATHS = [
 const isSupabaseConfigured =
   !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-function withLocales(path: string, siteUrl: string): MetadataRoute.Sitemap[number] {
+function withLocales(
+  path: string,
+  siteUrl: string,
+  lastModified?: string | null
+): MetadataRoute.Sitemap[number] {
   const url =
     path === ""
       ? `${siteUrl}/`
@@ -29,6 +33,7 @@ function withLocales(path: string, siteUrl: string): MetadataRoute.Sitemap[numbe
 
   return {
     url,
+    ...(lastModified && { lastModified }),
     alternates: {
       languages: Object.fromEntries(
         routing.locales.map((l) => [
@@ -51,14 +56,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = createPublicClient();
 
   const [{ data: actualites }, { data: formations }, { data: documents }] = await Promise.all([
-    supabase.from("actualites").select("slug").eq("publie", true),
-    supabase.from("formations").select("slug").neq("statut", "brouillon"),
-    supabase.from("documents").select("slug").eq("publie", true),
+    supabase.from("actualites").select("slug, updated_at").eq("publie", true),
+    supabase.from("formations").select("slug, updated_at").neq("statut", "brouillon"),
+    supabase.from("documents").select("slug, updated_at").eq("publie", true),
   ]);
 
-  actualites?.forEach((a) => entries.push(withLocales(`/actualites/${a.slug}`, siteUrl)));
-  formations?.forEach((f) => entries.push(withLocales(`/formations/${f.slug}`, siteUrl)));
-  documents?.forEach((d) => entries.push(withLocales(`/documents/${d.slug}`, siteUrl)));
+  actualites?.forEach((a) => entries.push(withLocales(`/actualites/${a.slug}`, siteUrl, a.updated_at)));
+  formations?.forEach((f) => entries.push(withLocales(`/formations/${f.slug}`, siteUrl, f.updated_at)));
+  documents?.forEach((d) => entries.push(withLocales(`/documents/${d.slug}`, siteUrl, d.updated_at)));
 
   return entries;
 }
