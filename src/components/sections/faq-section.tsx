@@ -19,7 +19,7 @@ export function FaqSection() {
       <AnimateIn>
         <SectionHeading title={t("titre")} align="center" />
 
-        <Accordion type="single" collapsible className="mt-10 rounded-card border border-primrose-ink/10 bg-primrose-white px-6">
+        <Accordion type="single" collapsible className="glass-surface mt-10 rounded-card px-6">
           {items.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger>{item.question}</AccordionTrigger>

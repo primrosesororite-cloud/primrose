@@ -10,7 +10,7 @@ export function HelpStrip() {
   return (
   <div className="relative z-10 -mt-12 bg-primrose-cream px-4 md:px-6">
   <AnimateIn className="mx-auto max-w-4xl">
-  <div className="flex flex-col gap-5 rounded-2xl border border-primrose-ink/10 bg-primrose-white p-6 shadow-[0_24px_50px_-28px_rgba(58,46,42,0.35)] md:flex-row md:items-center md:gap-6 md:p-7">
+  <div className="glass-surface flex flex-col gap-5 rounded-2xl p-6 md:flex-row md:items-center md:gap-6 md:p-7">
   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primrose-cream text-primrose-forest">
   <ShieldCheck aria-hidden className="h-6 w-6" />
   </span>

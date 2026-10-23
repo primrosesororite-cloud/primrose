@@ -25,7 +25,7 @@ export function TeamSection({ membres }: { membres: Membre[] }) {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {membres.map((membre) => (
               <StaggerItem key={membre.id}>
-                <article className="flex flex-col items-center rounded-card bg-primrose-white p-6 text-center shadow-card">
+                <article className="glass-surface flex flex-col items-center rounded-card p-6 text-center transition-transform duration-300 hover:-translate-y-1">
                   <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-primrose-green/15 text-primrose-forest">
                     {membre.photo_url ? (
                       <Image

@@ -34,7 +34,7 @@ export function DocumentCard({ document }: { document: Document }) {
     <TiltCard className="h-full">
       <Link
         href={`/documents/${document.slug}`}
-        className="group flex h-full flex-col overflow-hidden rounded-card bg-primrose-white shadow-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
+        className="glass-surface group flex h-full flex-col overflow-hidden rounded-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
       >
         <div className="relative flex h-40 items-center justify-center overflow-hidden bg-primrose-cream">
           <span

@@ -18,7 +18,7 @@ export function EngageSection() {
   const t = useTranslations("home.engager");
 
   return (
-    <section className="bg-primrose-white px-4 py-20 md:px-6 md:py-28">
+    <section className="bg-[radial-gradient(ellipse_at_50%_100%,rgba(196,220,196,0.28),transparent_55%)] bg-primrose-white px-4 py-20 md:px-6 md:py-28">
       <div className="mx-auto max-w-6xl">
         <SectionHeading eyebrow={t("eyebrow")} title={t("titre")} text={t("texte")} />
 

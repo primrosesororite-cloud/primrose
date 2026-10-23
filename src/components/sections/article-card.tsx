@@ -16,7 +16,7 @@ export function ArticleCard({ actualite }: { actualite: Actualite }) {
   <TiltCard className="h-full">
   <Link
   href={`/actualites/${actualite.slug}`}
-  className="group flex h-full flex-col overflow-hidden rounded-card bg-primrose-white shadow-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
+  className="glass-surface group flex h-full flex-col overflow-hidden rounded-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
   >
   <div className="relative aspect-[16/10] w-full overflow-hidden bg-primrose-green/20">
   {actualite.image_url && (

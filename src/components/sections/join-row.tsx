@@ -14,7 +14,7 @@ export function JoinRowContent({
   <>
   <span
   aria-hidden
-  className="absolute inset-0 origin-left scale-x-0 bg-primrose-cream transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
+  className="glass-sweep absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
   />
   <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primrose-forest/20 text-primrose-forest transition-colors duration-300 group-hover:border-primrose-forest/40 group-hover:bg-primrose-white">
   <Icon aria-hidden className="h-5 w-5" strokeWidth={1.7} />

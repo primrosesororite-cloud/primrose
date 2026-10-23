@@ -31,7 +31,7 @@ export async function VisionSection() {
   {t("valeursTitre")}
   </h3>
   <AnimateIn variants={stagger}>
-  <ul className="mt-4 divide-y divide-primrose-white/15 border-y border-primrose-white/15">
+  <ul className="glass-surface-dark mt-4 divide-y divide-primrose-white/15 rounded-3xl px-5">
   {valeurs.map((valeur) => (
   <li key={valeur}>
   <StaggerItem className="group flex items-center gap-4 py-4">

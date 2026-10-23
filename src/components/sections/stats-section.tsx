@@ -21,7 +21,7 @@ export async function StatsSection() {
         <AnimateIn variants={stagger} className="mt-12">
           <dl className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
             {chiffres.map((chiffre) => (
-              <StaggerItem key={chiffre.id} className="border-t-2 border-primrose-forest/30 pt-5">
+              <StaggerItem key={chiffre.id} className="glass-surface rounded-2xl p-5 sm:p-6">
                 <dd className="font-serif text-[2.75rem] leading-none text-primrose-forest md:text-[4rem]">
                   <CountUp valeur={chiffre.valeur} suffixe={chiffre.suffixe} />
                 </dd>
