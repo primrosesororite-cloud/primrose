@@ -22,9 +22,9 @@ test.describe("Navigation publique", () => {
     await expect(page).toHaveURL(/\/a-propos/);
   });
 
-  test("le lien Contact – Besoin d'aide mène à la page d'aide", async ({ page }) => {
+  test("le lien Besoin d'aide mène à la page d'aide", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("link", { name: /Contact.*Besoin d'aide/i }).first().click();
+    await page.getByRole("link", { name: /Besoin d'aide/i }).first().click();
     await expect(page).toHaveURL(/\/besoin-d-aide/);
   });
 

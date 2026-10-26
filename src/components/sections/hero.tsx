@@ -24,7 +24,7 @@ export function Hero() {
   <div className="relative mx-auto h-44 w-44 rounded-full border-[6px] border-primrose-white bg-primrose-white shadow-[0_24px_60px_-20px_rgba(52,80,59,0.45)] ring-1 ring-primrose-green/40 sm:h-64 sm:w-64">
   <Image
   src="/primrose-logo.png"
-  alt="Logo de Primrose – La Sororité Active : des mains entourent et soutiennent une femme"
+  alt="Logo de PrimROSE – La Sororité Active : des mains entourent et soutiennent une femme"
   fill
   priority
   sizes="(max-width: 640px) 176px, 256px"

@@ -1,4 +1,4 @@
-# Guide d'administration — Primrose, La Sororité Active
+# Guide d'administration — PrimROSE, La Sororité Active
 
 Guide simple pour l'équipe de l'association. Aucune connaissance technique n'est nécessaire.
 

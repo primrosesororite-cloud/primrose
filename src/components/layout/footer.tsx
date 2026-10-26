@@ -37,7 +37,7 @@ export async function Footer() {
   />
   </span>
   <p className="font-serif text-xl leading-tight">
-  Primrose
+  PrimROSE
   <span className="block text-sm italic text-primrose-white/80">La Sororité Active</span>
   </p>
   </div>
@@ -123,7 +123,7 @@ export async function Footer() {
 
   <div className="border-t border-primrose-white/15">
   <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-primrose-white/75 md:flex-row md:items-center md:justify-between md:px-6">
-  <p>© {new Date().getFullYear()} Primrose – La Sororité Active. {t("droits")}</p>
+  <p>© {new Date().getFullYear()} PrimROSE – La Sororité Active. {t("droits")}</p>
   <ul aria-label={t("legal")} className="flex flex-wrap gap-x-6 gap-y-2">
   <li><Link href="/mentions-legales" className="hover:text-primrose-white hover:underline underline-offset-4">{t("mentionsLegales")}</Link></li>
   <li><Link href="/politique-de-confidentialite" className="hover:text-primrose-white hover:underline underline-offset-4">{t("politiqueConfidentialite")}</Link></li>

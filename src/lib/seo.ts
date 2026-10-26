@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 
-const SITE_NAME = "Primrose – La Sororité Active";
+const SITE_NAME = "PrimROSE – La Sororité Active";
 
+/** Adresse officielle, utilisée en production si NEXT_PUBLIC_SITE_URL manque ou vaut localhost. */
+const SITE_URL_PRODUCTION = "https://www.sororiteprimrose.org";
+
+/**
+ * Adresse publique du site (liens canoniques, og:url, sitemap, JSON-LD).
+ * En production sur Vercel, jamais « localhost » : une variable absente ou
+ * mal réglée ne doit pas casser le référencement ni les aperçus de partage.
+ */
 export function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const configuree = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "");
+  const invalide = !configuree || configuree.includes("localhost");
+  if (process.env.VERCEL_ENV === "production" && invalide) return SITE_URL_PRODUCTION;
+  return configuree || "http://localhost:3000";
 }
 
 /**

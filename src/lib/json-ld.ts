@@ -13,11 +13,11 @@ export function organizationJsonLd(reseaux: ReseauSocial[]) {
   return {
     "@context": "https://schema.org",
     "@type": "NGO",
-    name: "Primrose – La Sororité Active",
+    name: "PrimROSE – La Sororité Active",
     url: siteUrl,
     logo: `${siteUrl}/opengraph-image`,
     description:
-      "Association congolaise engagée contre les violences de genre : prévenir, soutenir, plaider, former.",
+      "Association congolaise engagée contre les violences de genre : prévenir, soutenir, porter le plaidoyer et former.",
     areaServed: {
       "@type": "Country",
       name: "République du Congo",
@@ -46,7 +46,7 @@ export function evenementJsonLd(evenement: Evenement) {
       : undefined,
     organizer: {
       "@type": "NGO",
-      name: "Primrose – La Sororité Active",
+      name: "PrimROSE – La Sororité Active",
       url: siteUrl,
     },
   };
@@ -69,8 +69,8 @@ export function actualiteJsonLd(actualite: {
     image: actualite.image_url ?? undefined,
     datePublished: actualite.date_publication ?? undefined,
     mainEntityOfPage: `${siteUrl}/actualites/${actualite.slug}`,
-    author: { "@type": "Organization", name: "Primrose – La Sororité Active" },
-    publisher: { "@type": "Organization", name: "Primrose – La Sororité Active", url: siteUrl },
+    author: { "@type": "Organization", name: "PrimROSE – La Sororité Active" },
+    publisher: { "@type": "Organization", name: "PrimROSE – La Sororité Active", url: siteUrl },
   };
 }
 
