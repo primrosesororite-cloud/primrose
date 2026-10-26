@@ -12,23 +12,28 @@
     "contact": "Contact",
     "adhesion": "Join us",
     "rejoignez": "Join us",
-    "besoinDAide": "Contact – Need help",
+    "besoinDAide": "Need help?",
     "menu": "Menu",
     "ouvrirMenu": "Open menu",
     "fermerMenu": "Close menu",
-    "accueilLogo": "Primrose – La Sororité Active, home"
+    "accueilLogo": "PrimROSE – La Sororité Active, home",
+    "langue": {
+      "choisir": "Site language",
+      "fr": "Français",
+      "en": "English"
+    }
   },
   "home": {
     "hero": {
       "titre": "A world without gender-based violence. Together, towards recovery.",
-      "texte": "In the Republic of the Congo, Primrose listens to and supports women affected by violence, and works to make that violence recede — in families, schools, health services and all the way into the law.",
+      "texte": "In the Republic of the Congo, PrimROSE listens to and supports women affected by violence, and works to make that violence recede — in families, schools, health services and all the way into the law.",
       "cta": "Discover our work",
       "eyebrow": "The active sisterhood · Republic of the Congo",
       "titre1": "A world without gender-based violence.",
       "titre2": "Together, towards recovery.",
       "ctaRejoindre": "Join the association",
-      "metaTitre": "Primrose – La Sororité Active · Fighting gender-based violence in the Republic of the Congo",
-      "metaDescription": "Primrose listens to and supports women who are victims of gender-based violence in the Republic of the Congo, raises awareness, advocates for fairer laws and trains professionals. Need help? Contact us in full confidentiality."
+      "metaTitre": "PrimROSE – La Sororité Active · Fighting gender-based violence in the Republic of the Congo",
+      "metaDescription": "PrimROSE listens to and supports women who are victims of gender-based violence in the Republic of the Congo, raises awareness, advocates for fairer laws and trains professionals. Need help? Contact us in full confidentiality."
     },
     "missions": {
       "titre": "Acting before, during and after violence",
@@ -47,7 +52,7 @@
       "titre": "Going through a difficult situation?",
       "texte": "Confidential support, no sign-up and no trace left on your device.",
       "lien": "Ask for help",
-      "astuce": "To leave this site immediately, press Escape twice."
+      "astuce": "To leave this site immediately, press the Escape key twice."
     },
     "vision": {
       "eyebrow": "Our vision",
@@ -59,7 +64,7 @@
         "Solidarity",
         "Kindness",
         "Tolerance",
-        "Civic respect for all"
+        "Respect for everyone"
       ],
       "lien": "About the association"
     },
@@ -71,19 +76,19 @@
       "items": {
         "membre": {
           "titre": "Become a member",
-          "texte": "Join, take part in general meetings and carry the association's voice."
+          "texte": "Join the association, take part in general meetings and help carry its voice."
         },
         "benevole": {
           "titre": "Volunteer",
-          "texte": "Run a workshop, staff an awareness stand, help organise a campaign."
+          "texte": "Run a workshop, staff an awareness stand or help organise a campaign."
         },
         "partenaire": {
           "titre": "Become a partner",
-          "texte": "Institution, NGO or company: let's build prevention and training programmes together."
+          "texte": "Institution, NGO or company: building prevention and training programmes together."
         },
         "donateur": {
           "titre": "Donate",
-          "texte": "Fund listening, guidance and support for survivors."
+          "texte": "Fund listening, guidance and support for people affected by violence."
         }
       }
     },
@@ -100,7 +105,7 @@
     },
     "chiffres": {
       "eyebrow": "Our impact",
-      "titre": "Primrose's work in numbers"
+      "titre": "PrimROSE's work in numbers"
     }
   },
   "missions": {
@@ -108,8 +113,8 @@
     "texte": "Prevent before, support during and after, change laws and practices: our action covers a survivor's entire journey.",
     "prevenir": {
       "titre": "PREVENT",
-      "description": "Organize large-scale campaigns, workshops and conferences to educate the general public.",
-      "detail": "We meet the general public where they are — schools, neighborhoods, media — to reduce gender-based violence before it happens, through information and dialogue.",
+      "description": "Run campaigns, workshops and conferences to raise awareness as widely as possible.",
+      "detail": "We reach out to people in schools, neighbourhoods and the media to act ahead of gender-based violence, through information and dialogue.",
       "valeurs": [
         "Information",
         "Dialogue",
@@ -159,7 +164,7 @@
       "valeurs": [
         "Trust",
         "Solidarity",
-        "Civic respect for all"
+        "Respect for everyone"
       ],
       "actions": [
         "Training health workers",
@@ -230,7 +235,7 @@
     "eyebrow": "Calendar"
   },
   "footer": {
-    "description": "A Congolese association working against gender-based violence: prevent, support, advocate, train.",
+    "description": "A Congolese association working against gender-based violence: prevention, support, advocacy and training.",
     "evenements": "Events",
     "mentionsLegales": "Legal notice",
     "politiqueConfidentialite": "Privacy policy",
@@ -240,7 +245,7 @@
     "agir": "Get involved",
     "besoinDAide": "Need help",
     "demanderAide": "Ask for help",
-    "quitter": "To leave this site immediately, press Escape twice.",
+    "quitter": "To leave this site immediately, press the Escape key twice.",
     "aPropos": "About",
     "notreMission": "Our mission",
     "formations": "Training",
@@ -257,7 +262,7 @@
     "avertissement": "If you are in immediate danger, contact your country's emergency services.",
     "confidentialite": {
       "titre": "Confidentiality",
-      "texte": "Only Primrose's authorized team can view your request. Your contact details and message are encrypted as soon as they're saved. We only ask for what's strictly necessary to respond to you."
+      "texte": "Only PrimROSE's authorized team can view your request. Your contact details and message are encrypted as soon as they're saved. We only ask for what's strictly necessary to respond to you."
     },
     "urgences": {
       "titre": "Need help right now?",
@@ -299,13 +304,13 @@
     "aideLien": "Ask for help"
   },
   "rejoindre": {
-    "titre": "Join Primrose",
-    "texte": "Sisterhood means standing by one another. Choose how you want to act with us.",
-    "choisirProfil": "Choose your profile",
+    "titre": "Join the association",
+    "texte": "Sisterhood means standing by one another. Choose how you would like to act alongside us.",
+    "choisirProfil": "How would you like to get involved?",
     "changerProfil": "Change profile",
     "temoignages": {
       "titre": "In their words",
-      "aVenir": "Testimonials from our members and volunteers will be published here soon, with their consent."
+      "aVenir": "Testimonials from our members and volunteers will soon be published here, with their consent."
     },
     "faq": {
       "titre": "Frequently asked questions",
@@ -365,17 +370,33 @@
     "seDeconnecter": "Sign out"
   },
   "aPropos": {
-    "titre": "About Primrose",
+    "titre": "About PrimROSE",
     "histoireTitre": "Our story",
-    "histoireTexte": "Primrose – La Sororité Active was born from the belief that a world without gender-based violence is possible. In the Republic of the Congo, we act every day along four complementary areas — prevent, support, advocate, train — so that prevention, listening and support are accessible to everyone who needs them.",
+    "histoireTexte": "PrimROSE – La Sororité Active was born from a conviction: a world without gender-based violence is possible. From the Republic of the Congo, we act every day around four complementary areas: prevention, support, advocacy and training. Our goal is for everyone to find prevention, a listening ear and support close to home.",
     "equipeTitre": "Our team",
     "equipeAVenir": "Team members will be introduced here soon.",
     "valeursTitre": "Our values",
     "valeurs": [
-      "Trust",
-      "Solidarity",
-      "Compassion",
-      "Civic respect for all"
+      {
+        "titre": "Trust",
+        "accroche": "A space where you can speak without fear.",
+        "texte": "We create a safe setting where everyone can speak without being judged. We protect the confidentiality of every testimony and keep the commitments we make."
+      },
+      {
+        "titre": "Solidarity",
+        "accroche": "Standing by one another.",
+        "texte": "We support victims and those who act alongside them. Together, we prevent violence, support survivors and carry the voices of those who are not heard."
+      },
+      {
+        "titre": "Compassion",
+        "accroche": "Attentive listening, without judgment.",
+        "texte": "We welcome everyone with humanity, respecting their pace and their choices. No one has to justify what they have lived through."
+      },
+      {
+        "titre": "Respect for everyone",
+        "accroche": "Every person's dignity comes first.",
+        "texte": "Everyone has the right to safety, equality and respect, whatever their sex, age, origin or situation. We act within the law and with respect for everyone's rights."
+      }
     ],
     "partenairesTitre": "Our partners",
     "partenairesAVenir": "Our partners will be introduced here soon.",
@@ -406,7 +427,7 @@
   "politiqueConfidentialite": {
     "titre": "Privacy policy",
     "majLe": "Last updated: to be completed by the association.",
-    "intro": "This page explains what data Primrose – La Sororité Active collects through this site, why, and how it is protected. This site's audience can be in a vulnerable situation: confidentiality is not a formality, it is a safety requirement.",
+    "intro": "This page explains what data PrimROSE – La Sororité Active collects through this site, why, and how it is protected. This site's audience can be in a vulnerable situation: confidentiality is not a formality, it is a safety requirement.",
     "responsable": {
       "titre": "Data controller",
       "texte": "[Association's legal name], [legal form], [registered address] — to be completed by the association before going live."

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 /**
  * Page interne de référence (non liée dans la navigation publique).
- * Documente les tokens et composants de base de la charte Primrose,
+ * Documente les tokens et composants de base de la charte PrimROSE,
  * à comparer visuellement à la maquette avant toute livraison.
  */
 
@@ -17,7 +17,7 @@ const SWATCHES = [
   { name: "primrose-green-dark", hex: "#3F5B45", usage: "Titres, logo, boutons pleins" },
   { name: "primrose-cream", hex: "#EAF4EA", usage: "Fonds de section" },
   { name: "primrose-ink", hex: "#3A2E2A", usage: "Texte courant" },
-  { name: "primrose-alert", hex: "#BE3E37", usage: "Bouton Contact – Besoin d'aide UNIQUEMENT" },
+  { name: "primrose-alert", hex: "#BE3E37", usage: "Bouton « Besoin d'aide ? » UNIQUEMENT" },
   { name: "primrose-white", hex: "#FFFFFF", usage: "Fond des cartes" },
   { name: "primrose-charcoal", hex: "#5F6255", usage: "Bandeau sous le footer (Retour en haut)" },
 ] as const;
@@ -42,7 +42,7 @@ export default async function DesignSystemPage({
   return (
   <div className="mx-auto max-w-4xl px-4 py-16 md:px-6">
   <h1 className="font-serif text-3xl text-primrose-green-dark md:text-4xl">
-  Design system – Primrose
+  Design system – PrimROSE
   </h1>
   <p className="mt-2 text-primrose-ink/80">
   Référence interne des tokens et composants. Page non listée dans la navigation publique.
@@ -90,7 +90,7 @@ export default async function DesignSystemPage({
   Bouton secondaire
   </button>
   <button className="rounded-full bg-primrose-alert px-6 py-3 text-sm font-medium text-primrose-white hover:bg-primrose-alert/90">
-  Contact – Besoin d&apos;aide
+  Besoin d&apos;aide ?
   </button>
   <button disabled className="rounded-full bg-primrose-green-dark px-6 py-3 text-sm font-medium text-primrose-white opacity-60">
   Désactivé

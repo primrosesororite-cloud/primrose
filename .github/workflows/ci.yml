@@ -12,7 +12,7 @@ env:
   # voir src/lib/data/*). Les vrais secrets vivent dans Vercel, pas ici.
   NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
   NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder-anon-key
-  NEXT_PUBLIC_SITE_URL: https://primrose-sororite.org
+  NEXT_PUBLIC_SITE_URL: https://sororiteprimrose.org
   DEMANDES_AIDE_ENCRYPTION_KEY: cGxhY2Vob2xkZXItMzItb2N0ZXRzLXBvdXItbGEtY2k=
 
 jobs:

@@ -7,6 +7,7 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { EASE, SPRING, stagger, slideInLeft } from "@/lib/motion";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Menu, X, Lock } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -97,6 +98,7 @@ export function Navbar() {
   </ul>
 
   <div className="hidden items-center gap-2 lg:flex">
+  <LanguageSwitcher id="desktop" />
   <Link
   href="/rejoindre"
   aria-current={isActive(pathname, "/rejoindre") ? "page" : undefined}
@@ -174,6 +176,9 @@ export function Navbar() {
   );
   })}
   </motion.ul>
+  <div className="mx-auto max-w-6xl px-4 pb-5">
+  <LanguageSwitcher id="mobile" className="inline-block" />
+  </div>
   </motion.div>
   )}
   </AnimatePresence>

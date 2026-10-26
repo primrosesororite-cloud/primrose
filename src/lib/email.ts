@@ -53,7 +53,7 @@ export async function notifyUrgentDemand(): Promise<void> {
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "alertes@sororiteprimrose.org",
       to: process.env.ASSOCIATION_ALERT_EMAIL!,
-      subject: "Nouvelle demande d'aide urgente – Primrose",
+      subject: "Nouvelle demande d'aide urgente – PrimROSE",
       text:
         "Une nouvelle demande d'aide marquée URGENTE vient d'être reçue.\n\n" +
         "Connectez-vous au tableau de bord pour la consulter et y répondre rapidement.\n\n" +

@@ -52,7 +52,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(getSiteUrl()),
-    title: "Primrose – La Sororité Active",
+    title: "PrimROSE – La Sororité Active",
     description: t("texte"),
   };
 }

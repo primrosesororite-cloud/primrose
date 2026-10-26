@@ -12,23 +12,28 @@
     "contact": "Contact",
     "adhesion": "Adhérer",
     "rejoignez": "Rejoindre",
-    "besoinDAide": "Contact – Besoin d'aide",
+    "besoinDAide": "Besoin d'aide ?",
     "menu": "Menu",
     "ouvrirMenu": "Ouvrir le menu",
     "fermerMenu": "Fermer le menu",
-    "accueilLogo": "Primrose – La Sororité Active, accueil"
+    "accueilLogo": "PrimROSE – La Sororité Active, accueil",
+    "langue": {
+      "choisir": "Langue du site",
+      "fr": "Français",
+      "en": "English"
+    }
   },
   "home": {
     "hero": {
       "titre": "Un monde sans violences de genre. Ensemble, pour le rétablissement.",
-      "texte": "En République du Congo, Primrose écoute et accompagne les femmes victimes de violences, et agit pour que ces violences reculent — dans les familles, les écoles, les services de santé et jusque dans la loi.",
+      "texte": "En République du Congo, PrimROSE écoute et accompagne les femmes victimes de violences, et agit pour que ces violences reculent — dans les familles, les écoles, les services de santé et jusque dans la loi.",
       "cta": "Découvrir nos actions",
       "eyebrow": "La sororité active · République du Congo",
       "titre1": "Un monde sans violences de genre.",
       "titre2": "Ensemble, pour le rétablissement.",
       "ctaRejoindre": "Rejoindre l'association",
-      "metaTitre": "Primrose – La Sororité Active · Association contre les violences de genre en République du Congo",
-      "metaDescription": "Primrose écoute et accompagne les femmes victimes de violences de genre en République du Congo, sensibilise, plaide pour des lois plus justes et forme les professionnels. Besoin d'aide ? Écrivez-nous en toute confidentialité."
+      "metaTitre": "PrimROSE – La Sororité Active · Association contre les violences de genre en République du Congo",
+      "metaDescription": "PrimROSE écoute et accompagne les femmes victimes de violences de genre en République du Congo, sensibilise, plaide pour des lois plus justes et forme les professionnels. Besoin d'aide ? Écrivez-nous en toute confidentialité."
     },
     "missions": {
       "titre": "Agir avant, pendant et après les violences",
@@ -47,7 +52,7 @@
       "titre": "Vous traversez une situation difficile ?",
       "texte": "Une écoute confidentielle, sans inscription et sans trace sur votre appareil.",
       "lien": "Demander de l'aide",
-      "astuce": "Pour quitter ce site immédiatement, appuyez deux fois sur Échap."
+      "astuce": "Pour quitter ce site immédiatement, appuyez deux fois sur la touche Échap."
     },
     "vision": {
       "eyebrow": "Notre vision",
@@ -59,7 +64,7 @@
         "Solidarité",
         "Bienveillance",
         "Tolérance",
-        "Respect civique de tous"
+        "Respect de toutes et de tous"
       ],
       "lien": "Découvrir l'association"
     },
@@ -71,19 +76,19 @@
       "items": {
         "membre": {
           "titre": "Devenir membre",
-          "texte": "Adhérer, participer aux assemblées et porter la voix de l'association."
+          "texte": "Adhérer à l'association, participer aux assemblées générales et porter sa voix."
         },
         "benevole": {
           "titre": "Devenir bénévole",
-          "texte": "Animer un atelier, tenir un stand de sensibilisation, aider à organiser une campagne."
+          "texte": "Animer un atelier, tenir un stand de sensibilisation ou aider à organiser une campagne."
         },
         "partenaire": {
           "titre": "Devenir partenaire",
-          "texte": "Institution, ONG ou entreprise : construisons ensemble des programmes de prévention et de formation."
+          "texte": "Institution, ONG ou entreprise : construire ensemble des programmes de prévention et de formation."
         },
         "donateur": {
           "titre": "Faire un don",
-          "texte": "Financer l'écoute, l'orientation et l'accompagnement des victimes."
+          "texte": "Financer l'écoute, l'orientation et l'accompagnement des personnes victimes de violences."
         }
       }
     },
@@ -100,7 +105,7 @@
     },
     "chiffres": {
       "eyebrow": "Notre impact",
-      "titre": "L'action de Primrose en chiffres"
+      "titre": "L'action de PrimROSE en chiffres"
     }
   },
   "missions": {
@@ -108,8 +113,8 @@
     "texte": "Prévenir avant, soutenir pendant et après, changer les lois et les pratiques : notre action couvre tout le parcours d'une victime.",
     "prevenir": {
       "titre": "PRÉVENIR",
-      "description": "Organiser des campagnes, ateliers et conférences de grande envergure pour éduquer le grand public.",
-      "detail": "Nous allons à la rencontre du grand public — écoles, quartiers, médias — pour faire reculer les violences de genre avant qu'elles ne surviennent, par l'information et le dialogue.",
+      "description": "Mener des campagnes, des ateliers et des conférences pour sensibiliser le plus grand nombre.",
+      "detail": "Nous allons à la rencontre de la population, dans les écoles, les quartiers et les médias, pour agir en amont des violences de genre, grâce à l'information et au dialogue.",
       "valeurs": [
         "Information",
         "Dialogue",
@@ -159,7 +164,7 @@
       "valeurs": [
         "Confiance",
         "Solidarité",
-        "Respect civique de tous"
+        "Respect de toutes et de tous"
       ],
       "actions": [
         "Formation des personnels de santé",
@@ -230,7 +235,7 @@
     "eyebrow": "Agenda"
   },
   "footer": {
-    "description": "Association congolaise engagée contre les violences de genre : prévenir, soutenir, plaider, former.",
+    "description": "Association congolaise engagée contre les violences de genre : prévenir, soutenir, porter le plaidoyer et former.",
     "evenements": "Événements",
     "mentionsLegales": "Mentions légales",
     "politiqueConfidentialite": "Politique de confidentialité",
@@ -240,7 +245,7 @@
     "agir": "Agir",
     "besoinDAide": "Besoin d'aide",
     "demanderAide": "Demander de l'aide",
-    "quitter": "Pour quitter ce site immédiatement, appuyez deux fois sur Échap.",
+    "quitter": "Pour quitter ce site immédiatement, appuyez deux fois sur la touche Échap.",
     "aPropos": "À propos",
     "notreMission": "Notre mission",
     "formations": "Formations",
@@ -257,7 +262,7 @@
     "avertissement": "Si vous êtes en danger immédiat, contactez les services d'urgence de votre pays.",
     "confidentialite": {
       "titre": "Confidentialité",
-      "texte": "Seule l'équipe habilitée de Primrose peut consulter votre demande. Vos coordonnées et votre message sont chiffrés dès leur enregistrement. Nous ne vous demandons que le strict nécessaire pour vous répondre."
+      "texte": "Seule l'équipe habilitée de PrimROSE peut consulter votre demande. Vos coordonnées et votre message sont chiffrés dès leur enregistrement. Nous ne vous demandons que le strict nécessaire pour vous répondre."
     },
     "urgences": {
       "titre": "Besoin d'aide immédiate ?",
@@ -299,13 +304,13 @@
     "aideLien": "Demander de l'aide"
   },
   "rejoindre": {
-    "titre": "Rejoindre Primrose",
-    "texte": "La sororité, c'est se tenir aux côtés les unes des autres. Choisissez comment vous voulez agir avec nous.",
-    "choisirProfil": "Choisissez votre profil",
+    "titre": "Rejoindre l'association",
+    "texte": "La sororité, c'est se tenir aux côtés les unes des autres. Choisissez la manière dont vous souhaitez agir à nos côtés.",
+    "choisirProfil": "Comment souhaitez-vous vous engager ?",
     "changerProfil": "Changer de profil",
     "temoignages": {
       "titre": "Elles et ils en parlent",
-      "aVenir": "Les témoignages de nos membres et bénévoles seront publiés ici prochainement, avec leur accord."
+      "aVenir": "Les témoignages de nos membres et bénévoles seront bientôt publiés ici, avec leur accord."
     },
     "faq": {
       "titre": "Questions fréquentes",
@@ -323,7 +328,7 @@
           "reponse": "Décrivez votre organisation et le type de collaboration envisagé dans le formulaire ; notre équipe reviendra vers vous pour en discuter."
         },
         {
-          "question": "Puis-je faire un don ponctuel plutôt que devenir membre ?",
+          "question": "Puis-je faire un don ponctuel plutôt que de devenir membre ?",
           "reponse": "Oui. Choisissez le profil « Donateur » et précisez vos souhaits dans le formulaire ; nous vous recontacterons avec les modalités."
         }
       ]
@@ -365,17 +370,33 @@
     "seDeconnecter": "Se déconnecter"
   },
   "aPropos": {
-    "titre": "À propos de Primrose",
+    "titre": "À propos de PrimROSE",
     "histoireTitre": "Notre histoire",
-    "histoireTexte": "Primrose – La Sororité Active est née de la conviction qu'un monde sans violences de genre est possible. En République du Congo, nous agissons chaque jour selon quatre axes complémentaires — prévenir, soutenir, plaider, former — pour que la prévention, l'écoute et l'accompagnement soient accessibles à toutes celles et ceux qui en ont besoin.",
+    "histoireTexte": "PrimROSE – La Sororité Active est née d'une conviction : un monde sans violences de genre est possible. Depuis la République du Congo, nous agissons chaque jour autour de quatre axes complémentaires : prévenir, soutenir, plaider et former. Notre objectif est que chacune et chacun puisse trouver près de chez soi de la prévention, de l'écoute et un accompagnement.",
     "equipeTitre": "Notre équipe",
     "equipeAVenir": "Les membres de l'équipe seront présentés ici prochainement.",
     "valeursTitre": "Nos valeurs",
     "valeurs": [
-      "Confiance",
-      "Solidarité",
-      "Bienveillance",
-      "Respect civique de tous"
+      {
+        "titre": "Confiance",
+        "accroche": "Un espace où l'on peut parler sans crainte.",
+        "texte": "Nous créons un cadre sûr où chaque personne peut s'exprimer sans être jugée. Nous protégeons la confidentialité de chaque témoignage et tenons les engagements que nous prenons."
+      },
+      {
+        "titre": "Solidarité",
+        "accroche": "Se tenir aux côtés les unes des autres.",
+        "texte": "Nous soutenons les victimes et celles et ceux qui agissent à leurs côtés. Ensemble, nous prévenons, accompagnons et portons la voix de celles qui ne sont pas entendues."
+      },
+      {
+        "titre": "Bienveillance",
+        "accroche": "Une écoute attentive, sans jugement.",
+        "texte": "Nous accueillons chaque personne avec humanité, en respectant son rythme et ses choix. Personne n'a à justifier ce qu'elle a vécu."
+      },
+      {
+        "titre": "Respect de toutes et de tous",
+        "accroche": "La dignité de chaque personne avant tout.",
+        "texte": "Chaque personne a droit à la sécurité, à l'égalité et au respect, quels que soient son sexe, son âge, son origine ou sa situation. Nous agissons dans le respect des lois et des droits de chacune et de chacun."
+      }
     ],
     "partenairesTitre": "Nos partenaires",
     "partenairesAVenir": "Nos partenaires seront présentés ici prochainement.",
@@ -406,7 +427,7 @@
   "politiqueConfidentialite": {
     "titre": "Politique de confidentialité",
     "majLe": "Dernière mise à jour : à compléter par l'association.",
-    "intro": "Cette page explique quelles données Primrose – La Sororité Active collecte via ce site, pourquoi, et comment elles sont protégées. Le public de ce site peut se trouver en situation de vulnérabilité : la confidentialité n'est pas une formalité, c'est une condition de sécurité.",
+    "intro": "Cette page explique quelles données PrimROSE – La Sororité Active collecte via ce site, pourquoi, et comment elles sont protégées. Le public de ce site peut se trouver en situation de vulnérabilité : la confidentialité n'est pas une formalité, c'est une condition de sécurité.",
     "responsable": {
       "titre": "Responsable de traitement",
       "texte": "[Nom légal de l'association], [forme juridique], [adresse du siège] — à compléter par l'association avant mise en ligne."

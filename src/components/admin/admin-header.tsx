@@ -13,7 +13,7 @@ export function AdminHeader({ fullName, role }: { fullName: string; role: UserRo
   return (
   <header className="sticky top-0 z-40 flex h-14 items-center justify-between gap-4 bg-primrose-forest px-4 text-primrose-white shadow-[0_6px_18px_-12px_rgba(0,0,0,0.5)] md:px-6">
   <div className="flex min-w-0 items-center gap-3">
-  <span className="font-serif text-lg leading-none">Primrose</span>
+  <span className="font-serif text-lg leading-none">PrimROSE</span>
   <span className="hidden rounded-full bg-primrose-white/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] sm:inline">
   Administration
   </span>

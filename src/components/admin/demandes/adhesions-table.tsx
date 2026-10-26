@@ -122,7 +122,7 @@ export function AdhesionsTable({ adhesions }: { adhesions: Adhesion[] }) {
   cell: ({ row }) => (
   <div className="flex items-center gap-1">
   <DetailButton adhesion={row.original} />
-  <ReplyButton to={row.original.email} defaultSubject="Votre demande auprès de Primrose" />
+  <ReplyButton to={row.original.email} defaultSubject="Votre demande auprès de PrimROSE" />
   </div>
   ),
   }),

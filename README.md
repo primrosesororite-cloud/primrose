@@ -1,6 +1,6 @@
-# Primrose – La Sororité Active
+# PrimROSE – La Sororité Active
 
-Site officiel de l'association Primrose – La Sororité Active (République du Congo), engagée contre les violences de genre selon quatre axes : **Prévenir, Soutenir, Plaider, Former**.
+Site officiel de l'association PrimROSE – La Sororité Active (République du Congo), engagée contre les violences de genre selon quatre axes : **Prévenir, Soutenir, Plaider, Former**.
 
 ## Stack
 

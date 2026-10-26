@@ -3,6 +3,8 @@ import { getEquipe, getPartenaires } from "@/lib/data/team";
 import { TeamSection } from "@/components/sections/team-section";
 import { PartnersCarousel } from "@/components/sections/partners-carousel";
 import { AnimateIn } from "@/components/motion/animate-in";
+import { StaggerItem } from "@/components/motion/stagger-item";
+import { stagger } from "@/lib/motion";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { buildMetadata } from "@/lib/seo";
@@ -33,7 +35,7 @@ export default async function AProposPage({
   setRequestLocale(locale);
   const t = await getTranslations("aPropos");
   const [equipe, partenaires] = await Promise.all([getEquipe(), getPartenaires()]);
-  const valeurs = t.raw("valeurs") as string[];
+  const valeurs = t.raw("valeurs") as { titre: string; accroche: string; texte: string }[];
 
   return (
     <>
@@ -56,13 +58,18 @@ export default async function AProposPage({
         <div className="mx-auto max-w-6xl">
           <AnimateIn>
             <SectionHeading title={t("valeursTitre")} align="center" />
-            <ul className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
+          </AnimateIn>
+          <AnimateIn variants={stagger} className="mt-12">
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {valeurs.map((valeur) => (
-                <li
-                  key={valeur}
-                  className="rounded-full border border-primrose-green/40 bg-primrose-white px-6 py-3 font-serif text-xl italic text-primrose-ink"
-                >
-                  {valeur}
+                <li key={valeur.titre}>
+                  <StaggerItem className="h-full">
+                    <article className="h-full rounded-card bg-primrose-white p-6 shadow-card">
+                      <h3 className="font-serif text-2xl italic text-primrose-forest">{valeur.titre}</h3>
+                      <p className="mt-3 text-sm font-semibold text-primrose-ink">{valeur.accroche}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-primrose-ink/80">{valeur.texte}</p>
+                    </article>
+                  </StaggerItem>
                 </li>
               ))}
             </ul>
