@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Megaphone, HeartHandshake, Flag, GraduationCap, ArrowRight, Check, type LucideIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { BrandText } from "@/components/brand-text";
 import { EASE, SPRING } from "@/lib/motion";
 import type { AxeKey, MissionContent } from "@/lib/data/contenus";
 
@@ -138,7 +139,7 @@ export function MissionsExplorer({ missions }: { missions: MissionContent[] }) {
 
             <div className="mt-5 flex items-start justify-between gap-5 sm:mt-6">
               <h3 className="max-w-[39rem] font-serif text-[1.65rem] leading-[1.18] tracking-[-0.02em] text-primrose-ink sm:text-[2rem] md:text-[2.35rem]">
-                {courante.description}
+                <BrandText>{courante.description}</BrandText>
               </h3>
               <motion.span
                 initial={{ opacity: 0, scale: 0.75, rotate: -10 }}
@@ -151,7 +152,7 @@ export function MissionsExplorer({ missions }: { missions: MissionContent[] }) {
             </div>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-primrose-ink/75 sm:mt-5 sm:text-base sm:leading-7">
-              {courante.detail}
+              <BrandText>{courante.detail}</BrandText>
             </p>
 
             <div className="mt-6 border-t border-primrose-forest/10 pt-5 sm:mt-7 sm:pt-6">

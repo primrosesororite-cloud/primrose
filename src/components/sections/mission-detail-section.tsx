@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { BrandText } from "@/components/brand-text";
 import { Check } from "lucide-react";
 import type { MissionContent } from "@/lib/data/contenus";
 
@@ -70,8 +71,8 @@ export function MissionDetailSection({
         <motion.h2 variants={revealItem} className="font-sans text-sm font-bold tracking-[0.16em] text-primrose-forest">
           {mission.titre}
         </motion.h2>
-        <motion.p variants={revealItem} className="mt-4 font-serif text-2xl leading-snug text-primrose-ink md:text-[1.9rem]">{mission.description}</motion.p>
-        <motion.p variants={revealItem} className="mt-4 text-base leading-relaxed text-primrose-ink/80 md:text-lg">{mission.detail}</motion.p>
+        <motion.p variants={revealItem} className="mt-4 font-serif text-2xl leading-snug text-primrose-ink md:text-[1.9rem]"><BrandText>{mission.description}</BrandText></motion.p>
+        <motion.p variants={revealItem} className="mt-4 text-base leading-relaxed text-primrose-ink/80 md:text-lg"><BrandText>{mission.detail}</BrandText></motion.p>
 
         <motion.h3 variants={revealItem} className="mt-8 font-sans text-xs font-semibold uppercase tracking-[0.16em] text-primrose-forest">
           {t("concretement")}

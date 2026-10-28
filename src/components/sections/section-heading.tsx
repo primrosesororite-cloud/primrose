@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { BrandText } from "@/components/brand-text";
 import { RevealText } from "@/components/motion/reveal-text";
 import { ScrollHighlightText } from "@/components/motion/scroll-highlight-text";
 
@@ -49,7 +50,7 @@ export function SectionHeading({
             dark ? "text-primrose-white/85" : "text-primrose-ink/80"
           )}
         >
-          {text}
+          <BrandText>{text}</BrandText>
         </p>
       )}
     </div>

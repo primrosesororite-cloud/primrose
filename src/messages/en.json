@@ -128,8 +128,8 @@
     },
     "soutenir": {
       "titre": "SUPPORT",
-      "description": "Provide psychological, medical and legal support to survivors.",
-      "detail": "Every survivor we support receives confidential listening and guidance toward the psychological, medical and legal resources suited to their situation.",
+      "description": "Provide psychological, medical or legal support to anyone who needs it.",
+      "detail": "Everyone we support receives listening in complete confidentiality and guidance toward the psychological, medical or legal resources suited to their situation.",
       "valeurs": [
         "Trust",
         "Solidarity",
@@ -372,7 +372,7 @@
   "aPropos": {
     "titre": "About PrimROSE",
     "histoireTitre": "Our story",
-    "histoireTexte": "PrimROSE – La Sororité Active was born from a conviction: a world without gender-based violence is possible. From the Republic of the Congo, we act every day around four complementary areas: prevention, support, advocacy and training. Our goal is for everyone to find prevention, a listening ear and support close to home.",
+    "histoireTexte": "PrimROSE – La Sororité Active was born from a conviction: a world without gender-based violence is possible.\nFrom the Republic of the Congo, we act every day around four complementary areas: prevention, support, advocacy and training.\nOur goal is for everyone to find prevention, a listening ear and support close to home.",
     "equipeTitre": "Our team",
     "equipeAVenir": "Team members will be introduced here soon.",
     "valeursTitre": "Our values",

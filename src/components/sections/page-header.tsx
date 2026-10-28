@@ -1,4 +1,5 @@
 import { AnimateIn } from "@/components/motion/animate-in";
+import { BrandText } from "@/components/brand-text";
 import { ConvergingBands } from "@/components/sections/converging-bands";
 import { RevealText } from "@/components/motion/reveal-text";
 import { Aurora } from "@/components/motion/aurora";
@@ -36,7 +37,7 @@ export function PageHeader({
         {intro && (
           <AnimateIn delay={0.35}>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-primrose-white/85 md:text-lg">
-              {intro}
+              <BrandText>{intro}</BrandText>
             </p>
           </AnimateIn>
         )}

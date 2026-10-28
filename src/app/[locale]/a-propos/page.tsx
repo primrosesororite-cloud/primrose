@@ -4,6 +4,7 @@ import { TeamSection } from "@/components/sections/team-section";
 import { PartnersCarousel } from "@/components/sections/partners-carousel";
 import { AnimateIn } from "@/components/motion/animate-in";
 import { StaggerItem } from "@/components/motion/stagger-item";
+import { BrandText } from "@/components/brand-text";
 import { stagger } from "@/lib/motion";
 import { PageHeader } from "@/components/sections/page-header";
 import { SectionHeading } from "@/components/sections/section-heading";
@@ -47,8 +48,8 @@ export default async function AProposPage({
             <SectionHeading title={t("histoireTitre")} />
           </AnimateIn>
           <AnimateIn delay={0.08}>
-            <p className="text-lg leading-relaxed text-primrose-ink/85 md:text-xl md:leading-relaxed">
-              {t("histoireTexte")}
+            <p className="whitespace-pre-line text-lg leading-relaxed text-primrose-ink/85 md:text-xl md:leading-relaxed">
+              <BrandText>{t("histoireTexte")}</BrandText>
             </p>
           </AnimateIn>
         </div>

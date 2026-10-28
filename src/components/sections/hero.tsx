@@ -6,6 +6,7 @@ import { AnimateIn } from "@/components/motion/animate-in";
 import { scaleIn } from "@/lib/motion";
 import { Parallax } from "@/components/motion/parallax";
 import { Magnetic } from "@/components/motion/magnetic";
+import { BrandText } from "@/components/brand-text";
 import { Aurora } from "@/components/motion/aurora";
 import { HeroBands } from "@/components/sections/hero-bands";
 import { RevealText } from "@/components/motion/reveal-text";
@@ -50,7 +51,7 @@ export function Hero() {
 
   <AnimateIn delay={0.7}>
   <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-primrose-ink/80 md:text-lg">
-  {t("texte")}
+  <BrandText>{t("texte")}</BrandText>
   </p>
   </AnimateIn>
 

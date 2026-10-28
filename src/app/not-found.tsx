@@ -26,7 +26,7 @@ export default function RootNotFound() {
           Page introuvable — Page not found
         </p>
         <Link href="/" style={{ marginTop: "1rem", color: "#3F5B45" }}>
-          PrimROSE – La Sororité Active
+          <em style={{ fontWeight: 700 }}>PrimROSE</em> – La Sororité Active
         </Link>
       </body>
     </html>
