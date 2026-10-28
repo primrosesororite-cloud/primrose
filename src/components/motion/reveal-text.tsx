@@ -3,6 +3,7 @@
 import { Fragment } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { EASE } from "@/lib/motion";
+import { BrandText } from "@/components/brand-text";
 
 /** Titre révélé mot à mot (remontée depuis un masque) au défilement. */
 export function RevealText({ text, className }: { text: string; className?: string }) {
@@ -36,7 +37,7 @@ export function RevealText({ text, className }: { text: string; className?: stri
                     },
               }}
             >
-              {word}
+              <BrandText>{word}</BrandText>
             </motion.span>
           </span>
           {index < words.length - 1 && " "}

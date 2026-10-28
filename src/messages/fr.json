@@ -128,8 +128,8 @@
     },
     "soutenir": {
       "titre": "SOUTENIR",
-      "description": "Apporter un soutien psychologique, médical et légal aux victimes.",
-      "detail": "Chaque victime accompagnée reçoit une écoute confidentielle et une orientation vers les ressources psychologiques, médicales et juridiques adaptées à sa situation.",
+      "description": "Apporter un soutien psychologique, médical ou légal à toute personne.",
+      "detail": "Toute personne accompagnée reçoit une écoute en toute confidentialité et une orientation vers les ressources psychologiques, médicales ou juridiques adaptées à sa situation.",
       "valeurs": [
         "Confiance",
         "Solidarité",
@@ -372,7 +372,7 @@
   "aPropos": {
     "titre": "À propos de PrimROSE",
     "histoireTitre": "Notre histoire",
-    "histoireTexte": "PrimROSE – La Sororité Active est née d'une conviction : un monde sans violences de genre est possible. Depuis la République du Congo, nous agissons chaque jour autour de quatre axes complémentaires : prévenir, soutenir, plaider et former. Notre objectif est que chacune et chacun puisse trouver près de chez soi de la prévention, de l'écoute et un accompagnement.",
+    "histoireTexte": "PrimROSE – La Sororité Active est née d'une conviction : un monde sans violences de genre est possible.\nDepuis la République du Congo, nous agissons chaque jour autour de quatre axes complémentaires : prévenir, soutenir, plaider et former.\nNotre objectif est que chacune et chacun puisse trouver près de chez soi de la prévention, de l'écoute et un accompagnement.",
     "equipeTitre": "Notre équipe",
     "equipeAVenir": "Les membres de l'équipe seront présentés ici prochainement.",
     "valeursTitre": "Nos valeurs",

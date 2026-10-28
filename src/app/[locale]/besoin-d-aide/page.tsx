@@ -5,6 +5,7 @@ import { EmergencyNumbers } from "@/components/sections/emergency-numbers";
 import { PageHeader } from "@/components/sections/page-header";
 import { getNumerosUrgence } from "@/lib/data/site-settings";
 import { buildMetadata } from "@/lib/seo";
+import { BrandText } from "@/components/brand-text";
 
 /**
  * Page sensible : aucun tracking, aucun cookie tiers, aucun localStorage.
@@ -57,7 +58,7 @@ export default async function BesoinDAidePage({
           <div className="rounded-card bg-primrose-cream p-6">
             <ShieldCheck aria-hidden className="h-6 w-6 text-primrose-forest" />
             <h2 className="mt-3 font-serif text-xl text-primrose-ink">{t("confidentialite.titre")}</h2>
-            <p className="mt-2 text-sm leading-relaxed text-primrose-ink/85">{t("confidentialite.texte")}</p>
+            <p className="mt-2 text-sm leading-relaxed text-primrose-ink/85"><BrandText>{t("confidentialite.texte")}</BrandText></p>
           </div>
 
           <p className="flex items-start gap-2 text-sm text-primrose-ink/80">

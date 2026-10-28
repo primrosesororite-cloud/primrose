@@ -9,6 +9,7 @@ import {
   isNumeroAppelable,
 } from "@/lib/data/site-settings";
 import { SocialIcon } from "@/components/icons/social-icon";
+import { BrandText } from "@/components/brand-text";
 
 const linkClass =
 "text-sm text-primrose-white/80 transition-colors hover:text-primrose-white hover:underline underline-offset-4";
@@ -37,7 +38,7 @@ export async function Footer() {
   />
   </span>
   <p className="font-serif text-xl leading-tight">
-  PrimROSE
+  <span className="font-bold italic">PrimROSE</span>
   <span className="block text-sm italic text-primrose-white/80">La Sororité Active</span>
   </p>
   </div>
@@ -123,7 +124,9 @@ export async function Footer() {
 
   <div className="border-t border-primrose-white/15">
   <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-primrose-white/75 md:flex-row md:items-center md:justify-between md:px-6">
-  <p>© {new Date().getFullYear()} PrimROSE – La Sororité Active. {t("droits")}</p>
+  <p>
+  <BrandText>{`© ${new Date().getFullYear()} PrimROSE – La Sororité Active.`}</BrandText> {t("droits")}
+  </p>
   <ul aria-label={t("legal")} className="flex flex-wrap gap-x-6 gap-y-2">
   <li><Link href="/mentions-legales" className="hover:text-primrose-white hover:underline underline-offset-4">{t("mentionsLegales")}</Link></li>
   <li><Link href="/politique-de-confidentialite" className="hover:text-primrose-white hover:underline underline-offset-4">{t("politiqueConfidentialite")}</Link></li>

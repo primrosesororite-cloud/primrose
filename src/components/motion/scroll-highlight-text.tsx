@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { BrandText } from "@/components/brand-text";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 function Word({
@@ -17,7 +18,7 @@ function Word({
   const opacity = useTransform(progress, range, still ? [1, 1] : [0.18, 1]);
   return (
     <motion.span style={{ opacity }} className="inline-block">
-      {children}
+      <BrandText>{children}</BrandText>
     </motion.span>
   );
 }
