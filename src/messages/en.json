@@ -367,7 +367,9 @@
     "motDePasse": "Password",
     "seConnecter": "Sign in",
     "connexionEnCours": "Signing in…",
-    "seDeconnecter": "Sign out"
+    "seDeconnecter": "Sign out",
+    "identifiantsIncorrects": "Incorrect email or password.",
+    "emailNonConfirme": "Your email address has not been confirmed yet. Open the confirmation message sent to your inbox."
   },
   "aPropos": {
     "titre": "About PrimROSE",
@@ -509,6 +511,9 @@
       "zoomReset": "Fit to width",
       "pageAlt": "Page {numero}"
     },
-    "discretion": "This document opens in your browser. Remember to clear your history if you share this device."
+    "discretion": "This document opens in your browser. Remember to clear your history if you share this device.",
+    "couvertureAlt": "Cover of the document “{titre}”",
+    "voirAffiche": "View the poster",
+    "ouvrirImage": "Open the full-size image"
   }
 }

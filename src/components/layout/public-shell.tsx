@@ -6,6 +6,7 @@ import { PageTransition } from "@/components/motion/page-transition";
 import { useDoubleEscapeExit } from "@/components/layout/use-double-escape-exit";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { RouteCurtain } from "@/components/motion/route-curtain";
+import { ScrollProgress } from "@/components/motion/scroll-progress";
 
 /** Espace admin : pas de chrome public, et Échap y ferme les dialogues (pas de sortie rapide). */
 function isStaffArea(pathname: string) {
@@ -35,6 +36,7 @@ export function PublicShell({
     <>
       <SmoothScroll />
       <RouteCurtain />
+      <ScrollProgress />
       {navbar}
       {ticker}
       <main className="flex-1">

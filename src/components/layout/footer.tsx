@@ -12,7 +12,7 @@ import { SocialIcon } from "@/components/icons/social-icon";
 import { BrandText } from "@/components/brand-text";
 
 const linkClass =
-"text-sm text-primrose-white/80 transition-colors hover:text-primrose-white hover:underline underline-offset-4";
+"link-draw text-sm text-primrose-white/80 transition-colors hover:text-primrose-white";
 
 export async function Footer() {
   const t = await getTranslations("footer");
@@ -101,7 +101,7 @@ export async function Footer() {
   </h2>
   <Link
   href="/besoin-d-aide"
-  className="group mt-4 inline-flex items-center gap-2 rounded-full bg-primrose-white px-5 py-2.5 text-sm font-semibold text-primrose-forest transition-transform duration-300 motion-safe:hover:-translate-y-0.5 active:translate-y-0"
+  className="btn-sheen group mt-4 inline-flex items-center gap-2 rounded-full bg-primrose-white px-5 py-2.5 text-sm font-semibold text-primrose-forest transition-transform duration-300 motion-safe:hover:-translate-y-0.5 active:translate-y-0"
   >
   {t("demanderAide")}
   <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" />

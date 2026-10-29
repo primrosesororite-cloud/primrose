@@ -2,7 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { documentSchema, documentFichierSchema } from "@/lib/validations/admin/documents";
+import {
+  documentSchema,
+  documentFichierSchema,
+  couvertureUrlSchema,
+} from "@/lib/validations/admin/documents";
 
 type ActionResult = { error?: string } | void;
 
@@ -28,23 +32,35 @@ function parseFichier(formData: FormData) {
   });
 }
 
+function parseCouverture(formData: FormData) {
+  return couvertureUrlSchema.safeParse(formData.get("couverture_url") ?? "");
+}
+
 function revalidateDocuments() {
   revalidatePath("/admin/documents");
   revalidatePath("/", "layout");
 }
 
-/** Le PDF a déjà été envoyé côté client dans le bucket ; ceci enregistre la fiche. */
+const PDF_OU_COUVERTURE = "Ajoutez un PDF ou une image de couverture.";
+
+/**
+ * Le PDF (facultatif) a déjà été envoyé côté client dans le bucket ; ceci
+ * enregistre la fiche. Il faut au moins un PDF ou une image de couverture.
+ */
 export async function createDocument(formData: FormData): Promise<ActionResult> {
   const parsed = parseDocument(formData);
   if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Champs invalides." };
   const fichier = parseFichier(formData);
-  if (!fichier) return { error: "Ajoutez un fichier PDF." };
-  if (!fichier.success) return { error: fichier.error.issues[0]?.message ?? "Fichier invalide." };
+  if (fichier && !fichier.success) {
+    return { error: fichier.error.issues[0]?.message ?? "Fichier invalide." };
+  }
+  const couverture = parseCouverture(formData);
+  if (!couverture.success) return { error: couverture.error.issues[0]?.message ?? "Image invalide." };
+  const pdf = fichier?.success ? fichier.data : null;
+  if (!pdf && !couverture.data) return { error: PDF_OU_COUVERTURE };
 
   const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
-  // URL reconstruite côté serveur : jamais celle fournie par le navigateur.
-  const { data: urlData } = supabase.storage.from(BUCKET).getPublicUrl(fichier.data.chemin);
 
   const { error } = await supabase.from("documents").insert({
     slug: parsed.data.slug,
@@ -53,14 +69,16 @@ export async function createDocument(formData: FormData): Promise<ActionResult> 
     categorie: parsed.data.categorie,
     date_publication: parsed.data.date_publication || null,
     publie: parsed.data.publie,
-    fichier_url: urlData.publicUrl,
-    chemin: fichier.data.chemin,
-    taille_octets: fichier.data.tailleOctets,
+    // URL reconstruite côté serveur : jamais celle fournie par le navigateur.
+    fichier_url: pdf ? supabase.storage.from(BUCKET).getPublicUrl(pdf.chemin).data.publicUrl : null,
+    chemin: pdf?.chemin ?? null,
+    taille_octets: pdf?.tailleOctets ?? null,
+    couverture_url: couverture.data || null,
     uploaded_by: userData.user?.id ?? null,
   });
 
   if (error) {
-    await supabase.storage.from(BUCKET).remove([fichier.data.chemin]);
+    if (pdf) await supabase.storage.from(BUCKET).remove([pdf.chemin]);
     return { error: error.code === "23505" ? "Ce slug est déjà utilisé." : "La création a échoué." };
   }
   revalidateDocuments();
@@ -73,12 +91,15 @@ export async function updateDocument(id: string, formData: FormData): Promise<Ac
   if (fichier && !fichier.success) {
     return { error: fichier.error.issues[0]?.message ?? "Fichier invalide." };
   }
+  const couverture = parseCouverture(formData);
+  if (!couverture.success) return { error: couverture.error.issues[0]?.message ?? "Image invalide." };
 
   const supabase = await createClient();
   const { data: existant } = await supabase.from("documents").select("chemin").eq("id", id).single();
   if (!existant) return { error: "Document introuvable." };
 
   const nouveauFichier = fichier?.success ? fichier.data : null;
+  if (!nouveauFichier && !existant.chemin && !couverture.data) return { error: PDF_OU_COUVERTURE };
   const { error } = await supabase
     .from("documents")
     .update({
@@ -88,6 +109,7 @@ export async function updateDocument(id: string, formData: FormData): Promise<Ac
       categorie: parsed.data.categorie,
       date_publication: parsed.data.date_publication || null,
       publie: parsed.data.publie,
+      couverture_url: couverture.data || null,
       ...(nouveauFichier && {
         chemin: nouveauFichier.chemin,
         taille_octets: nouveauFichier.tailleOctets,
@@ -100,7 +122,7 @@ export async function updateDocument(id: string, formData: FormData): Promise<Ac
     if (nouveauFichier) await supabase.storage.from(BUCKET).remove([nouveauFichier.chemin]);
     return { error: error.code === "23505" ? "Ce slug est déjà utilisé." : "La mise à jour a échoué." };
   }
-  if (nouveauFichier && existant.chemin !== nouveauFichier.chemin) {
+  if (nouveauFichier && existant.chemin && existant.chemin !== nouveauFichier.chemin) {
     await supabase.storage.from(BUCKET).remove([existant.chemin]);
   }
   revalidateDocuments();
@@ -120,6 +142,6 @@ export async function deleteDocument(id: string): Promise<ActionResult> {
 
   const { error } = await supabase.from("documents").delete().eq("id", id);
   if (error) return { error: "La suppression a échoué." };
-  await supabase.storage.from(BUCKET).remove([existant.chemin]);
+  if (existant.chemin) await supabase.storage.from(BUCKET).remove([existant.chemin]);
   revalidateDocuments();
 }

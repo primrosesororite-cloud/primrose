@@ -18,9 +18,11 @@ export function SubmitButton({
   <motion.button
   type="submit"
   disabled={pending}
+  aria-busy={pending}
+  whileTap={pending ? undefined : { scale: 0.97 }}
   transition={{ duration: 0.15 }}
   className={cn(
-"w-full rounded-full px-6 py-3 text-sm font-medium text-primrose-white transition-colors disabled:opacity-60",
+"btn-sheen w-full rounded-full px-6 py-3 text-sm font-medium text-primrose-white transition-colors disabled:opacity-60",
   variant === "primary"
   ? "bg-primrose-forest hover:bg-primrose-forest/90"
   : "bg-primrose-alert hover:bg-primrose-alert/90",

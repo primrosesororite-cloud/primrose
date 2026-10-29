@@ -273,9 +273,10 @@ export interface Database {
           titre: string;
           description: string | null;
           categorie: DocumentCategorie;
-          fichier_url: string;
-          chemin: string;
+          fichier_url: string | null;
+          chemin: string | null;
           taille_octets: number | null;
+          couverture_url: string | null;
           publie: boolean;
           date_publication: string | null;
           uploaded_by: string | null;
@@ -288,9 +289,10 @@ export interface Database {
           titre: string;
           description?: string | null;
           categorie?: DocumentCategorie;
-          fichier_url: string;
-          chemin: string;
+          fichier_url?: string | null;
+          chemin?: string | null;
           taille_octets?: number | null;
+          couverture_url?: string | null;
           publie?: boolean;
           date_publication?: string | null;
           uploaded_by?: string | null;

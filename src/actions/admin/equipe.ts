@@ -7,6 +7,7 @@ import {
   partenaireSchema,
   reseauSocialSchema,
 } from "@/lib/validations/admin/equipe";
+import { imageProjetFacultativeSchema } from "@/lib/validations/admin/images";
 
 type ActionResult = { error?: string } | void;
 
@@ -102,12 +103,14 @@ export async function createPartenaire(
     lien: formData.get("lien"),
   });
   if (!parsed.success) return { error: "Champs invalides." };
+  const logo = imageProjetFacultativeSchema.safeParse(logoUrl ?? "");
+  if (!logo.success) return { error: "Logo invalide." };
 
   const supabase = await createClient();
   const { error } = await supabase.from("partenaires").insert({
     nom: parsed.data.nom,
     lien: parsed.data.lien || null,
-    logo_url: logoUrl,
+    logo_url: logo.data || null,
     ordre,
   });
   if (error) return { error: "La création a échoué." };
@@ -125,11 +128,13 @@ export async function updatePartenaire(
     lien: formData.get("lien"),
   });
   if (!parsed.success) return { error: "Champs invalides." };
+  const logo = imageProjetFacultativeSchema.safeParse(logoUrl ?? "");
+  if (!logo.success) return { error: "Logo invalide." };
 
   const supabase = await createClient();
   const { error } = await supabase
     .from("partenaires")
-    .update({ nom: parsed.data.nom, lien: parsed.data.lien || null, logo_url: logoUrl })
+    .update({ nom: parsed.data.nom, lien: parsed.data.lien || null, logo_url: logo.data || null })
     .eq("id", id);
   if (error) return { error: "La mise à jour a échoué." };
   revalidatePath("/admin/partenaires");
