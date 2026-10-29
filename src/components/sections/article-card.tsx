@@ -12,6 +12,8 @@ type Actualite = Database["public"]["Tables"]["actualites"]["Row"];
 export function ArticleCard({ actualite }: { actualite: Actualite }) {
   const t = useTranslations("actualites");
   const locale = useLocale();
+  // Revue de presse sans image propre : la photo de l'article du média.
+  const image = actualite.image_url ?? actualite.apercu?.image_url ?? null;
 
   return (
   <TiltCard className="h-full">
@@ -20,10 +22,10 @@ export function ArticleCard({ actualite }: { actualite: Actualite }) {
   className="glass-surface group flex h-full flex-col overflow-hidden rounded-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
   >
   <div className="relative aspect-[16/10] w-full overflow-hidden bg-primrose-green/20">
-  {actualite.image_url && (
+  {image && (
   <RevealImage className="absolute inset-0">
   <Image
-  src={actualite.image_url}
+  src={image}
   alt={actualite.titre}
   fill
   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
