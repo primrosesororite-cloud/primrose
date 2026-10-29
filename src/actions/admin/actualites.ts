@@ -3,8 +3,39 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { actualiteSchema, evenementSchema } from "@/lib/validations/admin/actualites";
+import { genererApercu } from "@/lib/apercu-lien";
+import type { ApercuLien } from "@/types/database";
 
-type ActionResult = { error?: string } | void;
+type ActionResult = { error?: string; avertissement?: string } | void;
+
+const AVERTISSEMENT_APERCU =
+  "Le lien est enregistré, mais l'aperçu n'a pas pu être récupéré (site indisponible ?). Réenregistrez plus tard avec « Actualiser l'aperçu ».";
+
+type Supabase = Awaited<ReturnType<typeof createClient>>;
+
+/**
+ * Aperçu de l'article externe : récupéré seulement si le lien est nouveau,
+ * s'il manque encore ou si l'admin demande à l'actualiser. En cas d'échec
+ * (site partenaire indisponible), le lien est tout de même enregistré.
+ */
+async function preparerApercu(
+  supabase: Supabase,
+  lien: string,
+  existant: { lien_externe: string | null; apercu: ApercuLien | null } | null,
+  actualiser: boolean
+): Promise<{ lien_externe?: string | null; apercu?: ApercuLien | null; avertissement?: string }> {
+  // Aucun lien, ni avant ni maintenant : on n'écrit pas ces colonnes (l'admin
+  // reste fonctionnel même si la migration 008 n'est pas encore appliquée).
+  if (!lien) return existant?.lien_externe ? { lien_externe: null, apercu: null } : {};
+  if (!actualiser && existant?.lien_externe === lien && existant.apercu) {
+    return { lien_externe: lien, apercu: existant.apercu };
+  }
+  try {
+    return { lien_externe: lien, apercu: await genererApercu(lien, supabase.storage.from("images-public")) };
+  } catch {
+    return { lien_externe: lien, apercu: null, avertissement: AVERTISSEMENT_APERCU };
+  }
+}
 
 function parseActualite(formData: FormData) {
   return actualiteSchema.safeParse({
@@ -12,6 +43,7 @@ function parseActualite(formData: FormData) {
     titre: formData.get("titre"),
     resume: formData.get("resume"),
     image_url: formData.get("image_url"),
+    lien_externe: formData.get("lien_externe") ?? "",
     publie: formData.get("publie") === "true",
     date_publication: formData.get("date_publication"),
   });
@@ -29,10 +61,11 @@ function parseContenu(formData: FormData): Record<string, unknown> | null {
 
 export async function createActualite(formData: FormData): Promise<ActionResult> {
   const parsed = parseActualite(formData);
-  if (!parsed.success) return { error: "Champs invalides." };
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Champs invalides." };
 
   const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
+  const { avertissement, ...lien } = await preparerApercu(supabase, parsed.data.lien_externe ?? "", null, false);
 
   const { error } = await supabase.from("actualites").insert({
     slug: parsed.data.slug,
@@ -40,6 +73,7 @@ export async function createActualite(formData: FormData): Promise<ActionResult>
     resume: parsed.data.resume || null,
     contenu: parseContenu(formData),
     image_url: parsed.data.image_url || null,
+    ...lien,
     publie: parsed.data.publie,
     date_publication: parsed.data.date_publication || (parsed.data.publie ? new Date().toISOString() : null),
     auteur_id: userData.user?.id ?? null,
@@ -50,13 +84,25 @@ export async function createActualite(formData: FormData): Promise<ActionResult>
   }
   revalidatePath("/admin/actualites");
   revalidatePath("/", "layout");
+  if (avertissement) return { avertissement };
 }
 
 export async function updateActualite(id: string, formData: FormData): Promise<ActionResult> {
   const parsed = parseActualite(formData);
-  if (!parsed.success) return { error: "Champs invalides." };
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Champs invalides." };
 
   const supabase = await createClient();
+  const { data: existant } = await supabase
+    .from("actualites")
+    .select("lien_externe, apercu")
+    .eq("id", id)
+    .single();
+  const { avertissement, ...lien } = await preparerApercu(
+    supabase,
+    parsed.data.lien_externe ?? "",
+    existant,
+    formData.get("actualiser_apercu") === "true"
+  );
   const { error } = await supabase
     .from("actualites")
     .update({
@@ -65,6 +111,7 @@ export async function updateActualite(id: string, formData: FormData): Promise<A
       resume: parsed.data.resume || null,
       contenu: parseContenu(formData),
       image_url: parsed.data.image_url || null,
+      ...lien,
       publie: parsed.data.publie,
       date_publication: parsed.data.date_publication || (parsed.data.publie ? new Date().toISOString() : null),
     })
@@ -75,6 +122,7 @@ export async function updateActualite(id: string, formData: FormData): Promise<A
   }
   revalidatePath("/admin/actualites");
   revalidatePath("/", "layout");
+  if (avertissement) return { avertissement };
 }
 
 export async function deleteActualite(id: string): Promise<ActionResult> {

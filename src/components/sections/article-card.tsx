@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Newspaper } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { RevealImage } from "@/components/motion/reveal-image";
@@ -30,6 +30,12 @@ export function ArticleCard({ actualite }: { actualite: Actualite }) {
   className="object-cover object-top transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
   />
   </RevealImage>
+  )}
+  {actualite.lien_externe && (
+  <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-primrose-white/95 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-primrose-forest shadow-sm">
+  <Newspaper aria-hidden className="h-3.5 w-3.5" />
+  {t("revuePresse.etiquette")}
+  </span>
   )}
   </div>
   <div className="flex flex-1 flex-col p-6">

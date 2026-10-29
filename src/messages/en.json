@@ -219,7 +219,13 @@
     "lienCopie": "Link copied!",
     "eyebrow": "The association's journal",
     "lire": "Read article",
-    "bandeau": "Latest news"
+    "bandeau": "Latest news",
+    "revuePresse": {
+      "etiquette": "In the press",
+      "lireSur": "Read on {site}",
+      "par": "by {auteur}",
+      "nouvelOnglet": "(opens in a new tab)"
+    }
   },
   "cookies": {
     "titre": "Privacy",

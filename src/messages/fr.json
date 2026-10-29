@@ -219,7 +219,13 @@
     "lienCopie": "Lien copié !",
     "eyebrow": "Le journal de l'association",
     "lire": "Lire l'article",
-    "bandeau": "À la une"
+    "bandeau": "À la une",
+    "revuePresse": {
+      "etiquette": "Revue de presse",
+      "lireSur": "Lire sur {site}",
+      "par": "par {auteur}",
+      "nouvelOnglet": "(s'ouvre dans un nouvel onglet)"
+    }
   },
   "cookies": {
     "titre": "Confidentialité",

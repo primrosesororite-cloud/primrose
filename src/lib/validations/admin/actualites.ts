@@ -10,6 +10,14 @@ export const actualiteSchema = z.object({
   titre: z.string().trim().min(1).max(200),
   resume: z.string().trim().max(500).optional().or(z.literal("")),
   image_url: z.string().trim().url().optional().or(z.literal("")),
+  /** Article d'un média partenaire (revue de presse) : https uniquement. */
+  lien_externe: z
+    .string()
+    .trim()
+    .url("Adresse invalide.")
+    .refine((url) => url.startsWith("https://"), "L'adresse doit commencer par https://")
+    .optional()
+    .or(z.literal("")),
   publie: z.boolean(),
   date_publication: z.string().optional().or(z.literal("")),
 });
