@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { TiltCard } from "@/components/motion/tilt-card";
 import { RevealImage } from "@/components/motion/reveal-image";
+import { BrandText } from "@/components/brand-text";
 import type { Database } from "@/types/database";
 
 type Actualite = Database["public"]["Tables"]["actualites"]["Row"];
@@ -26,7 +27,7 @@ export function ArticleCard({ actualite }: { actualite: Actualite }) {
   alt={actualite.titre}
   fill
   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-  className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
+  className="object-cover object-top transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
   />
   </RevealImage>
   )}
@@ -42,7 +43,7 @@ export function ArticleCard({ actualite }: { actualite: Actualite }) {
   <h3 className="mt-3 font-serif text-xl leading-snug text-primrose-ink">{actualite.titre}</h3>
   {actualite.resume && (
   <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-primrose-ink/80">
-  {actualite.resume}
+  <BrandText>{actualite.resume}</BrandText>
   </p>
   )}
   <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primrose-forest">
