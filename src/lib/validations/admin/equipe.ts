@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { lienExterneSchema } from "@/lib/validations/admin/images";
 
 export const membreEquipeSchema = z.object({
   nom: z.string().trim().min(1).max(120),
@@ -8,7 +9,7 @@ export const membreEquipeSchema = z.object({
 
 export const partenaireSchema = z.object({
   nom: z.string().trim().min(1).max(120),
-  lien: z.string().trim().url().optional().or(z.literal("")),
+  lien: lienExterneSchema.optional().or(z.literal("")),
 });
 
 export const reseauSocialSchema = z.object({

@@ -8,6 +8,7 @@ import { Parallax } from "@/components/motion/parallax";
 import { Magnetic } from "@/components/motion/magnetic";
 import { BrandText } from "@/components/brand-text";
 import { Aurora } from "@/components/motion/aurora";
+import { PointerParallax } from "@/components/motion/pointer-parallax";
 import { HeroBands } from "@/components/sections/hero-bands";
 import { RevealText } from "@/components/motion/reveal-text";
 
@@ -22,6 +23,7 @@ export function Hero() {
   <Parallax distance={140} fade className="relative mx-auto max-w-5xl px-4 pb-24 pt-10 text-center sm:pt-12 md:px-6 md:pb-28">
   <AnimateIn variants={scaleIn}>
   <Parallax distance={70} fade>
+  <PointerParallax profondeur={14}>
   <div className="relative mx-auto h-44 w-44 rounded-full border-[6px] border-primrose-white bg-primrose-white shadow-[0_24px_60px_-20px_rgba(52,80,59,0.45)] ring-1 ring-primrose-green/40 sm:h-64 sm:w-64">
   <Image
   src="/primrose-logo.png"
@@ -32,6 +34,7 @@ export function Hero() {
   className="rounded-full object-cover [clip-path:circle(48%_at_50%_50%)]"
   />
   </div>
+  </PointerParallax>
   </Parallax>
   </AnimateIn>
 
@@ -60,7 +63,7 @@ export function Hero() {
   <Magnetic>
   <Link
   href="/notre-mission"
-  className="group inline-flex items-center gap-2 rounded-full bg-primrose-forest px-6 py-3 text-sm font-semibold text-primrose-white shadow-[0_10px_24px_-10px_rgba(52,80,59,0.6)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_16px_30px_-12px_rgba(52,80,59,0.65)] motion-safe:hover:-translate-y-0.5 active:translate-y-0"
+  className="btn-sheen group inline-flex items-center gap-2 rounded-full bg-primrose-forest px-6 py-3 text-sm font-semibold text-primrose-white shadow-[0_10px_24px_-10px_rgba(52,80,59,0.6)] transition-[transform,box-shadow] duration-300 hover:shadow-[0_16px_30px_-12px_rgba(52,80,59,0.65)] motion-safe:hover:-translate-y-0.5 active:translate-y-0"
   >
   {t("cta")}
   <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1" />

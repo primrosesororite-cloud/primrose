@@ -7,7 +7,6 @@ import { getActualiteBySlug } from "@/lib/data/actualites";
 import { Link } from "@/i18n/navigation";
 import { ShareButton } from "@/components/forms/share-button";
 import { AnimateIn } from "@/components/motion/animate-in";
-import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { buildMetadata } from "@/lib/seo";
 import { actualiteJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { tiptapExtensions } from "@/lib/tiptap-extensions";
@@ -70,7 +69,6 @@ export default async function ActualiteDetailPage({
       ),
     }}
   />
-  <ScrollProgress />
   <Link href="/actualites" className="text-sm text-primrose-forest hover:underline">
   ← {t("retour")}
   </Link>

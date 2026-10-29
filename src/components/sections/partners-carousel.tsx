@@ -49,9 +49,13 @@ export function PartnersCarousel({ partenaires }: { partenaires: Partenaire[] })
   dragging && "[animation-play-state:paused]"
   )}
   >
-  {looped.map((partenaire, index) => (
+  {looped.map((partenaire, index) => {
+  const copie = index >= partenaires.length;
+  return (
   <a
   key={`${partenaire.id}-${index}`}
+  aria-hidden={copie || undefined}
+  tabIndex={copie ? -1 : undefined}
   href={partenaire.lien ?? undefined}
   target={partenaire.lien ? "_blank" : undefined}
   rel={partenaire.lien ? "noopener noreferrer" : undefined}
@@ -73,7 +77,8 @@ export function PartnersCarousel({ partenaires }: { partenaires: Partenaire[] })
   </span>
   )}
   </a>
-  ))}
+  );
+  })}
   </div>
   </motion.div>
   </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -36,12 +37,25 @@ export function DocumentCard({ document }: { document: Document }) {
         href={`/documents/${document.slug}`}
         className="glass-surface group flex h-full flex-col overflow-hidden rounded-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_28px_50px_-24px_rgba(52,80,59,0.45)]"
       >
-        <div className="relative flex h-40 items-center justify-center overflow-hidden bg-primrose-cream">
+        <div
+          className={`relative flex items-center justify-center overflow-hidden bg-primrose-cream ${document.couverture_url ? "h-72" : "h-44 pt-10"}`}
+        >
           <span
             aria-hidden
             className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-primrose-green/25 transition-transform duration-700 ease-out motion-safe:group-hover:scale-125"
           />
-          <DocumentSheet />
+          {document.couverture_url ? (
+            // Couverture entière (affiche souvent en hauteur) : pas de recadrage.
+            <Image
+              src={document.couverture_url}
+              alt={t("couvertureAlt", { titre: document.titre })}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-contain p-5 drop-shadow-[0_18px_24px_rgba(52,80,59,0.35)] transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04]"
+            />
+          ) : (
+            <DocumentSheet />
+          )}
           <span className="absolute left-4 top-4 rounded-full bg-primrose-white/90 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-primrose-forest">
             {t(`categories.${document.categorie}`)}
           </span>
@@ -74,7 +88,7 @@ export function DocumentCard({ document }: { document: Document }) {
               })}
           </p>
           <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primrose-forest">
-            {t("lire")}
+            {document.fichier_url ? t("lire") : t("voirAffiche")}
             <ArrowRight
               aria-hidden
               className="h-4 w-4 transition-transform duration-300 motion-safe:group-hover:translate-x-1"

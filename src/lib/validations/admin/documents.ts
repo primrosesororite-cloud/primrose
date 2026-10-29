@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { imageProjetFacultativeSchema } from "@/lib/validations/admin/images";
 
 export const DOCUMENT_CATEGORIES = [
   "rapport",
@@ -33,5 +34,11 @@ export const documentFichierSchema = z.object({
   chemin: z.string().regex(DOCUMENT_CHEMIN_REGEX, "Fichier invalide."),
   tailleOctets: z.number().int().min(1).max(DOCUMENT_MAX_OCTETS, "Fichier trop volumineux (20 Mo max)."),
 });
+
+/**
+ * Couverture facultative : uniquement une image déjà envoyée dans le bucket
+ * public du projet (jamais une adresse externe arbitraire).
+ */
+export const couvertureUrlSchema = imageProjetFacultativeSchema;
 
 export type DocumentInput = z.infer<typeof documentSchema>;

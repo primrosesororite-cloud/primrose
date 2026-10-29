@@ -13,6 +13,7 @@ import {
 } from "@/lib/validations/admin/documents";
 import { createDocument, updateDocument } from "@/actions/admin/documents";
 import { PdfDropField } from "@/components/admin/documents/pdf-drop-field";
+import { ImageUploadField } from "@/components/admin/image-upload-field";
 import { CATEGORIE_LABELS } from "@/components/admin/documents/categorie-labels";
 import type { Database } from "@/types/database";
 
@@ -28,6 +29,7 @@ export function DocumentForm({
   onSaved: () => void;
 }) {
   const [file, setFile] = useState<File | null>(null);
+  const [couverture, setCouverture] = useState<string | null>(document?.couverture_url ?? null);
   const [slugTouched, setSlugTouched] = useState(!!document);
 
   const {
@@ -61,8 +63,8 @@ export function DocumentForm({
   const slugField = register("slug");
 
   async function onSubmit(values: DocumentInput) {
-    if (!document && !file) {
-      toast.error("Ajoutez un fichier PDF.");
+    if (!file && !couverture && !document?.fichier_url) {
+      toast.error("Ajoutez un PDF ou une image de couverture.");
       return;
     }
 
@@ -73,6 +75,7 @@ export function DocumentForm({
     fd.set("categorie", values.categorie);
     fd.set("date_publication", values.date_publication ?? "");
     fd.set("publie", String(values.publie));
+    fd.set("couverture_url", couverture ?? "");
 
     if (file) {
       const chemin = `documents/${crypto.randomUUID()}.pdf`;
@@ -99,15 +102,30 @@ export function DocumentForm({
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <span className="text-sm font-medium text-primrose-ink">Fichier PDF</span>
+        <span className="text-sm font-medium text-primrose-ink">Fichier PDF (facultatif)</span>
+        <p className="text-xs text-primrose-ink/70">
+          Sans PDF, la fiche affiche simplement l&apos;image de couverture en grand.
+        </p>
         <div className="mt-1">
           <PdfDropField
             file={file}
             onChange={setFile}
             fichierActuel={
-              document ? { url: document.fichier_url, taille: document.taille_octets } : undefined
+              document?.fichier_url
+                ? { url: document.fichier_url, taille: document.taille_octets }
+                : undefined
             }
           />
+        </div>
+      </div>
+
+      <div>
+        <span className="text-sm font-medium text-primrose-ink">Image de couverture (facultative)</span>
+        <p className="text-xs text-primrose-ink/70">
+          Affiche ou première page du document. Les visiteurs la voient dans la liste ; un clic ouvre le PDF.
+        </p>
+        <div className="mt-1 max-w-xs">
+          <ImageUploadField value={couverture} onChange={setCouverture} folder="documents" />
         </div>
       </div>
 

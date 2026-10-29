@@ -24,10 +24,23 @@ export const fadeIn: Variants = {
   visible: { opacity: 1, transition: { duration: DURATION.base, ease: EASE } },
 };
 
-/** Fondu avec remontée : entrée des blocs au défilement. */
+/** Perspective commune aux entrées en 3D (px) : assez lointaine pour rester sobre. */
+const PERSPECTIVE = 1200;
+
+/**
+ * Entrée des blocs au défilement : remontée, fondu et légère bascule en
+ * perspective, comme une page qui se redresse. Transform uniquement (GPU).
+ */
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: DURATION.slow, ease: EASE } },
+  hidden: { opacity: 0, y: 40, rotateX: 9, scale: 0.98, transformPerspective: PERSPECTIVE },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    scale: 1,
+    transformPerspective: PERSPECTIVE,
+    transition: { duration: DURATION.slow, ease: EASE },
+  },
 };
 
 /** Glissement latéral court : éléments de liste, menu mobile. */

@@ -37,7 +37,14 @@ export function ConnexionForm() {
     setPending(false);
 
     if (signInError) {
-      setError(t("erreurGenerique"));
+      // `code` est renvoyé par Supabase Auth ; tout code inconnu reste générique.
+      setError(
+        signInError.code === "invalid_credentials"
+          ? tAuth("identifiantsIncorrects")
+          : signInError.code === "email_not_confirmed"
+            ? tAuth("emailNonConfirme")
+            : t("erreurGenerique")
+      );
       return;
     }
     router.push("/admin");

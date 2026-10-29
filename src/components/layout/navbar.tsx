@@ -113,7 +113,7 @@ export function Navbar() {
   </Link>
   <Link
   href="/besoin-d-aide"
-  className="inline-flex items-center gap-1.5 rounded-full bg-primrose-alert px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-primrose-white transition-colors hover:bg-primrose-alert/90"
+  className="btn-sheen inline-flex items-center gap-1.5 rounded-full bg-primrose-alert px-4 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-primrose-white transition-colors hover:bg-primrose-alert/90"
   >
   <Lock aria-hidden className="h-3.5 w-3.5" />
   {t("besoinDAide")}
