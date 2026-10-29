@@ -31,7 +31,7 @@ export async function generateMetadata({
   title: actualite.titre,
   description: actualite.resume ?? "",
   path: `/actualites/${slug}`,
-  image: actualite.image_url,
+  image: actualite.image_url ?? actualite.apercu?.image_url,
   article: { publishedTime: actualite.date_publication },
   });
 }
