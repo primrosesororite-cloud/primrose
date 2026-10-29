@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { generateHTML } from "@tiptap/core";
+// Version serveur : celle de @tiptap/core exige un navigateur (window) et
+// faisait planter toute actualité ayant un contenu.
+import { generateHTML } from "@tiptap/html/server";
 import type { JSONContent } from "@tiptap/react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { getActualiteBySlug } from "@/lib/data/actualites";
@@ -10,6 +12,7 @@ import { AnimateIn } from "@/components/motion/animate-in";
 import { buildMetadata } from "@/lib/seo";
 import { actualiteJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { tiptapExtensions } from "@/lib/tiptap-extensions";
+import { BrandText } from "@/components/brand-text";
 
 export const revalidate = 300;
 
@@ -87,20 +90,20 @@ export default async function ActualiteDetailPage({
   </h1>
 
   {actualite.image_url && (
-  <div className="relative mt-6 h-64 w-full overflow-hidden rounded-card">
+  <div className="relative mt-6 h-[26rem] w-full overflow-hidden rounded-card bg-primrose-cream md:h-[36rem]">
   <Image
   src={actualite.image_url}
   alt={actualite.titre}
   fill
   sizes="(min-width: 768px) 672px, 100vw"
-  className="object-cover"
+  className="object-contain"
   priority
   />
   </div>
   )}
 
   {actualite.resume && (
-  <p className="mt-6 text-lg text-primrose-ink/90">{actualite.resume}</p>
+  <p className="mt-6 text-lg text-primrose-ink/90"><BrandText>{actualite.resume}</BrandText></p>
   )}
 
   {contentHtml && (
