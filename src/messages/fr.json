@@ -515,5 +515,32 @@
     "couvertureAlt": "Couverture du document « {titre} »",
     "voirAffiche": "Voir l'affiche",
     "ouvrirImage": "Ouvrir l'image en taille réelle"
+  },
+  "bandeau": {
+    "actualite": "Actualité",
+    "evenement": "Événement",
+    "document": "Document",
+    "permanents": [
+      {
+        "etiquette": "Aide",
+        "titre": "Besoin d'aide ? Une écoute confidentielle, sans jugement",
+        "href": "/besoin-d-aide"
+      },
+      {
+        "etiquette": "Agir",
+        "titre": "Rejoignez la sororité : membre, bénévole, partenaire ou donateur",
+        "href": "/rejoindre"
+      },
+      {
+        "etiquette": "Ressources",
+        "titre": "Rapports, guides et affiches à lire en ligne",
+        "href": "/documents"
+      },
+      {
+        "etiquette": "Formations",
+        "titre": "Des formations pour mieux accueillir les victimes",
+        "href": "/formations"
+      }
+    ]
   }
 }

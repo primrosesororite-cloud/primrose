@@ -12,7 +12,7 @@ import { MotionProvider } from "@/components/motion/motion-provider";
 import { getSiteUrl } from "@/lib/seo";
 import { organizationJsonLd } from "@/lib/json-ld";
 import { getReseauxSociaux } from "@/lib/data/site-settings";
-import { getDernieresActualites } from "@/lib/data/actualites";
+import { getBandeau } from "@/lib/data/bandeau";
 import { NewsTicker } from "@/components/sections/news-ticker";
 import "../globals.css";
 
@@ -71,7 +71,7 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const [reseaux, dernieres] = await Promise.all([getReseauxSociaux(), getDernieresActualites()]);
+  const [reseaux, bandeau] = await Promise.all([getReseauxSociaux(), getBandeau(locale)]);
 
   return (
     <html
@@ -90,7 +90,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <MotionProvider>
             <AnalyticsProvider />
-            <PublicShell navbar={<Navbar />} ticker={<NewsTicker items={dernieres} />} footer={<Footer />}>
+            <PublicShell navbar={<Navbar />} ticker={<NewsTicker items={bandeau} />} footer={<Footer />}>
               {children}
             </PublicShell>
           </MotionProvider>

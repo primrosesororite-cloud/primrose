@@ -515,5 +515,32 @@
     "couvertureAlt": "Cover of the document “{titre}”",
     "voirAffiche": "View the poster",
     "ouvrirImage": "Open the full-size image"
+  },
+  "bandeau": {
+    "actualite": "News",
+    "evenement": "Event",
+    "document": "Document",
+    "permanents": [
+      {
+        "etiquette": "Help",
+        "titre": "Need help? Confidential listening, without judgment",
+        "href": "/besoin-d-aide"
+      },
+      {
+        "etiquette": "Act",
+        "titre": "Join the sisterhood: member, volunteer, partner or donor",
+        "href": "/rejoindre"
+      },
+      {
+        "etiquette": "Resources",
+        "titre": "Reports, guides and posters to read online",
+        "href": "/documents"
+      },
+      {
+        "etiquette": "Training",
+        "titre": "Training to better support survivors",
+        "href": "/formations"
+      }
+    ]
   }
 }
