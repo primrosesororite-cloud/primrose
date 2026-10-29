@@ -27,6 +27,20 @@ export type DocumentCategorie =
   | "juridique"
   | "autre";
 
+/** Aperçu d'un article externe (revue de presse), figé à l'enregistrement. */
+export type ApercuLien = {
+  url: string;
+  domaine: string;
+  site: string | null;
+  titre: string | null;
+  description: string | null;
+  auteur: string | null;
+  /** Copies hébergées dans le bucket images-public (jamais l'adresse d'origine). */
+  image_url: string | null;
+  icone_url: string | null;
+  recupere_le: string;
+};
+
 type NoRelationships = { Relationships: [] };
 
 export interface Database {
@@ -165,6 +179,8 @@ export interface Database {
           resume: string | null;
           contenu: Record<string, unknown> | null;
           image_url: string | null;
+          lien_externe: string | null;
+          apercu: ApercuLien | null;
           publie: boolean;
           date_publication: string | null;
           auteur_id: string | null;
@@ -178,6 +194,8 @@ export interface Database {
           resume?: string | null;
           contenu?: Record<string, unknown> | null;
           image_url?: string | null;
+          lien_externe?: string | null;
+          apercu?: ApercuLien | null;
           publie?: boolean;
           date_publication?: string | null;
           auteur_id?: string | null;

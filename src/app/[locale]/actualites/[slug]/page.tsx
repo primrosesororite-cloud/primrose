@@ -13,6 +13,7 @@ import { buildMetadata } from "@/lib/seo";
 import { actualiteJsonLd, breadcrumbJsonLd } from "@/lib/json-ld";
 import { tiptapExtensions } from "@/lib/tiptap-extensions";
 import { BrandText } from "@/components/brand-text";
+import { LienApercu } from "@/components/sections/lien-apercu";
 
 export const revalidate = 300;
 
@@ -104,6 +105,15 @@ export default async function ActualiteDetailPage({
 
   {actualite.resume && (
   <p className="mt-6 text-lg text-primrose-ink/90"><BrandText>{actualite.resume}</BrandText></p>
+  )}
+
+  {actualite.lien_externe && (
+  <div className="mt-8">
+  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-primrose-forest">
+  {t("revuePresse.etiquette")}
+  </p>
+  <LienApercu url={actualite.lien_externe} apercu={actualite.apercu} />
+  </div>
   )}
 
   {contentHtml && (

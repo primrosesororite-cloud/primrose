@@ -21,6 +21,7 @@ export function ActualiteForm({
   onSaved: () => void;
 }) {
   const [imageUrl, setImageUrl] = useState<string | null>(actualite?.image_url ?? null);
+  const [actualiserApercu, setActualiserApercu] = useState(false);
   const [contenu, setContenu] = useState<JSONContent | null>(
   (actualite?.contenu as JSONContent | null) ?? null
   );
@@ -38,12 +39,13 @@ export function ActualiteForm({
   titre: actualite.titre,
   resume: actualite.resume ?? "",
   image_url: actualite.image_url ?? "",
+  lien_externe: actualite.lien_externe ?? "",
   publie: actualite.publie,
   date_publication: actualite.date_publication
   ? actualite.date_publication.slice(0, 16)
   : "",
   }
-  : { slug: "", titre: "", resume: "", image_url: "", publie: false, date_publication: "" },
+  : { slug: "", titre: "", resume: "", image_url: "", lien_externe: "", publie: false, date_publication: "" },
   });
 
   async function onSubmit(values: ActualiteInput) {
@@ -52,6 +54,8 @@ export function ActualiteForm({
   fd.set("titre", values.titre);
   fd.set("resume", values.resume ?? "");
   fd.set("image_url", imageUrl ?? "");
+  fd.set("lien_externe", values.lien_externe ?? "");
+  fd.set("actualiser_apercu", String(actualiserApercu));
   fd.set("publie", String(values.publie));
   fd.set("date_publication", values.date_publication ?? "");
   fd.set("contenu", JSON.stringify(contenu ?? {}));
@@ -62,6 +66,7 @@ export function ActualiteForm({
 
   if (result?.error) toast.error(result.error);
   else {
+  if (result?.avertissement) toast.warning(result.avertissement);
   toast.success(actualite ? "Actualité mise à jour." : "Actualité créée.");
   onSaved();
   }
@@ -104,6 +109,47 @@ export function ActualiteForm({
   <div className="mt-1">
   <ImageUploadField value={imageUrl} onChange={setImageUrl} folder="actualites" />
   </div>
+  </div>
+
+  <div>
+  <label htmlFor="lien_externe" className="text-sm font-medium text-primrose-ink">
+  Article d&apos;un média partenaire (facultatif)
+  </label>
+  <input
+  id="lien_externe"
+  type="url"
+  placeholder="https://…"
+  className="mt-1 w-full rounded-lg border border-primrose-ink/15 px-3 py-2 text-sm"
+  {...register("lien_externe")}
+  />
+  <p className="mt-1 text-xs text-primrose-ink/70">
+  Revue de presse : un aperçu cliquable (image, titre, résumé) de l&apos;article est
+  ajouté à l&apos;actualité et ouvre le site du média.
+  </p>
+  {errors.lien_externe && (
+  <p className="mt-1 text-xs text-primrose-alert">{errors.lien_externe.message}</p>
+  )}
+  {actualite?.lien_externe && (
+  <div className="mt-2 rounded-lg bg-primrose-cream px-3 py-2 text-xs text-primrose-ink/80">
+  {actualite.apercu?.titre ? (
+  <>
+  Aperçu actuel : <strong>{actualite.apercu.titre}</strong>
+  {actualite.apercu.site && ` (${actualite.apercu.site})`}
+  </>
+  ) : (
+  "Aperçu non encore récupéré."
+  )}
+  <label className="mt-1 flex items-center gap-2 font-medium">
+  <input
+  type="checkbox"
+  checked={actualiserApercu}
+  onChange={(e) => setActualiserApercu(e.target.checked)}
+  className="h-3.5 w-3.5 rounded border-primrose-ink/30"
+  />
+  Actualiser l&apos;aperçu à l&apos;enregistrement
+  </label>
+  </div>
+  )}
   </div>
 
   <div>
